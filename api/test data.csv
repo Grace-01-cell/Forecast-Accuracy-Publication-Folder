@@ -1,0 +1,846 @@
+product_name,period,Actual Consumption,Forecast,Adopted Method
+COCs,01/07/2020,"132,830","114,101",Demographic
+COCs,01/08/2020,"130,332","114,101",Demographic
+COCs,01/09/2020,"132,812","114,101",Demographic
+COCs,01/10/2020,"135,550","114,101",Demographic
+COCs,01/11/2020,"130,697","114,101",Demographic
+COCs,01/12/2020,"88,967","114,101",Demographic
+COCs,01/01/2021,"94,995","114,101",Demographic
+COCs,01/02/2021,"125,363","114,101",Demographic
+COCs,01/03/2021,"158,594","136,407",Demographic
+COCs,01/04/2021,"134,214","136,407",Demographic
+COCs,01/05/2021,"148,727","136,407",Demographic
+COCs,01/06/2021,"145,151","136,407",Demographic
+COCs,01/07/2021,"138,249","136,407",Demographic
+COCs,01/08/2021,"139,703","136,407",Demographic
+COCs,01/09/2021,"144,411","136,407",Demographic
+COCs,01/10/2021,"138,638","128,644",Demographic
+COCs,01/11/2021,"158,374","128,644",Demographic
+COCs,01/12/2021,"125,284","128,644",Demographic
+COCs,01/01/2022,"138,945","128,644",Demographic
+COCs,01/02/2022,"126,471","128,644",Demographic
+COCs,01/03/2022,"148,064","128,644",Demographic
+COCs,01/04/2022,"152,402","138,074",Demographic
+COCs,01/05/2022,"154,668","138,074",Demographic
+COCs,01/06/2022,"160,125","138,074",Demographic
+COCs,01/07/2022,"151,418","138,074",Demographic
+COCs,01/08/2022,"154,808","138,074",Demographic
+COCs,01/09/2022,"159,539","140,882",Demographic
+COCs,01/10/2022,"150,377","140,882",Demographic
+COCs,01/11/2022,"108,741","140,882",Demographic
+COCs,01/12/2022,"59,751","140,882",Demographic
+COCs,01/01/2023,"30,322","140,882",Demographic
+COCs,01/02/2023,"16,089","140,882",Demographic
+COCs,01/03/2023,"19,876","140,882",Consumption AI
+COCs,01/04/2023,"41,478","140,882",Consumption AI
+COCs,01/05/2023,"106,206","165,617",Consumption AI
+COCs,01/06/2023,"107,846","165,617",Consumption AI
+COCs,01/07/2023,"98,333","165,617",Consumption AI
+COCs,01/08/2023,"108,632","165,617",Consumption AI
+COCs,01/09/2023,"102,115","165,617",Consumption AI
+COCs,01/10/2023,"100,006","165,617",Consumption AI
+COCs,01/11/2023,"103,295","165,617",Consumption AI
+COCs,01/12/2023,"100,415","165,617",Consumption AI
+COCs,01/01/2024,"130,285","165,617",Consumption AI
+COCs,01/02/2024,"122,131","165,617",Consumption AI
+COCs,01/03/2024,"115,311","130,381",Consumption AI
+COCs,01/04/2024,"111,040","130,381",Demographic
+COCs,01/05/2024,"130,424","130,381",Demographic
+COCs,01/06/2024,"120,322","130,381",Demographic
+COCs,01/07/2024,"117,582","130,381",Demographic
+COCs,01/08/2024,"114,987","130,381",Demographic
+COCs,01/09/2024,"107,554","130,381",Demographic
+COCs,01/10/2024,"100,764","130,381",Demographic
+COCs,01/11/2024,"92,449","130,381",Demographic
+COCs,01/12/2024,"83,034","130,381",Demographic
+COCs,01/01/2025,"85,991","130,381",Demographic
+COCs,01/02/2025,"74,166","130,381",Demographic
+COCs,01/03/2025,"66,929","130,381",Demographic
+COCs,01/04/2025,"59,836","130,381",Demographic
+COCs,01/05/2025,"53,130","130,381",Demographic
+COCs,01/06/2025,"42,852","130,381",Demographic
+Cycle Beads,01/07/2020,466,551,Demographic
+Cycle Beads,01/08/2020,880,551,Demographic
+Cycle Beads,01/09/2020,"1,387",551,Demographic
+Cycle Beads,01/10/2020,"1,037",551,Demographic
+Cycle Beads,01/11/2020,283,551,Demographic
+Cycle Beads,01/12/2020,317,551,Demographic
+Cycle Beads,01/01/2021,401,551,Demographic
+Cycle Beads,01/02/2021,421,551,Demographic
+Cycle Beads,01/03/2021,859,551,Demographic
+Cycle Beads,01/04/2021,235,551,Demographic
+Cycle Beads,01/05/2021,141,551,Demographic
+Cycle Beads,01/06/2021,843,551,Demographic
+Cycle Beads,01/07/2021,238,551,Demographic
+Cycle Beads,01/08/2021,317,551,Demographic
+Cycle Beads,01/09/2021,188,551,Demographic
+Cycle Beads,01/10/2021,158,551,Demographic
+Cycle Beads,01/11/2021,131,551,Demographic
+Cycle Beads,01/12/2021,315,551,Demographic
+Cycle Beads,01/01/2022,540,551,Demographic
+Cycle Beads,01/02/2022,433,551,Demographic
+Cycle Beads,01/03/2022,"1,980",551,Demographic
+Cycle Beads,01/04/2022,238,551,Demographic
+Cycle Beads,01/05/2022,"1,254",551,Demographic
+Cycle Beads,01/06/2022,157,551,Demographic
+Cycle Beads,01/07/2022,326,551,Demographic
+Cycle Beads,01/08/2022,683,551,Demographic
+Cycle Beads,01/09/2022,393,551,Demographic
+Cycle Beads,01/10/2022,157,551,Demographic
+Cycle Beads,01/11/2022,"2,154",551,Demographic
+Cycle Beads,01/12/2022,108,551,Demographic
+Cycle Beads,01/01/2023,119,551,Demographic
+Cycle Beads,01/02/2023,827,551,Demographic
+Cycle Beads,01/03/2023,"2,319",551,Demographic
+Cycle Beads,01/04/2023,130,551,Demographic
+Cycle Beads,01/05/2023,133,"3,226",Consumption
+Cycle Beads,01/06/2023,"1,959","3,226",Consumption
+Cycle Beads,01/07/2023,"1,280","3,226",Consumption
+Cycle Beads,01/08/2023,128,"3,226",Consumption
+Cycle Beads,01/09/2023,118,"3,226",Consumption
+Cycle Beads,01/10/2023,"1,573","3,226",Consumption
+Cycle Beads,01/11/2023,134,"3,226",Consumption
+Cycle Beads,01/12/2023,"1,001","3,226",Consumption
+Cycle Beads,01/01/2024,163,"3,226",Consumption
+Cycle Beads,01/02/2024,104,"3,226",Consumption
+Cycle Beads,01/03/2024,144,957,Demographic
+Cycle Beads,01/04/2024,105,957,Demographic
+Cycle Beads,01/05/2024,105,957,Demographic
+Cycle Beads,01/06/2024,86,957,Demographic
+Cycle Beads,01/07/2024,69,957,Demographic
+Cycle Beads,01/08/2024,124,957,Demographic
+Cycle Beads,01/09/2024,55,957,Demographic
+Cycle Beads,01/10/2024,105,957,Demographic
+Cycle Beads,01/11/2024,52,957,Demographic
+Cycle Beads,01/12/2024,102,957,Demographic
+Cycle Beads,01/01/2025,76,957,Demographic
+Cycle Beads,01/02/2025,114,957,Demographic
+Cycle Beads,01/03/2025,38,957,Demographic
+Cycle Beads,01/04/2025,82,957,Demographic
+Cycle Beads,01/05/2025,69,957,Demographic
+Cycle Beads,01/06/2025,106,957,Demographic
+DMPA-IM,01/07/2020,"252,411","252,128",Demographic
+DMPA-IM,01/08/2020,"233,002","252,128",Demographic
+DMPA-IM,01/09/2020,"235,433","252,128",Demographic
+DMPA-IM,01/10/2020,"248,161","252,128",Demographic
+DMPA-IM,01/11/2020,"236,354","252,128",Demographic
+DMPA-IM,01/12/2020,"136,445","252,128",Demographic
+DMPA-IM,01/01/2021,"149,980","252,128",Demographic
+DMPA-IM,01/02/2021,"194,029","252,128",Demographic
+DMPA-IM,01/03/2021,"212,519","252,128",Demographic
+DMPA-IM,01/04/2021,"188,833","252,128",Demographic
+DMPA-IM,01/05/2021,"177,830","252,128",Demographic
+DMPA-IM,01/06/2021,"154,755","252,128",Demographic
+DMPA-IM,01/07/2021,"152,131","252,128",Demographic
+DMPA-IM,01/08/2021,"167,434","252,128",Demographic
+DMPA-IM,01/09/2021,"198,073","252,128",Demographic
+DMPA-IM,01/10/2021,"213,744","230,401",Demographic
+DMPA-IM,01/11/2021,"229,705","230,401",Demographic
+DMPA-IM,01/12/2021,"212,775","230,401",Demographic
+DMPA-IM,01/01/2022,"209,092","230,401",Demographic
+DMPA-IM,01/02/2022,"178,999","230,401",Demographic
+DMPA-IM,01/03/2022,"198,004","230,401",Demographic
+DMPA-IM,01/04/2022,"180,047","220,340",Demographic
+DMPA-IM,01/05/2022,"198,217","220,340",Demographic
+DMPA-IM,01/06/2022,"213,983","220,340",Demographic
+DMPA-IM,01/07/2022,"201,123","220,340",Demographic
+DMPA-IM,01/08/2022,"200,283","220,340",Demographic
+DMPA-IM,01/09/2022,"214,707","249,389",Demographic
+DMPA-IM,01/10/2022,"210,489","249,389",Demographic
+DMPA-IM,01/11/2022,"216,381","249,389",Demographic
+DMPA-IM,01/12/2022,"212,234","249,389",Demographic
+DMPA-IM,01/01/2023,"225,423","249,389",Demographic
+DMPA-IM,01/02/2023,"223,075","249,389",Demographic
+DMPA-IM,01/03/2023,"245,874","249,389",Demographic
+DMPA-IM,01/04/2023,"195,703","249,389",Demographic
+DMPA-IM,01/05/2023,"221,177","271,139",Demographic
+DMPA-IM,01/06/2023,"204,177","271,139",Demographic
+DMPA-IM,01/07/2023,"195,891","271,139",Demographic
+DMPA-IM,01/08/2023,"208,750","271,139",Demographic
+DMPA-IM,01/09/2023,"206,618","271,139",Demographic
+DMPA-IM,01/10/2023,"192,611","271,139",Demographic
+DMPA-IM,01/11/2023,"200,081","271,139",Demographic
+DMPA-IM,01/12/2023,"202,906","271,139",Demographic
+DMPA-IM,01/01/2024,"217,289","271,139",Demographic
+DMPA-IM,01/02/2024,"191,762","271,139",Demographic
+DMPA-IM,01/03/2024,"207,029","200,866",Consumption AI
+DMPA-IM,01/04/2024,"200,364","200,866",Consumption AI
+DMPA-IM,01/05/2024,"220,112","200,866",Consumption AI
+DMPA-IM,01/06/2024,"212,825","200,866",Consumption AI
+DMPA-IM,01/07/2024,"228,424","200,866",Consumption AI
+DMPA-IM,01/08/2024,"216,668","200,866",Consumption AI
+DMPA-IM,01/09/2024,"210,510","200,866",Consumption AI
+DMPA-IM,01/10/2024,"218,819","200,866",Consumption AI
+DMPA-IM,01/11/2024,"207,141","200,866",Consumption AI
+DMPA-IM,01/12/2024,"202,942","200,866",Consumption AI
+DMPA-IM,01/01/2025,"212,054","200,866",Consumption AI
+DMPA-IM,01/02/2025,"183,057","200,866",Consumption AI
+DMPA-IM,01/03/2025,"175,278","200,866",Consumption AI
+DMPA-IM,01/04/2025,"206,348","200,866",Consumption AI
+DMPA-IM,01/05/2025,"207,059","200,866",Consumption AI
+DMPA-IM,01/06/2025,"166,329","200,866",Consumption AI
+DMPA-SC,01/07/2020,,"15,563",Demographic
+DMPA-SC,01/08/2020,,"15,563",Demographic
+DMPA-SC,01/09/2020,,"15,563",Demographic
+DMPA-SC,01/10/2020,,"15,563",Demographic
+DMPA-SC,01/11/2020,,"15,563",Demographic
+DMPA-SC,01/12/2020,,"15,563",Demographic
+DMPA-SC,01/01/2021,,"15,563",Demographic
+DMPA-SC,01/02/2021,,"15,563",Demographic
+DMPA-SC,01/03/2021,,"15,563",Demographic
+DMPA-SC,01/04/2021,,"15,563",Demographic
+DMPA-SC,01/05/2021,"2,746","15,563",Demographic
+DMPA-SC,01/06/2021,"2,793","15,563",Demographic
+DMPA-SC,01/07/2021,"1,827","15,563",Demographic
+DMPA-SC,01/08/2021,"2,595","15,563",Demographic
+DMPA-SC,01/09/2021,"2,671","15,563",Demographic
+DMPA-SC,01/10/2021,"1,075","23,917",Demographic
+DMPA-SC,01/11/2021,"2,437","23,917",Demographic
+DMPA-SC,01/12/2021,"2,450","23,917",Demographic
+DMPA-SC,01/01/2022,"3,118","23,917",Demographic
+DMPA-SC,01/02/2022,"1,253","23,917",Demographic
+DMPA-SC,01/03/2022,"2,596","23,917",Demographic
+DMPA-SC,01/04/2022,"1,498","51,845",Demographic
+DMPA-SC,01/05/2022,"1,525","51,845",Demographic
+DMPA-SC,01/06/2022,966,"51,845",Demographic
+DMPA-SC,01/07/2022,"1,190","51,845",Demographic
+DMPA-SC,01/08/2022,"1,583","51,845",Demographic
+DMPA-SC,01/09/2022,"1,674","45,833",Demographic
+DMPA-SC,01/10/2022,"1,839","45,833",Demographic
+DMPA-SC,01/11/2022,"1,570","45,833",Demographic
+DMPA-SC,01/12/2022,"2,340","45,833",Demographic
+DMPA-SC,01/01/2023,"2,483","45,833",Demographic
+DMPA-SC,01/02/2023,"1,840","45,833",Demographic
+DMPA-SC,01/03/2023,"2,759","45,833",Demographic
+DMPA-SC,01/04/2023,"3,625","45,833",Demographic
+DMPA-SC,01/05/2023,"8,214","61,105",Demographic
+DMPA-SC,01/06/2023,"15,175","61,105",Demographic
+DMPA-SC,01/07/2023,"18,663","61,105",Demographic
+DMPA-SC,01/08/2023,"24,493","61,105",Demographic
+DMPA-SC,01/09/2023,"29,549","61,105",Demographic
+DMPA-SC,01/10/2023,"33,595","61,105",Demographic
+DMPA-SC,01/11/2023,"36,336","61,105",Demographic
+DMPA-SC,01/12/2023,"37,892","61,105",Demographic
+DMPA-SC,01/01/2024,"48,538","61,105",Demographic
+DMPA-SC,01/02/2024,"46,835","61,105",Demographic
+DMPA-SC,01/03/2024,"43,184","68,815",Demographic
+DMPA-SC,01/04/2024,"42,977","68,815",Demographic
+DMPA-SC,01/05/2024,"49,097","68,815",Demographic
+DMPA-SC,01/06/2024,"47,927","68,815",Demographic
+DMPA-SC,01/07/2024,"56,685","68,815",Demographic
+DMPA-SC,01/08/2024,"58,686","68,815",Demographic
+DMPA-SC,01/09/2024,"62,225","68,815",Demographic
+DMPA-SC,01/10/2024,"67,348","68,815",Demographic
+DMPA-SC,01/11/2024,"57,400","68,815",Demographic
+DMPA-SC,01/12/2024,"54,771","68,815",Demographic
+DMPA-SC,01/01/2025,"55,164","68,815",Demographic
+DMPA-SC,01/02/2025,"48,718","68,815",Demographic
+DMPA-SC,01/03/2025,"45,760","68,815",Demographic
+DMPA-SC,01/04/2025,"44,402","68,815",Demographic
+DMPA-SC,01/05/2025,"49,305","68,815",Demographic
+DMPA-SC,01/06/2025,"55,762","68,815",Demographic
+EC Pills,01/07/2020,"3,591","6,703",Demographic
+EC Pills,01/08/2020,"11,590","6,703",Demographic
+EC Pills,01/09/2020,"3,672","6,703",Demographic
+EC Pills,01/10/2020,"3,840","6,703",Demographic
+EC Pills,01/11/2020,"4,139","6,703",Demographic
+EC Pills,01/12/2020,"4,952","6,703",Demographic
+EC Pills,01/01/2021,"3,337","6,703",Demographic
+EC Pills,01/02/2021,"2,808","6,703",Demographic
+EC Pills,01/03/2021,"4,150","8,620",Demographic
+EC Pills,01/04/2021,"3,103","8,620",Demographic
+EC Pills,01/05/2021,"13,019","8,620",Demographic
+EC Pills,01/06/2021,"6,641","8,620",Demographic
+EC Pills,01/07/2021,"11,427","8,620",Demographic
+EC Pills,01/08/2021,"5,124","8,620",Demographic
+EC Pills,01/09/2021,"2,695","8,620",Demographic
+EC Pills,01/10/2021,"5,032","9,913",Demographic
+EC Pills,01/11/2021,"5,264","9,913",Demographic
+EC Pills,01/12/2021,"4,816","9,913",Demographic
+EC Pills,01/01/2022,"2,833","9,913",Demographic
+EC Pills,01/02/2022,"71,635","9,913",Demographic
+EC Pills,01/03/2022,"6,509","9,913",Demographic
+EC Pills,01/04/2022,"4,243","11,109",Demographic
+EC Pills,01/05/2022,"3,978","11,109",Demographic
+EC Pills,01/06/2022,"2,453","11,109",Demographic
+EC Pills,01/07/2022,"3,521","11,109",Demographic
+EC Pills,01/08/2022,"4,311","11,109",Demographic
+EC Pills,01/09/2022,"3,654","5,004",Demographic
+EC Pills,01/10/2022,"2,783","5,004",Demographic
+EC Pills,01/11/2022,"2,687","5,004",Demographic
+EC Pills,01/12/2022,"3,745","5,004",Demographic
+EC Pills,01/01/2023,"6,337","5,004",Demographic
+EC Pills,01/02/2023,"8,332","5,004",Demographic
+EC Pills,01/03/2023,"7,402","5,004",Demographic
+EC Pills,01/04/2023,"6,082","5,004",Demographic
+EC Pills,01/05/2023,"4,455","3,607",Demographic
+EC Pills,01/06/2023,"4,551","3,607",Consumption AI
+EC Pills,01/07/2023,"6,531","3,607",Consumption AI
+EC Pills,01/08/2023,"5,315","3,607",Consumption AI
+EC Pills,01/09/2023,"5,300","3,607",Consumption AI
+EC Pills,01/10/2023,"5,526","3,607",Consumption AI
+EC Pills,01/11/2023,"5,378","3,607",Consumption AI
+EC Pills,01/12/2023,"5,821","3,607",Consumption AI
+EC Pills,01/01/2024,"6,002","3,607",Consumption AI
+EC Pills,01/02/2024,"5,987","3,607",Consumption AI
+EC Pills,01/03/2024,"6,629","3,353",Consumption AI
+EC Pills,01/04/2024,"6,441","3,353",Demographic
+EC Pills,01/05/2024,"6,517","3,353",Demographic
+EC Pills,01/06/2024,"6,835","3,353",Demographic
+EC Pills,01/07/2024,"7,719","3,353",Demographic
+EC Pills,01/08/2024,"7,690","3,353",Demographic
+EC Pills,01/09/2024,"7,086","3,353",Demographic
+EC Pills,01/10/2024,"7,822","3,353",Demographic
+EC Pills,01/11/2024,"7,025","3,353",Consumption AI
+EC Pills,01/12/2024,"7,160","3,353",Consumption AI
+EC Pills,01/01/2025,"6,895","3,353",Consumption AI
+EC Pills,01/02/2025,"5,926","3,353",Consumption AI
+EC Pills,01/03/2025,"5,932","3,353",Consumption AI
+EC Pills,01/04/2025,"6,649","3,353",Consumption AI
+EC Pills,01/05/2025,"6,199","3,353",Consumption AI
+EC Pills,01/06/2025,"6,048","3,353",Consumption AI
+Female Condoms,01/07/2020,"23,524","23,549",Demographic
+Female Condoms,01/08/2020,"39,034","23,549",Demographic
+Female Condoms,01/09/2020,"29,968","23,549",Demographic
+Female Condoms,01/10/2020,"67,705","23,549",Demographic
+Female Condoms,01/11/2020,"68,365","23,549",Demographic
+Female Condoms,01/12/2020,"16,601","23,549",Demographic
+Female Condoms,01/01/2021,"17,133","23,549",Demographic
+Female Condoms,01/02/2021,"12,548","23,549",Demographic
+Female Condoms,01/03/2021,"16,977","23,549",Demographic
+Female Condoms,01/04/2021,"23,089","23,549",Demographic
+Female Condoms,01/05/2021,"56,207","23,549",Demographic
+Female Condoms,01/06/2021,"26,192","23,549",Demographic
+Female Condoms,01/07/2021,"19,484","23,549",Demographic
+Female Condoms,01/08/2021,"36,982","23,549",Demographic
+Female Condoms,01/09/2021,"32,940","23,549",Demographic
+Female Condoms,01/10/2021,"18,383","24,916",Demographic
+Female Condoms,01/11/2021,"39,028","24,916",Demographic
+Female Condoms,01/12/2021,"14,463","24,916",Demographic
+Female Condoms,01/01/2022,"17,579","24,916",Demographic
+Female Condoms,01/02/2022,"18,531","24,916",Demographic
+Female Condoms,01/03/2022,"39,476","24,916",Demographic
+Female Condoms,01/04/2022,"21,775","37,829",Demographic
+Female Condoms,01/05/2022,"16,668","37,829",Demographic
+Female Condoms,01/06/2022,"19,925","37,829",Demographic
+Female Condoms,01/07/2022,"16,474","37,829",Demographic
+Female Condoms,01/08/2022,"48,211","37,829",Demographic
+Female Condoms,01/09/2022,"12,433","30,575",Demographic
+Female Condoms,01/10/2022,"18,780","30,575",Demographic
+Female Condoms,01/11/2022,"8,784","30,575",Demographic
+Female Condoms,01/12/2022,"9,574","30,575",Demographic
+Female Condoms,01/01/2023,"10,982","30,575",Service AI
+Female Condoms,01/02/2023,"16,020","30,575",Service AI
+Female Condoms,01/03/2023,"44,428","30,575",Service AI
+Female Condoms,01/04/2023,"48,499","30,575",Service AI
+Female Condoms,01/05/2023,"47,650","19,041",Service AI
+Female Condoms,01/06/2023,"34,460","19,041",Service AI
+Female Condoms,01/07/2023,"31,605","19,041",Service AI
+Female Condoms,01/08/2023,"31,418","19,041",Service AI
+Female Condoms,01/09/2023,"27,501","19,041",Service AI
+Female Condoms,01/10/2023,"20,329","19,041",Service AI
+Female Condoms,01/11/2023,"90,469","19,041",Service AI
+Female Condoms,01/12/2023,"65,297","19,041",Service AI
+Female Condoms,01/01/2024,"49,780","19,041",Service AI
+Female Condoms,01/02/2024,"34,297","19,041",Service AI
+Female Condoms,01/03/2024,"45,522","21,742",Service
+Female Condoms,01/04/2024,"82,948","21,742",Service
+Female Condoms,01/05/2024,"23,209","21,742",Service
+Female Condoms,01/06/2024,"43,800","21,742",Service
+Female Condoms,01/07/2024,"30,127","21,742",Service
+Female Condoms,01/08/2024,"24,858","21,742",Service
+Female Condoms,01/09/2024,"17,708","21,742",Service
+Female Condoms,01/10/2024,"47,864","21,742",Service
+Female Condoms,01/11/2024,"21,749","21,742",Consumption AI
+Female Condoms,01/12/2024,"37,328","21,742",Consumption AI
+Female Condoms,01/01/2025,"19,036","21,742",Consumption AI
+Female Condoms,01/02/2025,"25,908","21,742",Consumption AI
+Female Condoms,01/03/2025,"9,093","21,742",Consumption AI
+Female Condoms,01/04/2025,"18,116","21,742",Consumption AI
+Female Condoms,01/05/2025,"17,167","21,742",Consumption AI
+Female Condoms,01/06/2025,"14,626","21,742",Consumption AI
+Hormonal IUCD,01/07/2020,,965,Demographic
+Hormonal IUCD,01/08/2020,,965,Demographic
+Hormonal IUCD,01/09/2020,,965,Demographic
+Hormonal IUCD,01/10/2020,,965,Demographic
+Hormonal IUCD,01/11/2020,,965,Demographic
+Hormonal IUCD,01/12/2020,,965,Demographic
+Hormonal IUCD,01/01/2021,,965,Demographic
+Hormonal IUCD,01/02/2021,,965,Demographic
+Hormonal IUCD,01/03/2021,,"1,512",Demographic
+Hormonal IUCD,01/04/2021,54,"1,512",Demographic
+Hormonal IUCD,01/05/2021,"9,739","1,512",Demographic
+Hormonal IUCD,01/06/2021,"4,709","1,512",Demographic
+Hormonal IUCD,01/07/2021,"19,957","1,512",Demographic
+Hormonal IUCD,01/08/2021,"6,876","1,512",Demographic
+Hormonal IUCD,01/09/2021,"9,107","1,512",Demographic
+Hormonal IUCD,01/10/2021,"8,242","2,035",Demographic
+Hormonal IUCD,01/11/2021,"3,199","2,035",Demographic
+Hormonal IUCD,01/12/2021,"2,198","2,035",Demographic
+Hormonal IUCD,01/01/2022,"2,791","2,035",Demographic
+Hormonal IUCD,01/02/2022,"2,898","2,035",Demographic
+Hormonal IUCD,01/03/2022,"9,584","2,035",Demographic
+Hormonal IUCD,01/04/2022,"4,609","2,682",Demographic
+Hormonal IUCD,01/05/2022,"4,175","2,682",Demographic
+Hormonal IUCD,01/06/2022,"5,086","2,682",Demographic
+Hormonal IUCD,01/07/2022,"4,801","2,682",Demographic
+Hormonal IUCD,01/08/2022,"7,949","2,682",Demographic
+Hormonal IUCD,01/09/2022,"7,854","3,015",Demographic
+Hormonal IUCD,01/10/2022,"2,170","3,015",Demographic
+Hormonal IUCD,01/11/2022,"3,721","3,015",Demographic
+Hormonal IUCD,01/12/2022,"2,001","3,015",Demographic
+Hormonal IUCD,01/01/2023,"3,305","3,015",Demographic
+Hormonal IUCD,01/02/2023,"1,136","3,015",Demographic
+Hormonal IUCD,01/03/2023,"1,642","3,015",Demographic
+Hormonal IUCD,01/04/2023,507,"3,015",Demographic
+Hormonal IUCD,01/05/2023,504,"4,315",Demographic
+Hormonal IUCD,01/06/2023,352,"4,315",Demographic
+Hormonal IUCD,01/07/2023,"1,367","4,315",Demographic
+Hormonal IUCD,01/08/2023,873,"4,315",Demographic
+Hormonal IUCD,01/09/2023,708,"4,315",Demographic
+Hormonal IUCD,01/10/2023,743,"4,315",Demographic
+Hormonal IUCD,01/11/2023,686,"4,315",Demographic
+Hormonal IUCD,01/12/2023,486,"4,315",Demographic
+Hormonal IUCD,01/01/2024,549,"4,315",Demographic
+Hormonal IUCD,01/02/2024,796,"4,315",Demographic
+Hormonal IUCD,01/03/2024,717,965,Demographic
+Hormonal IUCD,01/04/2024,666,965,Demographic
+Hormonal IUCD,01/05/2024,997,965,Demographic
+Hormonal IUCD,01/06/2024,702,965,Demographic
+Hormonal IUCD,01/07/2024,"1,082",965,Demographic
+Hormonal IUCD,01/08/2024,"1,310",965,Demographic
+Hormonal IUCD,01/09/2024,"1,403",965,Demographic
+Hormonal IUCD,01/10/2024,"1,145",965,Demographic
+Hormonal IUCD,01/11/2024,"1,044",965,Service AI
+Hormonal IUCD,01/12/2024,876,965,Service AI
+Hormonal IUCD,01/01/2025,"1,104",965,Service AI
+Hormonal IUCD,01/02/2025,"1,246",965,Service AI
+Hormonal IUCD,01/03/2025,859,965,Service AI
+Hormonal IUCD,01/04/2025,870,965,Service AI
+Hormonal IUCD,01/05/2025,900,965,Service AI
+Hormonal IUCD,01/06/2025,"1,028",965,Service AI
+Implanon,01/07/2020,"39,877","28,214",Demographic
+Implanon,01/08/2020,"38,766","28,214",Demographic
+Implanon,01/09/2020,"35,044","28,214",Demographic
+Implanon,01/10/2020,"29,504","28,214",Demographic
+Implanon,01/11/2020,"25,539","28,214",Demographic
+Implanon,01/12/2020,"13,895","28,214",Demographic
+Implanon,01/01/2021,"14,559","28,214",Demographic
+Implanon,01/02/2021,"20,142","28,214",Demographic
+Implanon,01/03/2021,"23,437","32,783",Demographic
+Implanon,01/04/2021,"16,988","32,783",Demographic
+Implanon,01/05/2021,"14,818","32,783",Demographic
+Implanon,01/06/2021,"14,010","32,783",Demographic
+Implanon,01/07/2021,"14,738","32,783",Demographic
+Implanon,01/08/2021,"12,430","32,783",Demographic
+Implanon,01/09/2021,"12,573","32,783",Demographic
+Implanon,01/10/2021,"11,302","24,817",Demographic
+Implanon,01/11/2021,"11,714","24,817",Demographic
+Implanon,01/12/2021,"9,314","24,817",Demographic
+Implanon,01/01/2022,"7,922","24,817",Demographic
+Implanon,01/02/2022,"7,299","24,817",Demographic
+Implanon,01/03/2022,"9,291","24,817",Demographic
+Implanon,01/04/2022,"9,722","35,406",Demographic
+Implanon,01/05/2022,"10,650","35,406",Demographic
+Implanon,01/06/2022,"8,043","35,406",Demographic
+Implanon,01/07/2022,"10,168","35,406",Demographic
+Implanon,01/08/2022,"19,357","35,406",Demographic
+Implanon,01/09/2022,"24,100","35,406",Demographic
+Implanon,01/10/2022,"27,967","35,406",Demographic
+Implanon,01/11/2022,"41,890","35,406",Demographic
+Implanon,01/12/2022,"33,805","35,406",Demographic
+Implanon,01/01/2023,"35,629","35,406",Service AI
+Implanon,01/02/2023,"27,258","35,406",Service AI
+Implanon,01/03/2023,"31,563","35,406",Service AI
+Implanon,01/04/2023,"27,683","35,406",Service AI
+Implanon,01/05/2023,"36,672","34,282",Service AI
+Implanon,01/06/2023,"36,353","34,282",Service AI
+Implanon,01/07/2023,"34,617","34,282",Service AI
+Implanon,01/08/2023,"34,754","34,282",Service AI
+Implanon,01/09/2023,"28,470","34,282",Service AI
+Implanon,01/10/2023,"25,853","34,282",Service AI
+Implanon,01/11/2023,"24,382","34,282",Service AI
+Implanon,01/12/2023,"19,385","34,282",Service AI
+Implanon,01/01/2024,"19,800","34,282",Service AI
+Implanon,01/02/2024,"27,260","34,282",Service AI
+Implanon,01/03/2024,"32,320","31,608",Consumption
+Implanon,01/04/2024,"29,470","31,608",Consumption
+Implanon,01/05/2024,"32,076","31,608",Consumption
+Implanon,01/06/2024,"36,060","31,608",Consumption
+Implanon,01/07/2024,"30,691","31,608",Consumption
+Implanon,01/08/2024,"28,193","31,608",Consumption
+Implanon,01/09/2024,"26,130","31,608",Consumption
+Implanon,01/10/2024,"27,074","31,608",Consumption
+Implanon,01/11/2024,"29,744","31,608",Service AI
+Implanon,01/12/2024,"25,247","31,608",Service AI
+Implanon,01/01/2025,"25,682","31,608",Service AI
+Implanon,01/02/2025,"24,717","31,608",Service AI
+Implanon,01/03/2025,"23,911","31,608",Service AI
+Implanon,01/04/2025,"32,908","31,608",Service AI
+Implanon,01/05/2025,"28,553","31,608",Service AI
+Implanon,01/06/2025,"28,454","31,608",Service AI
+Jadelle,01/07/2020,"32,012","28,214",Demographic
+Jadelle,01/08/2020,"29,047","28,214",Demographic
+Jadelle,01/09/2020,"28,944","28,214",Demographic
+Jadelle,01/10/2020,"28,988","28,214",Demographic
+Jadelle,01/11/2020,"27,455","28,214",Demographic
+Jadelle,01/12/2020,"17,096","28,214",Demographic
+Jadelle,01/01/2021,"22,730","28,214",Demographic
+Jadelle,01/02/2021,"31,367","28,214",Demographic
+Jadelle,01/03/2021,"45,592","28,214",Demographic
+Jadelle,01/04/2021,"46,346","28,214",Demographic
+Jadelle,01/05/2021,"26,250","28,214",Demographic
+Jadelle,01/06/2021,"27,654","28,214",Demographic
+Jadelle,01/07/2021,"31,347","28,214",Demographic
+Jadelle,01/08/2021,"29,109","28,214",Demographic
+Jadelle,01/09/2021,"27,303","28,214",Demographic
+Jadelle,01/10/2021,"25,859","33,090",Demographic
+Jadelle,01/11/2021,"25,182","33,090",Demographic
+Jadelle,01/12/2021,"21,268","33,090",Demographic
+Jadelle,01/01/2022,"24,634","33,090",Demographic
+Jadelle,01/02/2022,"27,602","33,090",Demographic
+Jadelle,01/03/2022,"35,110","33,090",Demographic
+Jadelle,01/04/2022,"25,029","35,406",Demographic
+Jadelle,01/05/2022,"28,233","35,406",Demographic
+Jadelle,01/06/2022,"31,051","35,406",Demographic
+Jadelle,01/07/2022,"26,976","35,406",Demographic
+Jadelle,01/08/2022,"26,685","35,406",Demographic
+Jadelle,01/09/2022,"25,390","35,406",Demographic
+Jadelle,01/10/2022,"23,680","35,406",Demographic
+Jadelle,01/11/2022,"19,370","35,406",Demographic
+Jadelle,01/12/2022,"16,389","35,406",Demographic
+Jadelle,01/01/2023,"22,370","35,406",Consumption AI
+Jadelle,01/02/2023,"28,736","35,406",Consumption AI
+Jadelle,01/03/2023,"36,507","35,406",Consumption AI
+Jadelle,01/04/2023,"29,167","35,406",Consumption AI
+Jadelle,01/05/2023,"37,203","35,776",Consumption AI
+Jadelle,01/06/2023,"39,392","35,776",Consumption AI
+Jadelle,01/07/2023,"39,305","35,776",Consumption AI
+Jadelle,01/08/2023,"45,952","35,776",Consumption AI
+Jadelle,01/09/2023,"43,131","35,776",Consumption AI
+Jadelle,01/10/2023,"42,827","35,776",Consumption AI
+Jadelle,01/11/2023,"40,368","35,776",Consumption AI
+Jadelle,01/12/2023,"36,195","35,776",Consumption AI
+Jadelle,01/01/2024,"42,587","35,776",Consumption AI
+Jadelle,01/02/2024,"39,925","35,776",Consumption AI
+Jadelle,01/03/2024,"36,923","38,306",Consumption AI
+Jadelle,01/04/2024,"33,995","38,306",Consumption AI
+Jadelle,01/05/2024,"36,880","38,306",Consumption AI
+Jadelle,01/06/2024,"37,214","38,306",Consumption AI
+Jadelle,01/07/2024,"43,185","38,306",Consumption AI
+Jadelle,01/08/2024,"43,880","38,306",Consumption AI
+Jadelle,01/09/2024,"44,338","38,306",Consumption AI
+Jadelle,01/10/2024,"44,169","38,306",Consumption AI
+Jadelle,01/11/2024,"39,655","38,306",Consumption AI
+Jadelle,01/12/2024,"33,483","38,306",Consumption AI
+Jadelle,01/01/2025,"37,641","38,306",Consumption AI
+Jadelle,01/02/2025,"35,852","38,306",Consumption AI
+Jadelle,01/03/2025,"32,134","38,306",Consumption AI
+Jadelle,01/04/2025,"30,114","38,306",Consumption AI
+Jadelle,01/05/2025,"26,607","38,306",Consumption AI
+Jadelle,01/06/2025,"25,098","38,306",Consumption AI
+Levoplant,01/07/2020,,"14,107",Demographic
+Levoplant,01/08/2020,,"14,107",Demographic
+Levoplant,01/09/2020,,"14,107",Demographic
+Levoplant,01/10/2020,,"14,107",Demographic
+Levoplant,01/11/2020,,"14,107",Demographic
+Levoplant,01/12/2020,,"14,107",Demographic
+Levoplant,01/01/2021,,"14,107",Demographic
+Levoplant,01/02/2021,,"14,107",Demographic
+Levoplant,01/03/2021,161,"14,107",Demographic
+Levoplant,01/04/2021,471,"14,107",Demographic
+Levoplant,01/05/2021,"20,131","14,107",Demographic
+Levoplant,01/06/2021,"22,491","14,107",Demographic
+Levoplant,01/07/2021,"22,242","14,107",Demographic
+Levoplant,01/08/2021,"20,712","14,107",Demographic
+Levoplant,01/09/2021,"18,941","14,107",Demographic
+Levoplant,01/10/2021,"15,481","24,817",Demographic
+Levoplant,01/11/2021,"18,333","24,817",Demographic
+Levoplant,01/12/2021,"15,253","24,817",Demographic
+Levoplant,01/01/2022,"15,620","24,817",Demographic
+Levoplant,01/02/2022,"17,156","24,817",Demographic
+Levoplant,01/03/2022,"24,304","24,817",Demographic
+Levoplant,01/04/2022,"18,455","17,703",Demographic
+Levoplant,01/05/2022,"23,503","17,703",Demographic
+Levoplant,01/06/2022,"20,519","17,703",Demographic
+Levoplant,01/07/2022,"17,993","17,703",Demographic
+Levoplant,01/08/2022,"17,034","17,703",Demographic
+Levoplant,01/09/2022,"19,951","17,703",Demographic
+Levoplant,01/10/2022,"15,049","17,703",Demographic
+Levoplant,01/11/2022,"11,601","17,703",Demographic
+Levoplant,01/12/2022,"10,409","17,703",Demographic
+Levoplant,01/01/2023,"12,863","17,703",Demographic
+Levoplant,01/02/2023,"14,349","17,703",Demographic
+Levoplant,01/03/2023,"15,972","17,703",Demographic
+Levoplant,01/04/2023,"9,661","17,703",Demographic
+Levoplant,01/05/2023,"11,390","19,833",Consumption AI
+Levoplant,01/06/2023,"11,284","19,833",Consumption AI
+Levoplant,01/07/2023,"10,493","19,833",Consumption AI
+Levoplant,01/08/2023,"12,763","19,833",Consumption AI
+Levoplant,01/09/2023,"11,768","19,833",Consumption AI
+Levoplant,01/10/2023,"12,263","19,833",Consumption AI
+Levoplant,01/11/2023,"13,288","19,833",Consumption AI
+Levoplant,01/12/2023,"11,512","19,833",Consumption AI
+Levoplant,01/01/2024,"12,962","19,833",Consumption AI
+Levoplant,01/02/2024,"12,385","19,833",Consumption 
+Levoplant,01/03/2024,"10,854","12,394",Consumption 
+Levoplant,01/04/2024,"9,653","12,394",Consumption 
+Levoplant,01/05/2024,"8,982","12,394",Consumption 
+Levoplant,01/06/2024,"8,970","12,394",Consumption 
+Levoplant,01/07/2024,"10,623","12,394",Consumption 
+Levoplant,01/08/2024,"10,111","12,394",Consumption 
+Levoplant,01/09/2024,"9,763","12,394",Consumption 
+Levoplant,01/10/2024,"10,689","12,394",Consumption 
+Levoplant,01/11/2024,"8,736","12,394",Consumption AI
+Levoplant,01/12/2024,"8,383","12,394",Consumption AI
+Levoplant,01/01/2025,"8,938","12,394",Consumption AI
+Levoplant,01/02/2025,"10,481","12,394",Consumption AI
+Levoplant,01/03/2025,"11,641","12,394",Consumption AI
+Levoplant,01/04/2025,"10,878","12,394",Consumption AI
+Levoplant,01/05/2025,"10,141","12,394",Consumption AI
+Levoplant,01/06/2025,"8,779","12,394",Consumption AI
+Male Condoms,01/07/2020,"3,238,380","1,779,828",Demographic
+Male Condoms,01/08/2020,"3,323,017","1,779,828",Demographic
+Male Condoms,01/09/2020,"4,209,902","1,779,828",Demographic
+Male Condoms,01/10/2020,"4,220,002","1,779,828",Demographic
+Male Condoms,01/11/2020,"3,310,840","1,779,828",Demographic
+Male Condoms,01/12/2020,"2,286,248","1,779,828",Demographic
+Male Condoms,01/01/2021,"2,234,155","1,779,828",Demographic
+Male Condoms,01/02/2021,"2,923,941","1,779,828",Demographic
+Male Condoms,01/03/2021,"3,178,611","2,626,877",Demographic
+Male Condoms,01/04/2021,"3,810,348","2,626,877",Demographic
+Male Condoms,01/05/2021,"2,875,537","2,626,877",Demographic
+Male Condoms,01/06/2021,"3,510,342","2,626,877",Demographic
+Male Condoms,01/07/2021,"3,141,472","2,626,877",Demographic
+Male Condoms,01/08/2021,"3,052,846","2,626,877",Demographic
+Male Condoms,01/09/2021,"3,053,557","2,626,877",Demographic
+Male Condoms,01/10/2021,"2,778,950","3,694,598",Demographic
+Male Condoms,01/11/2021,"2,878,700","3,694,598",Demographic
+Male Condoms,01/12/2021,"2,395,250","3,694,598",Demographic
+Male Condoms,01/01/2022,"2,732,513","3,694,598",Demographic
+Male Condoms,01/02/2022,"2,298,822","3,694,598",Demographic
+Male Condoms,01/03/2022,"2,461,190","3,694,598",Demographic
+Male Condoms,01/04/2022,"1,863,927","5,145,813",Demographic
+Male Condoms,01/05/2022,"2,371,003","5,145,813",Demographic
+Male Condoms,01/06/2022,"1,459,267","5,145,813",Demographic
+Male Condoms,01/07/2022,"1,220,929","5,145,813",Demographic
+Male Condoms,01/08/2022,"1,088,036","5,145,813",Demographic
+Male Condoms,01/09/2022,"1,239,640","2,973,348",Demographic
+Male Condoms,01/10/2022,"1,455,464","2,973,348",Demographic
+Male Condoms,01/11/2022,"1,364,480","2,973,348",Demographic
+Male Condoms,01/12/2022,"1,107,469","2,973,348",Demographic
+Male Condoms,01/01/2023,"1,655,090","2,973,348",Demographic
+Male Condoms,01/02/2023,"2,336,877","2,973,348",Demographic
+Male Condoms,01/03/2023,"2,555,080","2,973,348",Demographic
+Male Condoms,01/04/2023,"2,423,233","2,973,348",Demographic
+Male Condoms,01/05/2023,"2,308,731","3,091,620",Service
+Male Condoms,01/06/2023,"2,842,871","3,091,620",Service
+Male Condoms,01/07/2023,"2,836,230","3,091,620",Service
+Male Condoms,01/08/2023,"2,841,063","3,091,620",Service
+Male Condoms,01/09/2023,"3,045,910","3,091,620",Service
+Male Condoms,01/10/2023,"3,663,415","3,091,620",Service
+Male Condoms,01/11/2023,"2,976,722","3,091,620",Service
+Male Condoms,01/12/2023,"3,112,028","3,091,620",Service
+Male Condoms,01/01/2024,"3,178,418","3,091,620",Service
+Male Condoms,01/02/2024,"3,506,458","3,091,620",Service
+Male Condoms,01/03/2024,"2,505,489","3,152,755",Demographic
+Male Condoms,01/04/2024,"2,617,195","3,152,755",Demographic
+Male Condoms,01/05/2024,"3,003,823","3,152,755",Demographic
+Male Condoms,01/06/2024,"2,198,161","3,152,755",Demographic
+Male Condoms,01/07/2024,"2,138,146","3,152,755",Demographic
+Male Condoms,01/08/2024,"2,306,557","3,152,755",Demographic
+Male Condoms,01/09/2024,"1,846,024","3,152,755",Demographic
+Male Condoms,01/10/2024,"1,991,640","3,152,755",Demographic
+Male Condoms,01/11/2024,"1,772,441","3,152,755",Demographic
+Male Condoms,01/12/2024,"1,500,712","3,152,755",Demographic
+Male Condoms,01/01/2025,"1,566,577","3,152,755",Demographic
+Male Condoms,01/02/2025,"1,024,927","3,152,755",Demographic
+Male Condoms,01/03/2025,"1,326,354","3,152,755",Demographic
+Male Condoms,01/04/2025,"1,134,191","3,152,755",Demographic
+Male Condoms,01/05/2025,"1,069,880","3,152,755",Demographic
+Male Condoms,01/06/2025,"1,171,648","3,152,755",Demographic
+Non-Hormonal IUCD,01/07/2020,"13,001","13,753",Demographic
+Non-Hormonal IUCD,01/08/2020,"13,172","13,753",Demographic
+Non-Hormonal IUCD,01/09/2020,"12,393","13,753",Demographic
+Non-Hormonal IUCD,01/10/2020,"16,993","13,753",Demographic
+Non-Hormonal IUCD,01/11/2020,"49,457","13,753",Demographic
+Non-Hormonal IUCD,01/12/2020,"10,328","13,753",Demographic
+Non-Hormonal IUCD,01/01/2021,"18,729","13,753",Demographic
+Non-Hormonal IUCD,01/02/2021,"10,781","13,753",Demographic
+Non-Hormonal IUCD,01/03/2021,"10,679","13,604",Demographic
+Non-Hormonal IUCD,01/04/2021,"12,025","13,604",Demographic
+Non-Hormonal IUCD,01/05/2021,"18,372","13,604",Demographic
+Non-Hormonal IUCD,01/06/2021,"11,045","13,604",Demographic
+Non-Hormonal IUCD,01/07/2021,"13,431","13,604",Demographic
+Non-Hormonal IUCD,01/08/2021,"8,891","13,604",Demographic
+Non-Hormonal IUCD,01/09/2021,"8,929","13,604",Demographic
+Non-Hormonal IUCD,01/10/2021,"10,004","14,060",Demographic
+Non-Hormonal IUCD,01/11/2021,"10,013","14,060",Demographic
+Non-Hormonal IUCD,01/12/2021,"6,324","14,060",Demographic
+Non-Hormonal IUCD,01/01/2022,"6,558","14,060",Demographic
+Non-Hormonal IUCD,01/02/2022,"7,773","14,060",Demographic
+Non-Hormonal IUCD,01/03/2022,"10,729","14,060",Demographic
+Non-Hormonal IUCD,01/04/2022,"9,104","7,989",Demographic
+Non-Hormonal IUCD,01/05/2022,"7,340","7,989",Demographic
+Non-Hormonal IUCD,01/06/2022,"11,986","7,989",Demographic
+Non-Hormonal IUCD,01/07/2022,"12,312","7,989",Demographic
+Non-Hormonal IUCD,01/08/2022,"7,549","7,989",Demographic
+Non-Hormonal IUCD,01/09/2022,"7,941","8,313",Demographic
+Non-Hormonal IUCD,01/10/2022,"8,472","8,313",Demographic
+Non-Hormonal IUCD,01/11/2022,"7,803","8,313",Demographic
+Non-Hormonal IUCD,01/12/2022,"10,065","8,313",Demographic
+Non-Hormonal IUCD,01/01/2023,"9,478","8,313",Demographic
+Non-Hormonal IUCD,01/02/2023,"9,222","8,313",Demographic
+Non-Hormonal IUCD,01/03/2023,"8,049","8,313",Demographic
+Non-Hormonal IUCD,01/04/2023,"5,865","8,313",Demographic
+Non-Hormonal IUCD,01/05/2023,"6,717","7,892",Service AI
+Non-Hormonal IUCD,01/06/2023,"9,077","7,892",Service AI
+Non-Hormonal IUCD,01/07/2023,"6,544","7,892",Service AI
+Non-Hormonal IUCD,01/08/2023,"7,209","7,892",Service AI
+Non-Hormonal IUCD,01/09/2023,"6,997","7,892",Service AI
+Non-Hormonal IUCD,01/10/2023,"6,987","7,892",Service AI
+Non-Hormonal IUCD,01/11/2023,"6,516","7,892",Service AI
+Non-Hormonal IUCD,01/12/2023,"5,348","7,892",Service AI
+Non-Hormonal IUCD,01/01/2024,"6,378","7,892",Service AI
+Non-Hormonal IUCD,01/02/2024,"6,837","7,892",Service AI
+Non-Hormonal IUCD,01/03/2024,"6,741","6,301",Consumption
+Non-Hormonal IUCD,01/04/2024,"5,430","6,301",Consumption
+Non-Hormonal IUCD,01/05/2024,"6,356","6,301",Consumption
+Non-Hormonal IUCD,01/06/2024,"6,573","6,301",Consumption
+Non-Hormonal IUCD,01/07/2024,"7,398","6,301",Consumption
+Non-Hormonal IUCD,01/08/2024,"7,054","6,301",Consumption
+Non-Hormonal IUCD,01/09/2024,"7,060","6,301",Consumption
+Non-Hormonal IUCD,01/10/2024,"7,249","6,301",Consumption
+Non-Hormonal IUCD,01/11/2024,"6,634","6,301",Consumption
+Non-Hormonal IUCD,01/12/2024,"5,707","6,301",Consumption
+Non-Hormonal IUCD,01/01/2025,"6,439","6,301",Consumption
+Non-Hormonal IUCD,01/02/2025,"6,188","6,301",Consumption
+Non-Hormonal IUCD,01/03/2025,"6,237","6,301",Consumption
+Non-Hormonal IUCD,01/04/2025,"6,007","6,301",Consumption
+Non-Hormonal IUCD,01/05/2025,"6,138","6,301",Consumption
+Non-Hormonal IUCD,01/06/2025,"5,566","6,301",Consumption
+POPs,01/07/2020,"33,340","24,457",Demographic
+POPs,01/08/2020,"33,423","24,457",Demographic
+POPs,01/09/2020,"33,560","24,457",Demographic
+POPs,01/10/2020,"36,859","24,457",Demographic
+POPs,01/11/2020,"33,313","24,457",Demographic
+POPs,01/12/2020,"23,152","24,457",Demographic
+POPs,01/01/2021,"23,578","24,457",Demographic
+POPs,01/02/2021,"27,677","24,457",Demographic
+POPs,01/03/2021,"35,259","34,217",Demographic
+POPs,01/04/2021,"35,068","34,217",Demographic
+POPs,01/05/2021,"32,961","34,217",Demographic
+POPs,01/06/2021,"38,764","34,217",Demographic
+POPs,01/07/2021,"32,602","34,217",Demographic
+POPs,01/08/2021,"33,057","34,217",Demographic
+POPs,01/09/2021,"29,420","34,217",Demographic
+POPs,01/10/2021,"26,799","31,796",Demographic
+POPs,01/11/2021,"28,540","31,796",Demographic
+POPs,01/12/2021,"26,485","31,796",Demographic
+POPs,01/01/2022,"24,781","31,796",Demographic
+POPs,01/02/2022,"22,949","31,796",Demographic
+POPs,01/03/2022,"27,519","31,796",Demographic
+POPs,01/04/2022,"25,207","50,489",Demographic
+POPs,01/05/2022,"25,367","50,489",Demographic
+POPs,01/06/2022,"26,856","50,489",Demographic
+POPs,01/07/2022,"24,313","50,489",Demographic
+POPs,01/08/2022,"25,689","50,489",Demographic
+POPs,01/09/2022,"29,471","31,600",Demographic
+POPs,01/10/2022,"30,656","31,600",Demographic
+POPs,01/11/2022,"27,046","31,600",Demographic
+POPs,01/12/2022,"29,717","31,600",Demographic
+POPs,01/01/2023,"34,390","31,600",Demographic
+POPs,01/02/2023,"31,777","31,600",Demographic
+POPs,01/03/2023,"33,944","31,600",Demographic
+POPs,01/04/2023,"85,691","31,600",Demographic
+POPs,01/05/2023,"32,006","33,271",Consumption AI
+POPs,01/06/2023,"33,593","33,271",Consumption AI
+POPs,01/07/2023,"38,358","33,271",Consumption AI
+POPs,01/08/2023,"34,444","33,271",Consumption AI
+POPs,01/09/2023,"58,079","33,271",Consumption AI
+POPs,01/10/2023,"33,313","33,271",Consumption AI
+POPs,01/11/2023,"33,021","33,271",Consumption AI
+POPs,01/12/2023,"28,857","33,271",Consumption AI
+POPs,01/01/2024,"33,768","33,271",Consumption AI
+POPs,01/02/2024,"31,093","33,271",Consumption AI
+POPs,01/03/2024,"28,780","34,180",Consumption AI
+POPs,01/04/2024,"31,501","34,180",Consumption 
+POPs,01/05/2024,"32,637","34,180",Consumption 
+POPs,01/06/2024,"30,390","34,180",Consumption 
+POPs,01/07/2024,"34,514","34,180",Consumption 
+POPs,01/08/2024,"31,825","34,180",Consumption 
+POPs,01/09/2024,"26,070","34,180",Consumption 
+POPs,01/10/2024,"30,346","34,180",Consumption 
+POPs,01/11/2024,"24,661","34,180",Consumption AI
+POPs,01/12/2024,"22,726","34,180",Consumption AI
+POPs,01/01/2025,"25,802","34,180",Consumption AI
+POPs,01/02/2025,"23,708","34,180",Consumption AI
+POPs,01/03/2025,"21,977","34,180",Consumption AI
+POPs,01/04/2025,"24,150","34,180",Consumption AI
+POPs,01/05/2025,"26,465","34,180",Consumption AI
+POPs,01/06/2025,"24,418","34,180",Consumption AI
+COCs,01/07/2025,"38,568","123,803.00",Consumption LMIS
+COCs,01/08/2025,"34,040","123,803.00",Consumption LMIS
+COCs,01/09/2025,"41,616","123,803.00",Consumption LMIS
+COCs,01/10/2025,"41,616","123,803.00",Consumption LMIS
+COCs,01/11/2025,,"123,803.00",Consumption LMIS
+POPs,01/07/2025,25576,29663,Service AI
+POPs,01/08/2025,"24,102",29663,Service AI
+POPs,01/09/2025,"24,909",29663,Service AI
+POPs,01/10/2025,,29663,Service AI
+POPs,01/11/2025,,29663,Service AI
+Cycle Beads,01/07/2025,34,3734,Demographic
+Cycle Beads,01/08/2025,38,3734,Demographic
+Cycle Beads,01/09/2025,29,3734,Demographic
+Cycle Beads,01/10/2025,,3734,Demographic
+Cycle Beads,01/11/2025,,3734,Demographic
+DMPA-IM,01/07/2025,168438,216901,Consumption LMIS
+DMPA-IM,01/08/2025,157313,216901,Consumption LMIS
+DMPA-IM,01/09/2025,171102,216901,Consumption LMIS
+DMPA-IM,01/10/2025,,216901,Consumption LMIS
+DMPA-IM,01/11/2025,,216901,Consumption LMIS
+DMPA-SC,01/07/2025,64514,116106,Service AI
+DMPA-SC,01/08/2025,56520,116106,Service AI
+DMPA-SC,01/09/2025,70045,116106,Service AI
+DMPA-SC,01/10/2025,,116106,Service AI
+DMPA-SC,01/11/2025,,116106,Service AI
+EC Pills,01/07/2025,5877,11131,Service AI
+EC Pills,01/08/2025,5896,11394,Service AI
+EC Pills,01/09/2025,5489,"11,131",Service AI
+EC Pills,01/10/2025,,"11,131",Service AI
+EC Pills,01/11/2025,,"11,229.00",Service AI
+Female Condoms,01/07/2025,8746,12289,Service AI
+Female Condoms,01/08/2025,15115,11510,Service AI
+Female Condoms,01/09/2025,21649,"13,587",Service AI
+Female Condoms,01/10/2025,,"11,396",Service AI
+Female Condoms,01/11/2025,,"18,271.00",Service AI
+Hormonal IUCD,01/07/2025,829,991,Demographic
+Hormonal IUCD,01/08/2025,815,991,Demographic
+Hormonal IUCD,01/09/2025,941,991,Demographic
+Hormonal IUCD,01/10/2025,,991,Demographic
+Hormonal IUCD,01/11/2025,,991,Demographic
+Implanon,01/07/2025,45192,"37,527",Service AI
+Implanon,01/08/2025,39817,"36,217",Service AI
+Implanon,01/09/2025,42043,"34,626",Service AI
+Implanon,01/10/2025,,"34,931",Service AI
+Implanon,01/11/2025,,"35,509",Service AI
+Jadelle,01/07/2025,34291,"40,170",Service AI
+Jadelle,01/08/2025,35386,"40,708",Service AI
+Jadelle,01/09/2025,36504,"40,450",Service AI
+Jadelle,01/10/2025,,"40,576",Service AI
+Jadelle,01/11/2025,,"39,655",Service AI
+Levoplant,01/07/2025,6699,19885,Consumption LMIS
+Levoplant,01/08/2025,6878,19885,Consumption LMIS
+Levoplant,01/09/2025,7433,19885,Consumption LMIS
+Levoplant,01/10/2025,,19885,Consumption LMIS
+Levoplant,01/11/2025,,19885,Consumption LMIS
+Non-Hormonal IUCD,01/07/2025,5823,"7,126",Service AI
+Non-Hormonal IUCD,01/08/2025,5168,"7,151",Service AI
+Non-Hormonal IUCD,01/09/2025,5258,"7,421",Service AI
+Non-Hormonal IUCD,01/10/2025,,"7,216",Service AI
+Non-Hormonal IUCD,01/11/2025,,"7,284",Service AI
+Male Condoms,01/07/2025,1322091,3253078,Consumption LMIS
+Male Condoms,01/08/2025,1333878,3253078,Consumption LMIS
+Male Condoms,01/09/2025,1362762,3253078,Consumption LMIS
+Male Condoms,01/10/2025,,3253078,Consumption LMIS
+Male Condoms,01/11/2025,,3253078,Consumption LMIS
