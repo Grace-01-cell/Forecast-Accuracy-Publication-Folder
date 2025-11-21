@@ -1,92 +1,80 @@
-# main.py
-from __future__ import annotations
-
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import List
-
 import pandas as pd
 import numpy as np
-from pathlib import Path
+import os
 
+# --------------------------------------------------------------------
+# 1. Load and prepare data
+# --------------------------------------------------------------------
 
-# -----------------------------------------------------------------------------
-# Create app + CORS
-# -----------------------------------------------------------------------------
-app = FastAPI(title="Forecast Accuracy API")
+CSV_PATH = "test data.csv"  # change if your file is somewhere else
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # during development; you can restrict to localhost:5173 later
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+if not os.path.exists(CSV_PATH):
+    raise RuntimeError(f"CSV file not found at {CSV_PATH}")
 
+df = pd.read_csv(CSV_PATH)
 
-# -----------------------------------------------------------------------------
-# Load and prepare data
-# -----------------------------------------------------------------------------
-DATA_PATH = Path(__file__).parent / "test data.csv"
+# Expecting at least these columns:
+# - product_name
+# - period (date string, e.g. "01/07/2023" etc.)
+# - Actual Consumption
+# - Forecast
+# - Adopted Method
 
-df_all = pd.read_csv(DATA_PATH)
+# Parse period -> datetime
+df["date"] = pd.to_datetime(df["period"], dayfirst=True, errors="coerce")
+if df["date"].isna().any():
+    raise RuntimeError("Some dates could not be parsed from 'period' column.")
 
-# Parse dates and financial year
-df_all["period"] = pd.to_datetime(df_all["period"], dayfirst=True, errors="coerce")
-df_all["fy"] = df_all["period"].dt.year
-
-# Clean method names
-df_all["Adopted Method"] = (
-    df_all["Adopted Method"]
-    .astype(str)
-    .str.strip()
-    .replace({"Consumption ": "Consumption"})
-)
-
-# Only use AI era (2023+) for evaluation
-df_eval = df_all[df_all["fy"] >= 2023].copy()
-
-# If LMIS should only be recognised from 2025 onwards, treat earlier LMIS as Consumption
-df_eval.loc[df_eval["fy"] < 2025, "Adopted Method"] = (
-    df_eval.loc[df_eval["fy"] < 2025, "Adopted Method"]
-    .replace({"Consumption LMIS": "Consumption"})
-)
-
-# Precompute numeric versions of Actual and Forecast
-def _to_number(series: pd.Series) -> pd.Series:
-    """Convert strings like '132,830' to float."""
-    return (
-        series.astype(str)
-        .str.replace(",", "", regex=False)
-        .replace("nan", np.nan)
-        .astype(float)
+# Numeric versions of actuals & forecast
+for col in ["Actual Consumption", "Forecast"]:
+    df[col + "_num"] = pd.to_numeric(
+        df[col].astype(str).str.replace(",", ""),
+        errors="coerce",
     )
 
+# Clean adopted method names (strip spaces, e.g. "Consumption " -> "Consumption")
+df["Adopted Method_clean"] = df["Adopted Method"].astype(str).str.strip()
 
-df_eval["Actual_val"] = _to_number(df_eval["Actual Consumption"])
-df_eval["Forecast_val"] = _to_number(df_eval["Forecast"])
+# --------------------------------------------------------------------
+# Fiscal year helpers
+# FP FY = July -> June
+#   July 2023 – June 2024  => FY23/24
+#   July 2024 – June 2025  => FY24/25
+# --------------------------------------------------------------------
 
-# Drop rows without usable numbers
-df_eval = df_eval.dropna(subset=["Actual_val", "Forecast_val", "fy"])
+
+def fy_label(dt: pd.Timestamp) -> str:
+    year = dt.year
+    month = dt.month
+    start_year = year if month >= 7 else year - 1
+    return f"FY{start_year % 100:02d}/{(start_year + 1) % 100:02d}"
 
 
-# -----------------------------------------------------------------------------
-# Pydantic models
-# -----------------------------------------------------------------------------
+def fy_start_year(dt: pd.Timestamp) -> int:
+    year = dt.year
+    month = dt.month
+    return year if month >= 7 else year - 1
+
+
+df["fy_label"] = df["date"].apply(fy_label)
+df["fy_start_year"] = df["date"].apply(fy_start_year)
+
+# --------------------------------------------------------------------
+# 2. Pydantic models
+# --------------------------------------------------------------------
+
+
 class ListResponse(BaseModel):
     items: List[str]
 
 
-class HistoricalData(BaseModel):
-    product_name: str
-    fy: int
-    actuals: List[float]
-
-
 class AdoptedAccuracyResponse(BaseModel):
     product_name: str
-    fy: int
+    fy: str
     adopted_method: str
     bias: float
     rmse: float
@@ -94,107 +82,78 @@ class AdoptedAccuracyResponse(BaseModel):
     count: int
 
 
-# -----------------------------------------------------------------------------
-# Helper: compute metrics
-# -----------------------------------------------------------------------------
-def compute_metrics_for_slice(df_slice: pd.DataFrame) -> tuple[float, float, float, int]:
-    """
-    Compute Bias, RMSE, MAPE and N for a slice with columns Actual_val, Forecast_val.
-    """
-    if df_slice.empty:
-        return float("nan"), float("nan"), float("nan"), 0
-
-    err = df_slice["Forecast_val"] - df_slice["Actual_val"]
-
-    bias = float(err.mean())
-    rmse = float(np.sqrt((err ** 2).mean()))
-    # prevent division by zero in MAPE
-    non_zero = df_slice["Actual_val"] != 0
-    if non_zero.any():
-        mape = float((err.abs()[non_zero] / df_slice["Actual_val"][non_zero]).mean() * 100.0)
-    else:
-        mape = float("nan")
-
-    count = int(len(df_slice))
-    return bias, rmse, mape, count
+class HistoricalData(BaseModel):
+    product_name: str
+    fy: str
+    actuals: List[float]
 
 
-# -----------------------------------------------------------------------------
-# Endpoints
-# -----------------------------------------------------------------------------
+# --------------------------------------------------------------------
+# 3. FastAPI app + CORS
+# --------------------------------------------------------------------
 
-@app.get("/products", response_model=ListResponse)
-def list_products() -> ListResponse:
-    """List products that have evaluation data (FY >= 2023)."""
-    products = sorted(df_eval["product_name"].dropna().unique().tolist())
-    return ListResponse(items=products)
+app = FastAPI(title="Forecast Accuracy API")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-@app.get("/methods", response_model=ListResponse)
-def list_methods() -> ListResponse:
-    """List distinct (cleaned) adopted methods in the dataset."""
-    methods = (
-        df_eval["Adopted Method"]
-        .dropna()
-        .astype(str)
-        .str.strip()
-        .unique()
-        .tolist()
-    )
-    methods = sorted(methods)
-    return ListResponse(items=methods)
+# --------------------------------------------------------------------
+# 4. Utility: compute accuracy for adopted method in a FY
+# --------------------------------------------------------------------
 
 
-@app.get("/years/{product}", response_model=ListResponse)
-def list_years_for_product(product: str) -> ListResponse:
-    """
-    List financial years that have data for the given product (FY >= 2023).
-    Returned as strings so the frontend can bind directly to a <select>.
-    """
-    mask = df_eval["product_name"] == product
-    years = (
-        df_eval.loc[mask, "fy"]
-        .dropna()
-        .astype(int)
-        .sort_values()
-        .unique()
-        .tolist()
-    )
-    if not years:
-        raise HTTPException(status_code=404, detail=f"No data for product '{product}'.")
-    return ListResponse(items=[str(y) for y in years])
-
-
-@app.get("/fy_adopted_accuracy/{product}/{fy}", response_model=AdoptedAccuracyResponse)
-def fy_adopted_accuracy(product: str, fy: int) -> AdoptedAccuracyResponse:
-    """
-    Forecast accuracy for the adopted method, for a given product and financial year.
-    This is a single-row summary: one method per product+FY.
-    """
-    mask = (df_eval["product_name"] == product) & (df_eval["fy"] == fy)
-    subset = df_eval.loc[mask].copy()
+def compute_adopted_accuracy(product: str, fy: str) -> AdoptedAccuracyResponse:
+    # Filter by product + FY
+    subset = df[
+        (df["product_name"] == product) & (df["fy_label"] == fy)
+    ].copy()
 
     if subset.empty:
         raise HTTPException(
             status_code=404,
-            detail=f"No data found for product '{product}' in FY {fy}.",
+            detail=f"No data found for product '{product}' in {fy}.",
         )
 
-    # Clean method name again just in case
-    subset["Adopted Method"] = (
-        subset["Adopted Method"].astype(str).str.strip().replace({"Consumption ": "Consumption"})
-    )
-
-    # Most frequent method in that FY is treated as the adopted method
-    adopted_method = subset["Adopted Method"].mode().iat[0]
-
-    bias, rmse, mape, count = compute_metrics_for_slice(subset)
-
-    if count == 0:
+    subset = subset.dropna(subset=["Actual Consumption_num", "Forecast_num"])
+    if subset.empty:
         raise HTTPException(
             status_code=404,
-            detail=f"No usable forecast/actual data for '{product}' in FY {fy}.",
+            detail=f"No usable actual/forecast pairs for '{product}' in {fy}.",
         )
+
+    # Adopted method = most frequent method in that FY
+    method_counts = subset["Adopted Method_clean"].value_counts()
+    adopted_method = method_counts.idxmax()
+
+    subset_method = subset[subset["Adopted Method_clean"] == adopted_method]
+    if subset_method.empty:
+        raise HTTPException(
+            status_code=404,
+            detail=(
+                f"No data for adopted method '{adopted_method}' "
+                f"for '{product}' in {fy}."
+            ),
+        )
+
+    actual = subset_method["Actual Consumption_num"].to_numpy()
+    forecast = subset_method["Forecast_num"].to_numpy()
+    errors = forecast - actual
+
+    bias = float(np.mean(errors))
+    rmse = float(np.sqrt(np.mean(errors ** 2)))
+    # Avoid divide-by-zero in MAPE
+    mape = float(
+        np.mean(np.abs(errors) / np.where(actual == 0, np.nan, actual)) * 100.0
+    )
+    count = int(len(subset_method))
 
     return AdoptedAccuracyResponse(
         product_name=product,
@@ -207,22 +166,79 @@ def fy_adopted_accuracy(product: str, fy: int) -> AdoptedAccuracyResponse:
     )
 
 
-@app.get("/data/actuals/{product}/{fy}", response_model=HistoricalData)
-def actuals_for_histogram(product: str, fy: int) -> HistoricalData:
+# --------------------------------------------------------------------
+# 5. Endpoints
+# --------------------------------------------------------------------
+
+
+@app.get("/products", response_model=ListResponse)
+def get_products():
+    products = sorted(df["product_name"].dropna().unique().tolist())
+    return ListResponse(items=products)
+
+
+@app.get("/years/{product}", response_model=ListResponse)
+def get_years_for_product(product: str):
+    subset = df[df["product_name"] == product]
+    if subset.empty:
+        raise HTTPException(
+            status_code=404,
+            detail=f"No data found for product '{product}'.",
+        )
+
+    # AI era from FY23/24 onwards (start year >= 2023)
+    subset = subset[subset["fy_start_year"] >= 2023]
+    years = sorted(subset["fy_label"].dropna().unique().tolist())
+
+    if not years:
+        raise HTTPException(
+            status_code=404,
+            detail=f"No financial years from FY23/24 onwards for '{product}'.",
+        )
+
+    return ListResponse(items=years)
+
+
+@app.get("/fy_adopted_accuracy/{product}", response_model=AdoptedAccuracyResponse)
+def get_fy_adopted_accuracy(
+    product: str,
+    fy_label: str = Query(..., description="Fiscal year label, e.g. FY23/24"),
+):
     """
-    Actual consumption values for histogram, for a given product and FY.
+    Example:
+      /fy_adopted_accuracy/Jadelle?fy_label=FY24/25
     """
-    mask = (df_eval["product_name"] == product) & (df_eval["fy"] == fy)
-    subset = df_eval.loc[mask, ["Actual_val"]].dropna()
+    return compute_adopted_accuracy(product, fy_label)
+
+
+@app.get("/data/actuals/{product}", response_model=HistoricalData)
+def get_actuals_for_product_fy(
+    product: str,
+    fy_label: str = Query(..., description="Fiscal year label, e.g. FY23/24"),
+):
+    """
+    Example:
+      /data/actuals/Jadelle?fy_label=FY24/25
+    """
+    subset = df[
+        (df["product_name"] == product) & (df["fy_label"] == fy_label)
+    ].copy()
 
     if subset.empty:
         raise HTTPException(
             status_code=404,
-            detail=f"No actuals found for product '{product}' in FY {fy}.",
+            detail=f"No actual consumption data for '{product}' in {fy_label}.",
         )
 
-    return HistoricalData(
-        product_name=product,
-        fy=fy,
-        actuals=subset["Actual_val"].astype(float).tolist(),
-    )
+    subset = subset.sort_values("date")
+    actuals = subset["Actual Consumption_num"].dropna().tolist()
+    if not actuals:
+        raise HTTPException(
+            status_code=404,
+            detail=(
+                f"No numeric actual consumption values for "
+                f"'{product}' in {fy_label}."
+            ),
+        )
+
+    return HistoricalData(product_name=product, fy=fy_label, actuals=actuals)

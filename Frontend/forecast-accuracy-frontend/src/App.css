@@ -1,42 +1,121 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+/* ---------- GLOBAL STYLING ---------- */
+body, html {
+  margin: 0;
+  padding: 0;
+  background: #f1f5f9; /* slate-100 */
+  font-family: "Inter", sans-serif;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* ---------- MAIN LAYOUT ---------- */
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
   padding: 2rem;
+  gap: 2rem;
+}
+
+/* ---------- LEFT SIDEBAR ---------- */
+.left-panel {
+  width: 32%;
+  background: #0f172a;       /* slate-900 */
+  color: #f8fafc;            /* slate-50 */
+  padding: 2rem;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.left-panel h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.left-panel small {
+  color: #cbd5e1; /* slate-300 */
+}
+
+/* ---------- BUTTON ---------- */
+.run-button {
+  width: 100%;
+  padding: 0.85rem;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  border: none;
+  cursor: pointer;
+  background: #10b981;          /* emerald-500 */
+  color: white;
+  transition: 0.2s;
+}
+
+.run-button:hover:not(:disabled) {
+  background: #059669;          /* emerald-600 */
+}
+
+.run-button:disabled {
+  background: #64748b;          /* slate-500 */
+  cursor: not-allowed;
+}
+
+/* ---------- RIGHT PANEL ---------- */
+.right-panel {
+  flex-grow: 1;
+  background: white;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.06);
+}
+
+/* ---------- EMPTY STATE ---------- */
+.empty-state {
   text-align: center;
+  padding: 3rem;
+  border: 2px dashed #cbd5e1;
+  border-radius: 1.25rem;
+  color: #64748b;
+  background: #ffffff;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* ---------- METRIC TABLE ---------- */
+.metric-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.metric-table th {
+  background: #f8fafc;
+  color: #1e293b; /* slate-800 */
+  text-align: left;
+  padding: 0.75rem;
+  font-size: 0.9rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.metric-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+  color: #334155;
 }
 
-.card {
-  padding: 2em;
+.metric-table tr:hover td {
+  background: #f1f5f9;
 }
 
-.read-the-docs {
-  color: #888;
+/* ---------- HISTOGRAM CHART ---------- */
+.chart-container {
+  padding: 1rem;
+  background: white;
+  border-radius: 1.25rem;
+  border: 1px solid #e2e8f0;
+  margin-top: 1rem;
 }

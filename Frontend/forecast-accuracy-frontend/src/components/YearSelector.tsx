@@ -5,8 +5,8 @@ interface YearSelectorProps {
   years: string[];
   selectedYear: string;
   onChange: (value: string) => void;
-  loading: boolean;
-  disabled: boolean;
+  loading?: boolean;
+  disabled?: boolean;
 }
 
 const YearSelector: React.FC<YearSelectorProps> = ({
@@ -17,34 +17,25 @@ const YearSelector: React.FC<YearSelectorProps> = ({
   disabled,
 }) => {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-100">
-      <h2 className="text-xl font-semibold text-slate-800 mb-3">
-        2. Select Financial Year
-      </h2>
+    <div className="control-group">
+      <label className="control-label">2. Select Financial Year</label>
+
       <select
-        className="w-full p-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm"
+        className="control-select"
         value={selectedYear}
         onChange={(e) => onChange(e.target.value)}
-        disabled={loading || disabled || years.length === 0}
+        disabled={disabled || loading}
       >
         <option value="">
-          {loading
-            ? "Loading years..."
-            : years.length === 0
-            ? "No years available"
-            : "Choose a financial year"}
+          {loading ? "Loading financial years..." : "Choose a financial year"}
         </option>
-        {years.map((y) => (
-          <option key={y} value={y}>
-            FY {y}
+
+        {years.map((yr) => (
+          <option key={yr} value={yr}>
+            {yr}
           </option>
         ))}
       </select>
-      {years.length > 0 && !loading && (
-        <p className="mt-2 text-xs text-slate-500">
-          Showing data from FY {years[0]} onwards (AI era).
-        </p>
-      )}
     </div>
   );
 };
