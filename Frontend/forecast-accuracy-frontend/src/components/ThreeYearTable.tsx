@@ -1,8 +1,7 @@
-// src/components/MetricTable.tsx
 import React from "react";
 
-export interface MetricResult {
-  id: number;
+export interface ThreeYearResultRow {
+  fy: string;
   method_name: string;
   bias: number;
   rmse: number;
@@ -10,11 +9,11 @@ export interface MetricResult {
   count: number;
 }
 
-interface MetricTableProps {
-  results: MetricResult[];
+interface ThreeYearTableProps {
+  results: ThreeYearResultRow[];
 }
 
-const MetricTable: React.FC<MetricTableProps> = ({ results }) => {
+const ThreeYearTable: React.FC<ThreeYearTableProps> = ({ results }) => {
   if (!results || results.length === 0) return null;
 
   const minRmse = Math.min(...results.map((r) => r.rmse));
@@ -23,6 +22,7 @@ const MetricTable: React.FC<MetricTableProps> = ({ results }) => {
     <table className="metric-table">
       <thead>
         <tr>
+          <th>FY</th>
           <th>Method</th>
           <th>Bias</th>
           <th>RMSE</th>
@@ -32,7 +32,8 @@ const MetricTable: React.FC<MetricTableProps> = ({ results }) => {
       </thead>
       <tbody>
         {results.map((r) => (
-          <tr key={r.id}>
+          <tr key={r.fy}>
+            <td>{r.fy}</td>
             <td>{r.method_name}</td>
             <td>{r.bias.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
             <td>
@@ -48,4 +49,4 @@ const MetricTable: React.FC<MetricTableProps> = ({ results }) => {
   );
 };
 
-export default MetricTable;
+export default ThreeYearTable;

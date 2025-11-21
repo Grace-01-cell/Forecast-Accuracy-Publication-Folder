@@ -1,4 +1,3 @@
-// src/components/HistogramChart.tsx
 import React from "react";
 import {
   BarChart,
@@ -21,6 +20,9 @@ interface HistogramChartProps {
   productName: string;
 }
 
+const formatNumber = (value: number) =>
+  value.toLocaleString(undefined, { maximumFractionDigits: 0 });
+
 const createHistogramData = (actuals: number[]): HistogramBin[] => {
   if (!actuals || actuals.length === 0) return [];
 
@@ -32,7 +34,7 @@ const createHistogramData = (actuals: number[]): HistogramBin[] => {
   if (range < 0.001) {
     return [
       {
-        range: minVal.toFixed(2),
+        range: formatNumber(minVal),
         count: actuals.length,
       },
     ];
@@ -42,13 +44,14 @@ const createHistogramData = (actuals: number[]): HistogramBin[] => {
 
   const bins: HistogramBin[] = Array(numBins)
     .fill(0)
-    .map((_, i) => ({
-      range: `${(minVal + i * binSize).toFixed(0)} - ${(
-        minVal +
-        (i + 1) * binSize
-      ).toFixed(0)}`,
-      count: 0,
-    }));
+    .map((_, i) => {
+      const start = minVal + i * binSize;
+      const end = minVal + (i + 1) * binSize;
+      return {
+        range: `${formatNumber(start)} - ${formatNumber(end)}`,
+        count: 0,
+      };
+    });
 
   actuals.forEach((val) => {
     let idx = Math.floor((val - minVal) / binSize);
@@ -88,7 +91,15 @@ const HistogramChart: React.FC<HistogramChartProps> = ({
               style={{ fill: "#6b7280" }}
             />
           </XAxis>
-          <YAxis stroke="#6b7280" allowDecimals={false}>
+          <YAxis
+            stroke="#6b7280"
+            allowDecimals={false}
+            tickFormatter={(value) =>
+              (value as number).toLocaleString(undefined, {
+                maximumFractionDigits: 0,
+              })
+            }
+          >
             <Label
               value="Frequency (Periods)"
               angle={-90}
@@ -98,7 +109,7 @@ const HistogramChart: React.FC<HistogramChartProps> = ({
           </YAxis>
           <Tooltip
             formatter={(value: any) => [value, "Periods"]}
-            labelFormatter={(label: string) => `Consumption range: ${label}`}
+            labelFormatter={(label: string) => `Range: ${label}`}
             contentStyle={{
               borderRadius: 8,
               border: "1px solid #d1d5db",
