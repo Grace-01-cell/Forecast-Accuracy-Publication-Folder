@@ -1,42 +1,61 @@
+from pathlib import Path
+from typing import List
+
+import numpy as np
+import os
+import pandas as pd
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from typing import List
-import pandas as pd
-import numpy as np
-import os
-from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
-# ... the rest of your imports (pandas, typing, etc.)
 
-app = FastAPI()
+# --------------------------------------------------------------------
+# 1. FastAPI app + CORS
+# --------------------------------------------------------------------
 
-# 👇 Add all allowed frontends here
+app = FastAPI(title="Forecast Accuracy API")
+
+# IMPORTANT: update these to match your real frontend/backends
 origins = [
-    "http://localhost:5173",  # Vite dev
+    "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "http://localhost:8000",
-    "http://127.0.0.1:8000",
-    "https://forecast-accuracy-publication-folde.vercel.app",  # Vercel frontend
+    # Vercel frontend
+    "https://forecast-accuracy-publication-folde.vercel.app",
+    # (optional) if you ever call the API from the Render URL directly in a browser
+    "https://forecast-accuracy-publication-folder.onrender.com",
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,      # or ["*"] if you want to allow everyone
+    allow_origins=origins,  # you can use ["*"] during debugging if you want
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# 👉 keep all your existing routes below this ( /products, /fy_years, /fy_accuracy, etc.)
+# Simple root so / doesn’t 404
+@app.get("/")
+def root():
+    return {
+        "status": "ok",
+        "message": "Forecast Accuracy API",
+        "endpoints": [
+            "/products",
+            "/years/{product}",
+            "/fy_adopted_accuracy/{product}?fy_label=FY23/24",
+            "/data/actuals/{product}?fy_label=FY23/24",
+            "/fy_accuracy_3year/{product}",
+        ],
+    }
 
 # --------------------------------------------------------------------
-# 1. Load and prepare data
+# 2. Load and prepare data
 # --------------------------------------------------------------------
 
-CSV_PATH = "test data.csv"  # change if needed
+# Resolve CSV path relative to this file (works locally + on Render)
+BASE_DIR = Path(__file__).resolve().parent
+CSV_PATH = BASE_DIR / "test data.csv"
 
-if not os.path.exists(CSV_PATH):
+if not CSV_PATH.exists():
     raise RuntimeError(f"CSV file not found at {CSV_PATH}")
 
 df = pd.read_csv(CSV_PATH)
@@ -48,20 +67,24 @@ df = pd.read_csv(CSV_PATH)
 # - Forecast
 # - Adopted Method
 
+# Parse dates
 df["date"] = pd.to_datetime(df["period"], dayfirst=True, errors="coerce")
 if df["date"].isna().any():
     raise RuntimeError("Some dates could not be parsed from 'period' column.")
 
+# Numeric conversions for actuals & forecasts
 for col in ["Actual Consumption", "Forecast"]:
     df[col + "_num"] = pd.to_numeric(
         df[col].astype(str).str.replace(",", ""),
         errors="coerce",
     )
 
+# Clean adopted method
 df["Adopted Method_clean"] = df["Adopted Method"].astype(str).str.strip()
 
 
 def fy_label(dt: pd.Timestamp) -> str:
+    """Return FY label like 'FY23/24' using July–June FY."""
     year = dt.year
     month = dt.month
     start_year = year if month >= 7 else year - 1
@@ -69,6 +92,7 @@ def fy_label(dt: pd.Timestamp) -> str:
 
 
 def fy_start_year(dt: pd.Timestamp) -> int:
+    """Return the FY start year (e.g. 2023 for FY23/24)."""
     year = dt.year
     month = dt.month
     return year if month >= 7 else year - 1
@@ -78,7 +102,7 @@ df["fy_label"] = df["date"].apply(fy_label)
 df["fy_start_year"] = df["date"].apply(fy_start_year)
 
 # --------------------------------------------------------------------
-# 2. Pydantic models
+# 3. Pydantic models
 # --------------------------------------------------------------------
 
 
@@ -117,23 +141,6 @@ class ThreeYearAccuracyResponse(BaseModel):
 
 
 # --------------------------------------------------------------------
-# 3. FastAPI app + CORS
-# --------------------------------------------------------------------
-
-app = FastAPI(title="Forecast Accuracy API")
-
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://127.0.0.1:5173",
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# --------------------------------------------------------------------
 # 4. Utility: compute accuracy for adopted method in a FY
 # --------------------------------------------------------------------
 
@@ -156,6 +163,7 @@ def compute_adopted_accuracy(product: str, fy: str) -> AdoptedAccuracyResponse:
             detail=f"No usable actual/forecast pairs for '{product}' in {fy}.",
         )
 
+    # Adopted method = most frequent method in that FY for the product
     method_counts = subset["Adopted Method_clean"].value_counts()
     adopted_method = method_counts.idxmax()
 
@@ -174,7 +182,7 @@ def compute_adopted_accuracy(product: str, fy: str) -> AdoptedAccuracyResponse:
     errors = forecast - actual
 
     bias = float(np.mean(errors))
-    rmse = float(np.sqrt(np.mean(errors ** 2)))
+    rmse = float(np.sqrt(np.mean(errors**2)))
     mape = float(
         np.mean(np.abs(errors) / np.where(actual == 0, np.nan, actual)) * 100.0
     )
@@ -211,6 +219,7 @@ def get_years_for_product(product: str):
             detail=f"No data found for product '{product}'.",
         )
 
+    # Only FYs starting 2023 onwards
     subset = subset[subset["fy_start_year"] >= 2023]
     years = sorted(subset["fy_label"].dropna().unique().tolist())
 
