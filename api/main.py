@@ -5,6 +5,30 @@ from typing import List
 import pandas as pd
 import numpy as np
 import os
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+# ... the rest of your imports (pandas, typing, etc.)
+
+app = FastAPI()
+
+# 👇 Add all allowed frontends here
+origins = [
+    "http://localhost:5173",  # Vite dev
+    "http://127.0.0.1:5173",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+    "https://forecast-accuracy-publication-folde.vercel.app",  # Vercel frontend
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,      # or ["*"] if you want to allow everyone
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# 👉 keep all your existing routes below this ( /products, /fy_years, /fy_accuracy, etc.)
 
 # --------------------------------------------------------------------
 # 1. Load and prepare data
