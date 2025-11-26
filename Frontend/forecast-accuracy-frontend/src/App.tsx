@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { RefreshCcw } from "lucide-react";
-
 import ProductSelector from "./components/ProductSelector";
 import YearSelector from "./components/YearSelector";
-import MetricTable, { MetricResult } from "./components/MetricTable";
+import MetricTable from "./components/MetricTable";
 import HistogramChart from "./components/HistogramChart";
-import ThreeYearTable, {
-  ThreeYearResultRow,
-} from "./components/ThreeYearTable";
+import ThreeYearTable from "./components/ThreeYearTable";
 import TrendChart from "./components/TrendChart";
 import NarrativeBlock from "./components/NarrativeBlock";
 
-const API_BASE_URL = "http://127.0.0.1:8000";
+// 👇 type-only imports (for TS / Vercel build)
+import type { MetricResult } from "./components/MetricTable";
+import type { ThreeYearResultRow } from "./components/ThreeYearTable";
+
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
+
 
 interface ListResponse {
   items: string[];

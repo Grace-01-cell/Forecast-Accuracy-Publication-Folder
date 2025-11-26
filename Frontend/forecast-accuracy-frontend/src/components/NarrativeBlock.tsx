@@ -1,5 +1,6 @@
 import React from "react";
-import { ThreeYearResultRow } from "./ThreeYearTable";
+
+import type { ThreeYearResultRow } from "./ThreeYearTable";
 
 interface NarrativeBlockProps {
   productName: string;

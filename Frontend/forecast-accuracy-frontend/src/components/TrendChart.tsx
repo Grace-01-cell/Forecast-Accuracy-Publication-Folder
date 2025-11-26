@@ -9,7 +9,8 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
-import { ThreeYearResultRow } from "./ThreeYearTable";
+
+import type { ThreeYearResultRow } from "./ThreeYearTable";
 
 interface TrendChartProps {
   results: ThreeYearResultRow[];
