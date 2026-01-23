@@ -52,7 +52,7 @@ p {
   border-radius: 0.75rem;
   border: none;
   cursor: pointer;
-  background: #10b981;          /* emerald-500 */
+  background: #10b981;         
   color: white;
   transition: 0.2s;
 }

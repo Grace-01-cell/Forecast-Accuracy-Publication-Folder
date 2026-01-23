@@ -1,55 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import "./App.css";
 import { RefreshCcw } from "lucide-react";
+
 import ProductSelector from "./components/ProductSelector";
 import YearSelector from "./components/YearSelector";
+import ForecastTypeToggle from "./components/ForecastTypeToggle";
 import MetricTable from "./components/MetricTable";
 import HistogramChart from "./components/HistogramChart";
 import ThreeYearTable from "./components/ThreeYearTable";
 import TrendChart from "./components/TrendChart";
 import NarrativeBlock from "./components/NarrativeBlock";
 
-// 👇 type-only imports (for TS / Vercel build)
+import {
+  fetchProducts,
+  fetchFysForProduct,
+  fetchCompare,
+  fetchTrend,
+  fetchActuals,
+  fetchForecastTypes,
+} from "./api";
+
+import type { FyMethodComparisonResponse, TrendResponse, HistoricalData } from "./api";
 import type { MetricResult } from "./components/MetricTable";
 import type { ThreeYearResultRow } from "./components/ThreeYearTable";
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
-
-
-interface ListResponse {
-  items: string[];
-}
-
-interface HistoricalData {
-  product_name: string;
-  fy: string;
-  actuals: number[];
-}
-
-interface AdoptedAccuracyResponse {
-  product_name: string;
-  fy: string;
-  adopted_method: string;
-  bias: number;
-  rmse: number;
-  mape: number;
-  count: number;
-}
-
-interface ThreeYearAccuracyResponse {
-  product_name: string;
-  years: {
-    fy: string;
-    adopted_method: string;
-    bias: number;
-    rmse: number;
-    mape: number;
-    count: number;
-  }[];
-}
-
 type ViewMode = "one" | "three";
+
+const TARGET_FYS = ["FY23/24", "FY24/25", "FY25/26"];
 
 const App: React.FC = () => {
   const [products, setProducts] = useState<string[]>([]);
@@ -60,40 +37,66 @@ const App: React.FC = () => {
 
   const [viewMode, setViewMode] = useState<ViewMode>("one");
 
-  const [results, setResults] = useState<MetricResult[]>([]);
+  // Forecast Type (Main vs Review)
+  const [forecastType, setForecastType] = useState<"Main" | "Review">("Main");
+  const [availableForecastTypes, setAvailableForecastTypes] = useState<string[]>([]);
+
+  // 1-year outputs
+  const [oneYearCompare, setOneYearCompare] = useState<FyMethodComparisonResponse | null>(null);
+  const [oneYearTableRows, setOneYearTableRows] = useState<MetricResult[]>([]);
   const [actuals, setActuals] = useState<HistoricalData | null>(null);
 
-  const [threeYearResults, setThreeYearResults] = useState<ThreeYearResultRow[]>(
-    []
-  );
+  // 3-year outputs
+  const [threeYearRows, setThreeYearRows] = useState<ThreeYearResultRow[]>([]);
+  const [trend, setTrend] = useState<TrendResponse | null>(null);
   const [selectedHistogramFY, setSelectedHistogramFY] = useState<string>("");
 
   const [loadingProducts, setLoadingProducts] = useState(false);
   const [loadingYears, setLoadingYears] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loadingRun, setLoadingRun] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  // Load products on mount
+  // -----------------------------
+  // Load products (once)
+  // -----------------------------
   useEffect(() => {
-    const fetchProducts = async () => {
+    (async () => {
       try {
         setLoadingProducts(true);
-        const res = await fetch(`${API_BASE_URL}/products`);
-        if (!res.ok) throw new Error("Failed to load products");
-        const data: ListResponse = await res.json();
-        setProducts(data.items);
-      } catch (err: any) {
-        console.error("Error loading products:", err);
-        setError(err.message ?? "Could not load products.");
+        setError(null);
+        const items = await fetchProducts();
+        setProducts(items);
+      } catch (e: any) {
+        console.error(e);
+        setError(e?.message || "Failed to load products.");
       } finally {
         setLoadingProducts(false);
       }
-    };
-
-    fetchProducts();
+    })();
   }, []);
 
-  // Load FY options when product changes
+  // -----------------------------
+  // Load forecast types (once)
+  // -----------------------------
+  useEffect(() => {
+    (async () => {
+      try {
+        const items = await fetchForecastTypes();
+        setAvailableForecastTypes(items);
+      } catch (e) {
+        console.error(e);
+        setAvailableForecastTypes(["Main"]);
+      }
+    })();
+  }, []);
+
+  const showForecastToggle = useMemo(() => {
+    return availableForecastTypes.includes("Review");
+  }, [availableForecastTypes]);
+
+  // -----------------------------
+  // Load FY list when product changes
+  // -----------------------------
   useEffect(() => {
     if (!selectedProduct) {
       setYears([]);
@@ -101,190 +104,172 @@ const App: React.FC = () => {
       return;
     }
 
-    const fetchYears = async () => {
+    (async () => {
       try {
         setLoadingYears(true);
-        const res = await fetch(
-          `${API_BASE_URL}/years/${encodeURIComponent(selectedProduct)}`
-        );
-        if (!res.ok) throw new Error("Failed to load years");
-        const data: ListResponse = await res.json();
-        setYears(data.items);
+        setError(null);
+        const items = await fetchFysForProduct(selectedProduct);
+        setYears(items);
 
-        if (!selectedYear && data.items.length > 0) {
-          setSelectedYear(data.items[data.items.length - 1]);
+        if (items.length > 0) {
+          const preferred = items.includes("FY24/25") ? "FY24/25" : items[items.length - 1];
+          setSelectedYear(preferred);
+        } else {
+          setSelectedYear("");
         }
-      } catch (err: any) {
-        console.error("Error loading years:", err);
-        setError(err.message ?? "Could not load financial years.");
+
+        // Reset forecast type when product changes
+        setForecastType("Main");
+      } catch (e: any) {
+        console.error(e);
+        setError(e?.message || "Failed to load financial years.");
       } finally {
         setLoadingYears(false);
       }
-    };
-
-    fetchYears();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    })();
   }, [selectedProduct]);
 
-  const loadHistogramForFY = async (product: string, fyLabel: string) => {
+  // -----------------------------
+  // Helpers
+  // -----------------------------
+  const resetOutputs = () => {
+    setOneYearCompare(null);
+    setOneYearTableRows([]);
+    setActuals(null);
+
+    setThreeYearRows([]);
+    setTrend(null);
+    setSelectedHistogramFY("");
+  };
+
+  const loadHistogramForFY = async (product: string, fy: string) => {
     try {
-      const fyParam = encodeURIComponent(fyLabel);
-      const prodParam = encodeURIComponent(product);
-      const res = await fetch(
-        `${API_BASE_URL}/data/actuals/${prodParam}?fy_label=${fyParam}`
-      );
-      if (!res.ok) {
-        const txt = await res.text();
-        console.warn("Histogram error:", res.status, txt);
-        setActuals(null);
-        return;
-      }
-      const histJson: HistoricalData = await res.json();
-      setActuals(histJson);
-    } catch (err) {
-      console.error("Histogram fetch error:", err);
+      const data = await fetchActuals(product, fy);
+      setActuals(data);
+    } catch (e) {
+      console.error(e);
       setActuals(null);
     }
   };
 
-  const handleCalculateOneYear = async () => {
+  const mapCompareToMetricTable = (cmp: FyMethodComparisonResponse): MetricResult[] => {
+    return cmp.rows.map((r, idx) => ({
+      id: `${cmp.product_name}-${cmp.fy}-${r.method}-${idx}`,
+      method_name: r.method + (r.is_adopted ? " (Adopted)" : ""),
+      bias: r.bias,
+      rmse: r.rmse,
+      mape: r.mape,
+      count: r.n,
+    }));
+  };
+
+  const pickSummaryRowsForThreeYears = (t: TrendResponse): ThreeYearResultRow[] => {
+    const out: ThreeYearResultRow[] = [];
+
+    for (const fy of t.years) {
+      const points = t.points.filter((p) => p.fy === fy);
+      if (points.length === 0) continue;
+
+      const adopted = points.find((p) => p.is_adopted);
+      const bestRmse = [...points].sort((a, b) => a.rmse - b.rmse)[0];
+      const chosen = adopted || bestRmse;
+
+      out.push({
+        fy,
+        method_name: chosen.method + (chosen.is_adopted ? " (Adopted)" : " (Best RMSE)"),
+        bias: chosen.bias,
+        rmse: chosen.rmse,
+        mape: chosen.mape,
+        count: chosen.n,
+      });
+    }
+
+    const order = [...TARGET_FYS];
+    out.sort((a, b) => order.indexOf(a.fy) - order.indexOf(b.fy));
+
+    return out;
+  };
+
+  const canRun = useMemo(() => {
+    if (!selectedProduct) return false;
+    if (loadingRun) return false;
+    if (viewMode === "one") return !!selectedYear;
+    return true;
+  }, [selectedProduct, selectedYear, viewMode, loadingRun]);
+
+  // -----------------------------
+  // Run actions
+  // -----------------------------
+  const handleRunOneYear = async () => {
     if (!selectedProduct || !selectedYear) return;
 
-    setLoading(true);
+    setLoadingRun(true);
     setError(null);
-    setResults([]);
-    setActuals(null);
-    setThreeYearResults([]);
+    resetOutputs();
 
     try {
-      const fyParam = encodeURIComponent(selectedYear);
-      const prodParam = encodeURIComponent(selectedProduct);
-
-      const [accRes, histRes] = await Promise.all([
-        fetch(
-          `${API_BASE_URL}/fy_adopted_accuracy/${prodParam}?fy_label=${fyParam}`
-        ),
-        fetch(
-          `${API_BASE_URL}/data/actuals/${prodParam}?fy_label=${fyParam}`
-        ),
+      const [cmp, hist] = await Promise.all([
+        fetchCompare(selectedProduct, selectedYear, forecastType),
+        fetchActuals(selectedProduct, selectedYear),
       ]);
 
-      if (!accRes.ok) {
-        const bodyText = await accRes.text();
-        throw new Error(
-          `Accuracy error: ${
-            bodyText || `${accRes.status} ${accRes.statusText}`
-          }`
-        );
-      }
+      if (!cmp) throw new Error("No comparison data found for that product and FY.");
 
-      const accJson: AdoptedAccuracyResponse = await accRes.json();
-      const row: MetricResult = {
-        id: Date.now(),
-        method_name: accJson.adopted_method,
-        bias: accJson.bias,
-        rmse: accJson.rmse,
-        mape: accJson.mape,
-        count: accJson.count,
-      };
-      setResults([row]);
-
-      if (histRes.ok) {
-        const histJson: HistoricalData = await histRes.json();
-        setActuals(histJson);
-      } else {
-        const bodyText = await histRes.text();
-        console.warn("Histogram response:", histRes.status, bodyText);
-      }
-    } catch (err: any) {
-      console.error("Calculation error:", err);
-      setError(
-        err.message ??
-          "Something went wrong while calculating accuracy. Check console."
-      );
+      setOneYearCompare(cmp);
+      setOneYearTableRows(mapCompareToMetricTable(cmp));
+      setActuals(hist);
+    } catch (e: any) {
+      console.error(e);
+      setError(e?.message || "Failed to run 1-year accuracy.");
     } finally {
-      setLoading(false);
+      setLoadingRun(false);
     }
   };
 
-  const handleCalculateThreeYears = async () => {
+  const handleRunThreeYears = async () => {
     if (!selectedProduct) return;
 
-    setLoading(true);
+    setLoadingRun(true);
     setError(null);
-    setResults([]);
-    setActuals(null);
-    setThreeYearResults([]);
-    setSelectedHistogramFY("");
+    resetOutputs();
 
     try {
-      const prodParam = encodeURIComponent(selectedProduct);
-      const res = await fetch(
-        `${API_BASE_URL}/fy_accuracy_3year/${prodParam}`
-      );
-      if (!res.ok) {
-        const txt = await res.text();
-        throw new Error(
-          `3-year accuracy error: ${txt || res.statusText || res.status}`
-        );
-      }
+      // keep 3-year always Main (recommended)
+      const t = await fetchTrend(selectedProduct, [...TARGET_FYS], "Main");
+      if (!t) throw new Error("No 3-year trend data found for that product.");
 
-      const json: ThreeYearAccuracyResponse = await res.json();
+      setTrend(t);
 
-      const mapped: ThreeYearResultRow[] = json.years.map((y) => ({
-        fy: y.fy,
-        method_name: y.adopted_method,
-        bias: y.bias,
-        rmse: y.rmse,
-        mape: y.mape,
-        count: y.count,
-      }));
+      const rows = pickSummaryRowsForThreeYears(t);
+      setThreeYearRows(rows);
 
-      // Sort FY order: FY23/24, FY24/25, FY25/26
-      const order = ["FY23/24", "FY24/25", "FY25/26"];
-      mapped.sort(
-        (a, b) => order.indexOf(a.fy) - order.indexOf(b.fy)
-      );
-
-      setThreeYearResults(mapped);
-
-      if (mapped.length > 0) {
-        const firstFY = mapped[0].fy;
+      if (rows.length > 0) {
+        const firstFY = rows[0].fy;
         setSelectedHistogramFY(firstFY);
         await loadHistogramForFY(selectedProduct, firstFY);
       }
-    } catch (err: any) {
-      console.error("3-year calc error:", err);
-      setError(
-        err.message ??
-          "Something went wrong while loading 3-year comparison."
-      );
+    } catch (e: any) {
+      console.error(e);
+      setError(e?.message || "Failed to run 3-year comparison.");
     } finally {
-      setLoading(false);
+      setLoadingRun(false);
     }
   };
 
   const handleRun = async () => {
-    if (viewMode === "one") {
-      await handleCalculateOneYear();
-    } else {
-      await handleCalculateThreeYears();
-    }
+    if (viewMode === "one") return handleRunOneYear();
+    return handleRunThreeYears();
   };
 
-  const canRun =
-    !!selectedProduct && !loading && (viewMode === "three" || !!selectedYear);
-
+  // -----------------------------
+  // UI
+  // -----------------------------
   return (
     <div className="dashboard-container">
-      {/* LEFT PANEL */}
       <div className="left-panel">
         <div>
           <h1>Forecast Accuracy Dashboard</h1>
-          <small>
-            Explore how the adopted forecasting methodology performs for each
-            product and financial year.
-          </small>
+          <small>Compare forecast accuracy by product, financial year, and method. FY runs July–June.</small>
         </div>
 
         <ProductSelector
@@ -292,11 +277,9 @@ const App: React.FC = () => {
           selectedProduct={selectedProduct}
           onChange={(value) => {
             setSelectedProduct(value);
-            setResults([]);
-            setActuals(null);
+            setForecastType("Main");
             setError(null);
-            setThreeYearResults([]);
-            setSelectedHistogramFY("");
+            resetOutputs();
           }}
           loading={loadingProducts}
         />
@@ -306,23 +289,36 @@ const App: React.FC = () => {
           selectedYear={selectedYear}
           onChange={(value) => {
             setSelectedYear(value);
-            setResults([]);
-            setActuals(null);
+            setForecastType("Main");
             setError(null);
+            resetOutputs();
           }}
           loading={loadingYears}
           disabled={!selectedProduct || viewMode === "three"}
         />
 
-        {/* View mode toggle */}
+        {viewMode === "one" && (
+          <div style={{ marginTop: 12 }}>
+            <ForecastTypeToggle
+              value={forecastType}
+              onChange={(v) => {
+                setForecastType(v as "Main" | "Review");
+                setError(null);
+                resetOutputs();
+              }}
+              show={showForecastToggle}
+            />
+          </div>
+        )}
+
         <div className="view-toggle">
           <button
             type="button"
             className={viewMode === "one" ? "view-btn active" : "view-btn"}
             onClick={() => {
               setViewMode("one");
-              setThreeYearResults([]);
-              setSelectedHistogramFY("");
+              setError(null);
+              resetOutputs();
             }}
           >
             1-Year View
@@ -332,25 +328,19 @@ const App: React.FC = () => {
             className={viewMode === "three" ? "view-btn active" : "view-btn"}
             onClick={() => {
               setViewMode("three");
-              setResults([]);
+              setForecastType("Main");
+              setError(null);
+              resetOutputs();
             }}
           >
             3-Year Comparison
           </button>
         </div>
 
-        <button
-          className="run-button"
-          onClick={handleRun}
-          disabled={!canRun}
-        >
-          {loading ? (
+        <button className="run-button" onClick={handleRun} disabled={!canRun}>
+          {loadingRun ? (
             <>
-              <RefreshCcw
-                size={16}
-                style={{ marginRight: 8, verticalAlign: "middle" }}
-                className="spin"
-              />
+              <RefreshCcw size={16} style={{ marginRight: 8, verticalAlign: "middle" }} className="spin" />
               Calculating…
             </>
           ) : (
@@ -363,142 +353,49 @@ const App: React.FC = () => {
             {error}
           </div>
         )}
-
-        <p
-          style={{
-            fontSize: "0.75rem",
-            color: "#cbd5e1",
-            marginTop: error ? 8 : 16,
-          }}
-        >
-          Showing data from FY23/24 onwards (AI era).
-        </p>
       </div>
 
-      {/* RIGHT PANEL */}
       <div className="right-panel">
         {viewMode === "one" ? (
-          // ONE-YEAR VIEW
-          results.length > 0 || actuals ? (
+          oneYearCompare ? (
             <>
               <h2>
-                Forecast Accuracy – {selectedProduct || "…"} (
-                {selectedYear || "…"})
+                Method Comparison – {selectedProduct} ({selectedYear}){" "}
+                <span style={{ color: "#64748b", fontWeight: 600 }}>• {forecastType}</span>
               </h2>
-              <p style={{ color: "#475569", fontSize: "0.9rem" }}>
-                Lower RMSE and MAPE are better. Bias near 0 means forecasts are
-                well-centered.
-              </p>
-              {results.length === 1 && (
-                <p style={{ color: "#64748b", fontSize: "0.85rem" }}>
-                  Adopted method for <strong>{selectedProduct}</strong> in{" "}
-                  <strong>{selectedYear}</strong> is{" "}
-                  <strong>{results[0].method_name}</strong>.
-                </p>
-              )}
 
-              <MetricTable results={results} />
+              <MetricTable results={oneYearTableRows} />
 
-              <h2 style={{ marginTop: "2rem" }}>
-                Historical Consumption Distribution – {selectedYear || "…"}
-              </h2>
+              <h2 style={{ marginTop: "2rem" }}>Historical Consumption Distribution – {selectedYear}</h2>
 
               {actuals && actuals.actuals.length > 0 ? (
                 <div className="chart-container">
-                  <HistogramChart
-                    actuals={actuals.actuals}
-                    productName={actuals.product_name}
-                  />
+                  <HistogramChart actuals={actuals.actuals} productName={actuals.product_name} />
                 </div>
               ) : (
-                <div className="empty-state">
-                  No consumption data available for this product and year.
-                </div>
+                <div className="empty-state">No consumption data available for this product and year.</div>
               )}
             </>
           ) : (
             <div className="empty-state">
-              Select a product and financial year on the left, then click{" "}
-              <b>Run Accuracy</b> to see results here.
+              Select a product and financial year on the left, then click <b>Run Accuracy</b>.
             </div>
           )
-        ) : (
-          // 3-YEAR VIEW
+        ) : threeYearRows.length > 0 ? (
           <>
-            {threeYearResults.length > 0 ? (
-              <>
-                <h2>3-Year Forecast Accuracy – {selectedProduct}</h2>
-                <p style={{ color: "#475569", fontSize: "0.9rem" }}>
-                  Comparing Bias, RMSE and MAPE for FY23/24, FY24/25 and
-                  FY25/26.
-                </p>
+            <h2>3-Year Forecast Accuracy – {selectedProduct}</h2>
 
-                <ThreeYearTable results={threeYearResults} />
+            <ThreeYearTable results={threeYearRows} />
 
-                <h2 style={{ marginTop: "2rem" }}>RMSE &amp; MAPE Trend</h2>
-                <TrendChart results={threeYearResults} />
+            <h2 style={{ marginTop: "2rem" }}>RMSE &amp; MAPE Trend</h2>
+            <TrendChart results={threeYearRows} />
 
-                <NarrativeBlock
-                  productName={selectedProduct}
-                  results={threeYearResults}
-                />
-
-                <h2 style={{ marginTop: "2rem" }}>
-                  Historical Consumption Distribution
-                </h2>
-                {threeYearResults.length > 0 && (
-                  <div style={{ marginBottom: "0.75rem" }}>
-                    <label
-                      style={{
-                        fontSize: "0.85rem",
-                        color: "#475569",
-                        marginRight: "0.5rem",
-                      }}
-                    >
-                      View FY:
-                    </label>
-                    <select
-                      className="control-select"
-                      style={{ maxWidth: "200px", display: "inline-block" }}
-                      value={selectedHistogramFY}
-                      onChange={async (e) => {
-                        const fy = e.target.value;
-                        setSelectedHistogramFY(fy);
-                        await loadHistogramForFY(selectedProduct, fy);
-                      }}
-                    >
-                      <option value="">Choose FY</option>
-                      {threeYearResults.map((r) => (
-                        <option key={r.fy} value={r.fy}>
-                          {r.fy}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                )}
-
-                {actuals && actuals.actuals.length > 0 ? (
-                  <div className="chart-container">
-                    <HistogramChart
-                      actuals={actuals.actuals}
-                      productName={actuals.product_name}
-                    />
-                  </div>
-                ) : (
-                  <div className="empty-state">
-                    Choose a financial year above to see consumption
-                    distribution.
-                  </div>
-                )}
-              </>
-            ) : (
-              <div className="empty-state">
-                Select a product on the left, switch to{" "}
-                <b>3-Year Comparison</b> and click <b>Run Accuracy</b> to see
-                trends across FY23/24–FY25/26.
-              </div>
-            )}
+            <NarrativeBlock productName={selectedProduct} results={threeYearRows} />
           </>
+        ) : (
+          <div className="empty-state">
+            Select a product, switch to <b>3-Year Comparison</b>, then click <b>Run Accuracy</b>.
+          </div>
         )}
       </div>
     </div>

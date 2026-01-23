@@ -2,7 +2,7 @@
 import React from "react";
 
 export interface MetricResult {
-  id: number;
+  id: string;
   method_name: string;
   bias: number;
   rmse: number;

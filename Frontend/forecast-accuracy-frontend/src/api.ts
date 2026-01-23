@@ -1,134 +1,150 @@
 // src/api.ts
-export const API_BASE_URL = "http://127.0.0.1:8000";
+export const API_BASE_URL: string =
+  import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000";
 
-export interface AccuracyMetrics {
+// ---- Types ----
+export interface ListResponse {
+  items: string[];
+}
+
+export type ForecastType = "Main" | "Review";
+
+export interface AccuracyRow {
   product_name: string;
-  method_name: string;
+  fy: string;
+  forecast_type: string;
+  method: string;
   bias: number;
   rmse: number;
   mape: number;
-  count: number;
+  wape?: number;
+  n: number;
+  is_adopted: boolean;
+  is_ai?: boolean;
 }
 
-export interface MetricResult extends AccuracyMetrics {
-  id: string;
+export interface FyMethodComparisonResponse {
+  product_name: string;
+  fy: string;
+  forecast_type: string;
+  rows: AccuracyRow[];
+}
+
+export interface TrendPoint {
+  fy: string;
+  forecast_type: string;
+  method: string;
+  rmse: number;
+  mape: number;
+  wape?: number;
+  bias: number;
+  n: number;
+  is_adopted: boolean;
+  is_ai?: boolean;
+}
+
+export interface TrendResponse {
+  product_name: string;
+  years: string[];
+  forecast_type: string;
+  points: TrendPoint[];
 }
 
 export interface HistoricalData {
   product_name: string;
+  fy: string;
   actuals: number[];
 }
 
-// ---------- Overall (FY 2023+ pooled) endpoints (existing) ----------
+// ---- helper: fetch with timeout ----
+async function fetchWithTimeout(url: string, ms = 15000) {
+  const controller = new AbortController();
+  const id = setTimeout(() => controller.abort(), ms);
 
-export const fetchAccuracy = async (
+  try {
+    const res = await fetch(url, { signal: controller.signal });
+    return res;
+  } finally {
+    clearTimeout(id);
+  }
+}
+
+// ---- API calls ----
+export async function fetchProducts(): Promise<string[]> {
+  const res = await fetchWithTimeout(`${API_BASE_URL}/products`);
+  if (!res.ok) throw new Error(await res.text());
+  const data: ListResponse = await res.json();
+  return data.items || [];
+}
+
+export async function fetchFysForProduct(product: string): Promise<string[]> {
+  const res = await fetchWithTimeout(
+    `${API_BASE_URL}/fys/${encodeURIComponent(product)}`
+  );
+  if (res.status === 404) return [];
+  if (!res.ok) throw new Error(await res.text());
+  const data: ListResponse = await res.json();
+  return data.items || [];
+}
+
+/**
+ * New: fetch available forecast types from backend
+ * GET /forecast-types -> { items: ["Main","Review"] }
+ */
+export async function fetchForecastTypes(): Promise<string[]> {
+  const res = await fetchWithTimeout(`${API_BASE_URL}/forecast-types`);
+  if (res.status === 404) return ["Main"];
+  if (!res.ok) throw new Error(await res.text());
+  const data: ListResponse = await res.json();
+  return data.items || ["Main"];
+}
+
+/**
+ * Updated: now accepts forecastType (Main/Review)
+ * GET /compare/{product}?fy=FY24/25&forecast_type=Main
+ */
+export async function fetchCompare(
   product: string,
-  method: string
-): Promise<MetricResult | null> => {
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/accuracy/${encodeURIComponent(
-        product
-      )}/${encodeURIComponent(method)}`
-    );
+  fy: string,
+  forecastType: ForecastType = "Main"
+) {
+  const res = await fetchWithTimeout(
+    `${API_BASE_URL}/compare/${encodeURIComponent(product)}?fy=${encodeURIComponent(
+      fy
+    )}&forecast_type=${encodeURIComponent(forecastType)}`
+  );
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error(await res.text());
+  return (await res.json()) as FyMethodComparisonResponse;
+}
 
-    if (response.status === 404) return null;
-    if (!response.ok) throw new Error("API error");
-
-    const data: AccuracyMetrics = await response.json();
-    return { ...data, id: `${product}-${method}` };
-  } catch (err) {
-    console.error("Error fetching accuracy:", err);
-    return null;
-  }
-};
-
-export const fetchActuals = async (
-  product: string
-): Promise<HistoricalData | null> => {
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/data/actuals/${encodeURIComponent(product)}`
-    );
-
-    if (response.status === 404) return null;
-    if (!response.ok) throw new Error("API error");
-
-    return await response.json();
-  } catch (err) {
-    console.error("Error fetching actuals:", err);
-    return null;
-  }
-};
-
-// ---------- NEW: Financial year endpoints ----------
-
-// List FYs as strings (e.g. ["2023", "2024"])
-export const fetchYearsForProduct = async (
-  product: string
-): Promise<string[]> => {
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/years/${encodeURIComponent(product)}`
-    );
-
-    if (response.status === 404) {
-      console.warn(`No years found for product: ${product}`);
-      return [];
-    }
-    if (!response.ok) throw new Error("API error");
-
-    const data = await response.json(); // { items: [...] }
-    return data.items ?? [];
-  } catch (err) {
-    console.error("Error fetching years:", err);
-    return [];
-  }
-};
-
-// FY-specific accuracy
-export const fetchFyAccuracy = async (
+/**
+ * Updated: now accepts forecastType (Main/Review)
+ * GET /trend/{product}?forecast_type=Main&years=FY23/24&years=FY24/25...
+ */
+export async function fetchTrend(
   product: string,
-  method: string,
-  fy: number
-): Promise<MetricResult | null> => {
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/fy_accuracy/${encodeURIComponent(
-        product
-      )}/${encodeURIComponent(method)}/${fy}`
-    );
+  years: string[],
+  forecastType: ForecastType = "Main"
+) {
+  const qsYears = years.map((y) => `years=${encodeURIComponent(y)}`).join("&");
+  const res = await fetchWithTimeout(
+    `${API_BASE_URL}/trend/${encodeURIComponent(
+      product
+    )}?forecast_type=${encodeURIComponent(forecastType)}&${qsYears}`
+  );
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error(await res.text());
+  return (await res.json()) as TrendResponse;
+}
 
-    if (response.status === 404) return null;
-    if (!response.ok) throw new Error("API error");
-
-    const data: AccuracyMetrics = await response.json();
-    return { ...data, id: `${product}-${method}-fy${fy}` };
-  } catch (err) {
-    console.error("Error fetching FY accuracy:", err);
-    return null;
-  }
-};
-
-// FY-specific actuals for histogram
-export const fetchFyActuals = async (
-  product: string,
-  fy: number
-): Promise<HistoricalData | null> => {
-  try {
-    const response = await fetch(
-      `${API_BASE_URL}/data/actuals/${encodeURIComponent(product)}/${fy}`
-    );
-
-    if (response.status === 404) {
-      console.warn(`No actuals for ${product} in FY ${fy}`);
-      return null;
-    }
-    if (!response.ok) throw new Error("API error");
-
-    return await response.json();
-  } catch (err) {
-    console.error("Error fetching FY actuals:", err);
-    return null;
-  }
-};
+export async function fetchActuals(product: string, fy: string) {
+  const res = await fetchWithTimeout(
+    `${API_BASE_URL}/actuals/${encodeURIComponent(product)}?fy=${encodeURIComponent(
+      fy
+    )}`
+  );
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error(await res.text());
+  return (await res.json()) as HistoricalData;
+}

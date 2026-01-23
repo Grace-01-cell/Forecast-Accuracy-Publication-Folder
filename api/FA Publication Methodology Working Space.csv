@@ -1,0 +1,676 @@
+product,Period,Actual Consumption,Service Excel,Service AI,Consumption Excel,Consumption AI,Demographic,Consumption LMIS,Forecast Type,Adopted
+Implanon,Jul-23,34617,"36,377","30,486","32,824","29,880","23,584",,Main,Service AI
+Implanon,Aug-23,34754,"36,377","31,102","32,824","29,944","23,584",,Main,Service AI
+Implanon,Sept-23,28470,"36,377","29,557","32,824","29,717","23,584",,Main,Service AI
+Implanon,Oct-23,25853,"36,377","30,286","32,824","29,472","23,584",,Main,Service AI
+Implanon,Nov-23,24382,"36,377","31,400","32,824","30,186","23,584",,Main,Service AI
+Implanon,Dec-23,19385,"36,377","30,317","32,824","29,685","23,584",,Main,Service AI
+Implanon,Jan-24,19800,"36,377","30,122","32,824","30,106","23,584",,Main,Service AI
+Implanon,Feb-24,27260,"36,377","29,912","32,824","29,814","23,584",,Main,Service AI
+Implanon,Mar-24,32320,"36,377","29,932","32,824","29,768","23,584",,Main,Service AI
+Implanon,Apr-24,29470,"36,377","29,975","32,824","29,501","23,584",,Main,Service AI
+Implanon,May-24,32076,"36,377","30,073","32,824","29,569","23,584",,Main,Service AI
+Implanon,Jun-24,36060,"36,377","29,730","32,824","29,107","23,584",,Main,Service AI
+,,,,,,,,,,
+Implanon,Jul-24,"30,691","342,060","402,264","409,236","348,876","337,356",,Main,Consumption Excel
+Implanon,Aug-24,"28,193","342,060","402,264","409,236","348,876","337,356",,Main,Consumption Excel
+Implanon,Sept-24,"26,130","342,060","402,264","409,236","348,876","337,356",,Main,Consumption Excel
+Implanon,Oct-24,"27,074","342,060","402,264","409,236","348,876","337,356",,Main,Consumption Excel
+Implanon,Nov-24,"29,744","342,060","402,264","409,236","348,876","337,356",,Main,Consumption Excel
+Implanon,Dec-24,"25,247","342,060","402,264","409,236","348,876","337,356",,Main,Consumption Excel
+Implanon,Jan-25,"25,682","342,060","402,264","409,236","348,876","337,356",,Main,Consumption Excel
+Implanon,Feb-25,"24,780","342,060","402,264","409,236","348,876","337,356",,Main,Consumption Excel
+Implanon,Mar-25,"23,977","342,060","402,264","409,236","348,876","337,356",,Main,Consumption Excel
+Implanon,Apr-25,"33,025","342,060","402,264","409,236","348,876","337,356",,Main,Consumption Excel
+Implanon,May-25,"28,804","342,060","402,264","409,236","348,876","337,356",,Main,Consumption Excel
+Implanon,Jun-25,"29,200","342,060","402,264","409,236","348,876","337,356",,Main,Consumption Excel
+,,,,,,,,,,
+Implanon,Jul-24,"30,691","397,692","409,236","326,940","353,196","125,304",,Review,Service AI
+Implanon,Aug-24,"28,193","397,692","409,236","326,940","353,196","125,304",,Review,Service AI
+Implanon,Sept-24,"26,130","397,692","409,236","326,940","353,196","125,304",,Review,Service AI
+Implanon,Oct-24,"27,074","397,692","409,236","326,940","353,196","125,304",,Review,Service AI
+Implanon,Nov-24,"29,744","397,692","409,236","326,940","353,196","125,304",,Review,Service AI
+Implanon,Dec-24,"25,247","397,692","409,236","326,940","353,196","125,304",,Review,Service AI
+Implanon,Jan-25,"25,682","397,692","409,236","326,940","353,196","125,304",,Review,Service AI
+Implanon,Feb-25,"24,780","397,692","409,236","326,940","353,196","125,304",,Review,Service AI
+Implanon,Mar-25,"23,977","397,692","409,236","326,940","353,196","125,304",,Review,Service AI
+Implanon,Apr-25,"33,025","397,692","409,236","326,940","353,196","125,304",,Review,Service AI
+Implanon,May-25,"28,804","397,692","409,236","326,940","353,196","125,304",,Review,Service AI
+Implanon,Jun-25,"29,200","397,692","409,236","326,940","353,196","125,304",,Review,Service AI
+,,,,,,,,,,
+Implanon,Jul-25,"45,218",,"37,527",,"30,096","15,705","39,705",Main,Service AI
+Implanon,Aug-25,"39,880",,"36,217",,"29,123","15,705","39,705",Main,Service AI
+Implanon,Sept-25,"42,273",,"34,626",,"27,561","15,705","39,705",Main,Service AI
+Implanon,Oct-25,"36,806",,"34,931",,"26,686","15,705","39,705",Main,Service AI
+Implanon,Nov-25,"37,186",,"35,509",,"26,350","15,705","39,705",Main,Service AI
+Implanon,Dec-25,"32,920",,"32,651",,"24,450","15,705","39,705",Main,Service AI
+Implanon,Jan-26,,,"34,687",,"27,108","15,705","39,705",Main,Service AI
+Implanon,Feb-26,,,"33,827",,"27,005","15,705","39,705",Main,Service AI
+Implanon,Mar-26,,,"34,898",,"28,358","15,705","39,705",Main,Service AI
+Implanon,Apr-26,,,"35,486",,"29,574","15,705","39,705",Main,Service AI
+Implanon,May-26,,,"36,074",,"29,904","15,705","39,705",Main,Service AI
+Implanon,Jun-26,,,"36,662",,"30,716","15,705","39,705",Main,Service AI
+,,,,,,,,,,
+EC_Pills,Jul-23,6531,"4,224","5,353","3,424","4,041","97,281",,Main,Demographic
+EC_Pills,Aug-23,5315,"4,224","5,353","3,424","4,006","97,281",,Main,Demographic
+EC_Pills,Sept-23,5300,"4,224","5,353","3,424","4,000","97,281",,Main,Demographic
+EC_Pills,Oct-23,5526,"4,224","5,353","3,424","4,028","97,281",,Main,Demographic
+EC_Pills,Nov-23,5378,"4,224","5,353","3,424","4,049","97,281",,Main,Demographic
+EC_Pills,Dec-23,5821,"4,224","5,353","3,424","4,037","97,281",,Main,Demographic
+EC_Pills,Jan-24,6002,"4,224","5,353","3,424","3,982","97,281",,Main,Demographic
+EC_Pills,Feb-24,5987,"4,224","5,353","3,424","4,004","97,281",,Main,Demographic
+EC_Pills,Mar-24,6629,"4,224","5,353","3,424","3,967","97,281",,Main,Demographic
+EC_Pills,Apr-24,6441,"4,224","5,353","3,424","4,013","97,281",,Main,Demographic
+EC_Pills,May-24,6517,"4,224","5,353","3,424","4,013","97,281",,Main,Demographic
+EC_Pills,Jun-24,6835,"4,224","5,353","3,424","3,980","97,281",,Main,Demographic
+,,,,,,,,,,
+EC_Pills,Jul-24,"7,719","67,620","64,884","54,024","88,440","40,860",,Main,Demographic
+EC_Pills,Aug-24,"7,690","67,620","64,884","54,024","88,440","40,860",,Main,Demographic
+EC_Pills,Sept-24,"7,086","67,620","64,884","54,024","88,440","40,860",,Main,Demographic
+EC_Pills,Oct-24,"7,822","67,620","64,884","54,024","88,440","40,860",,Main,Demographic
+EC_Pills,Nov-24,"7,025","67,620","64,884","54,024","88,440","40,860",,Main,Demographic
+EC_Pills,Dec-24,"7,160","67,620","64,884","54,024","88,440","40,860",,Main,Demographic
+EC_Pills,Jan-25,"7,059","67,620","64,884","54,024","88,440","40,860",,Main,Demographic
+EC_Pills,Feb-25,"5,941","67,620","64,884","54,024","88,440","40,860",,Main,Demographic
+EC_Pills,Mar-25,"5,922","67,620","64,884","54,024","88,440","40,860",,Main,Demographic
+EC_Pills,Apr-25,"6,689","67,620","64,884","54,024","88,440","40,860",,Main,Demographic
+EC_Pills,May-25,"6,293","67,620","64,884","54,024","88,440","40,860",,Main,Demographic
+EC_Pills,Jun-25,"6,177","67,620","64,884","54,024","88,440","40,860",,Main,Demographic
+,,,,,,,,,,
+EC_Pills,Jul-24,"7,719","121,992","40,860","79,212","78,564","39,216",,Review,Consumption AI
+EC_Pills,Aug-24,"7,690","121,992","40,860","79,212","78,564","39,216",,Review,Consumption AI
+EC_Pills,Sept-24,"7,086","121,992","40,860","79,212","78,564","39,216",,Review,Consumption AI
+EC_Pills,Oct-24,"7,822","121,992","40,860","79,212","78,564","39,216",,Review,Consumption AI
+EC_Pills,Nov-24,"7,025","121,992","40,860","79,212","78,564","39,216",,Review,Consumption AI
+EC_Pills,Dec-24,"7,160","121,992","40,860","79,212","78,564","39,216",,Review,Consumption AI
+EC_Pills,Jan-25,"7,059","121,992","40,860","79,212","78,564","39,216",,Review,Consumption AI
+EC_Pills,Feb-25,"5,941","121,992","40,860","79,212","78,564","39,216",,Review,Consumption AI
+EC_Pills,Mar-25,"5,922","121,992","40,860","79,212","78,564","39,216",,Review,Consumption AI
+EC_Pills,Apr-25,"6,689","121,992","40,860","79,212","78,564","39,216",,Review,Consumption AI
+EC_Pills,May-25,"6,293","121,992","40,860","79,212","78,564","39,216",,Review,Consumption AI
+EC_Pills,Jun-25,"6,177","121,992","40,860","79,212","78,564","39,216",,Review,Consumption AI
+,,,,,,,,,,
+EC_Pills,Jul-25,"5,877",,"11,131",,"7,256","6,057","10,311",Main,Service AI
+EC_Pills,Aug-25,"5,922",,"11,394",,"7,140","6,057","10,311",Main,Service AI
+EC_Pills,Sept-25,"5,544",,"11,131",,"6,957","6,057","10,311",Main,Service AI
+EC_Pills,Oct-25,"5,323",,"11,131",,"7,148","6,057","10,311",Main,Service AI
+EC_Pills,Nov-25,"5,293",,"11,229",,"6,921","6,057","10,311",Main,Service AI
+EC_Pills,Dec-25,"5,333",,"11,131",,"7,014","6,057","10,311",Main,Service AI
+EC_Pills,Jan-26,,,"11,005",,"6,389","6,057","10,311",Main,Service AI
+EC_Pills,Feb-26,,,"10,771",,"6,136","6,057","10,311",Main,Service AI
+EC_Pills,Mar-26,,,"10,881",,"6,287","6,057","10,311",Main,Service AI
+EC_Pills,Apr-26,,,"10,925",,"6,537","6,057","10,311",Main,Service AI
+EC_Pills,May-26,,,"10,865",,"6,321","6,057","10,311",Main,Service AI
+EC_Pills,Jun-26,,,"10,954",,"6,293","6,057","10,311",Main,Service AI
+,,,,,,,,,,
+COCs,Jul-23,98333,"130,776","140,976","146,879","138,188","385,017",,Main,Consumption AI
+COCs,Aug-23,108632,"130,776","142,292","146,879","159,669","385,017",,Main,Consumption AI
+COCs,Sept-23,102115,"130,776","141,468","146,879","124,859","385,017",,Main,Consumption AI
+COCs,Oct-23,100006,"130,776","141,350","146,879","125,506","385,017",,Main,Consumption AI
+COCs,Nov-23,103295,"130,776","142,496","146,879","124,832","385,017",,Main,Consumption AI
+COCs,Dec-23,100415,"130,776","140,906","146,879","148,321","385,017",,Main,Consumption AI
+COCs,Jan-24,130285,"130,776","144,232","146,879","143,372","385,017",,Main,Consumption AI
+COCs,Feb-24,122131,"130,776","142,224","146,879","158,545","385,017",,Main,Consumption AI
+COCs,Mar-24,115311,"130,776","141,240","146,879","150,946","385,017",,Main,Consumption AI
+COCs,Apr-24,111040,"130,776","142,010","146,879","147,210","385,017",,Main,Consumption AI
+COCs,May-24,130424,"130,776","142,196","146,879","155,297","385,017",,Main,Consumption AI
+COCs,Jun-24,120322,"130,776","141,584","146,879","137,178","385,017",,Main,Consumption AI
+,,,,,,,,,,
+COCs,Jul-24,"117,582","1,611,444","1,365,012","1,660,824","1,214,076","1,626,060",,Main,Service AI
+COCs,Aug-24,"114,987","1,611,444","1,365,012","1,660,824","1,214,076","1,626,060",,Main,Service AI
+COCs,Sept-24,"107,554","1,611,444","1,365,012","1,660,824","1,214,076","1,626,060",,Main,Service AI
+COCs,Oct-24,"100,764","1,611,444","1,365,012","1,660,824","1,214,076","1,626,060",,Main,Service AI
+COCs,Nov-24,"92,449","1,611,444","1,365,012","1,660,824","1,214,076","1,626,060",,Main,Service AI
+COCs,Dec-24,"83,034","1,611,444","1,365,012","1,660,824","1,214,076","1,626,060",,Main,Service AI
+COCs,Jan-25,"85,991","1,611,444","1,365,012","1,660,824","1,214,076","1,626,060",,Main,Service AI
+COCs,Feb-25,"74,399","1,611,444","1,365,012","1,660,824","1,214,076","1,626,060",,Main,Service AI
+COCs,Mar-25,"67,244","1,611,444","1,365,012","1,660,824","1,214,076","1,626,060",,Main,Service AI
+COCs,Apr-25,"59,668","1,611,444","1,365,012","1,660,824","1,214,076","1,626,060",,Main,Service AI
+COCs,May-25,"53,405","1,611,444","1,365,012","1,660,824","1,214,076","1,626,060",,Main,Service AI
+COCs,Jun-25,"43,432","1,611,444","1,365,012","1,660,824","1,214,076","1,626,060",,Main,Service AI
+,,,,,,,,,,
+COCs,Jul-24,"117,582","1,683,504","1,626,060","1,374,276","1,454,076","1,518,072",,Review,Service AI
+COCs,Aug-24,"114,987","1,683,504","1,626,060","1,374,276","1,454,076","1,518,072",,Review,Service AI
+COCs,Sept-24,"107,554","1,683,504","1,626,060","1,374,276","1,454,076","1,518,072",,Review,Service AI
+COCs,Oct-24,"100,764","1,683,504","1,626,060","1,374,276","1,454,076","1,518,072",,Review,Service AI
+COCs,Nov-24,"92,449","1,683,504","1,626,060","1,374,276","1,454,076","1,518,072",,Review,Service AI
+COCs,Dec-24,"83,034","1,683,504","1,626,060","1,374,276","1,454,076","1,518,072",,Review,Service AI
+COCs,Jan-25,"85,991","1,683,504","1,626,060","1,374,276","1,454,076","1,518,072",,Review,Service AI
+COCs,Feb-25,"74,399","1,683,504","1,626,060","1,374,276","1,454,076","1,518,072",,Review,Service AI
+COCs,Mar-25,"67,244","1,683,504","1,626,060","1,374,276","1,454,076","1,518,072",,Review,Service AI
+COCs,Apr-25,"59,668","1,683,504","1,626,060","1,374,276","1,454,076","1,518,072",,Review,Service AI
+COCs,May-25,"53,405","1,683,504","1,626,060","1,374,276","1,454,076","1,518,072",,Review,Service AI
+COCs,Jun-25,"43,432","1,683,504","1,626,060","1,374,276","1,454,076","1,518,072",,Review,Service AI
+,,,,,,,,,,
+COCs,Jul-25,"38,583",,"60,240",,"7,256","281,445","123,803",Main,Consumption LMIS
+COCs,Aug-25,"34,029",,"60,026",,"7,140","281,445","123,803",Main,Consumption LMIS
+COCs,Sept-25,"41,573",,"60,602",,"6,957","281,445","123,803",Main,Consumption LMIS
+COCs,Oct-25,"39,445",,"60,788",,"7,148","281,445","123,803",Main,Consumption LMIS
+COCs,Nov-25,"26,724",,"60,026",,"6,921","281,445","123,803",Main,Consumption LMIS
+COCs,Dec-25,"17,503",,"60,026",,"7,014","281,445","123,803",Main,Consumption LMIS
+COCs,Jan-26,,,"64,514",,"6,389","281,445","123,803",Main,Consumption LMIS
+COCs,Feb-26,,,"60,887",,"6,136","281,445","123,803",Main,Consumption LMIS
+COCs,Mar-26,,,"60,456",,"6,287","281,445","123,803",Main,Consumption LMIS
+COCs,Apr-26,,,"62,078",,"6,537","281,445","123,803",Main,Consumption LMIS
+COCs,May-26,,,"60,026",,"6,321","281,445","123,803",Main,Consumption LMIS
+COCs,Jun-26,,,"60,026",,"6,293","281,445","123,803",Main,Consumption LMIS
+,,,,,,,,,,
+DMPA-IM,Jul-23,195891,"217,170","216,721","208,037","227,074","287,552",,Main,Demographic
+DMPA-IM,Aug-23,208750,"217,170","225,710","208,037","227,875","287,552",,Main,Demographic
+DMPA-IM,Sept-23,206618,"217,170","231,246","208,037","228,703","287,552",,Main,Demographic
+DMPA-IM,Oct-23,192611,"217,170","240,201","208,037","229,505","287,552",,Main,Demographic
+DMPA-IM,Nov-23,200081,"217,170","246,518","208,037","230,333","287,552",,Main,Demographic
+DMPA-IM,Dec-23,202906,"217,170","247,744","208,037","231,162","287,552",,Main,Demographic
+DMPA-IM,Jan-24,217289,"217,170","259,281","208,037","231,963","287,552",,Main,Demographic
+DMPA-IM,Feb-24,191762,"217,170","264,568","208,037","232,791","287,552",,Main,Demographic
+DMPA-IM,Mar-24,207029,"217,170","268,515","208,037","233,593","287,552",,Main,Demographic
+DMPA-IM,Apr-24,200364,"217,170","274,568","208,037","234,421","287,552",,Main,Demographic
+DMPA-IM,May-24,220112,"217,170","279,460","208,037","235,249","287,552",,Main,Demographic
+DMPA-IM,Jun-24,212825,"217,170","287,913","208,037","236,024","287,552",,Main,Demographic
+,,,,,,,,,,
+DMPA-IM,Jul-24,"228,424","2,579,244","2,545,476","2,523,432","2,418,492","3,430,284",,Main,Consumption AI
+DMPA-IM,Aug-24,"216,668","2,579,244","2,545,476","2,523,432","2,418,492","3,430,284",,Main,Consumption AI
+DMPA-IM,Sept-24,"210,510","2,579,244","2,545,476","2,523,432","2,418,492","3,430,284",,Main,Consumption AI
+DMPA-IM,Oct-24,"218,819","2,579,244","2,545,476","2,523,432","2,418,492","3,430,284",,Main,Consumption AI
+DMPA-IM,Nov-24,"207,141","2,579,244","2,545,476","2,523,432","2,418,492","3,430,284",,Main,Consumption AI
+DMPA-IM,Dec-24,"202,942","2,579,244","2,545,476","2,523,432","2,418,492","3,430,284",,Main,Consumption AI
+DMPA-IM,Jan-25,"212,054","2,579,244","2,545,476","2,523,432","2,418,492","3,430,284",,Main,Consumption AI
+DMPA-IM,Feb-25,"183,451","2,579,244","2,545,476","2,523,432","2,418,492","3,430,284",,Main,Consumption AI
+DMPA-IM,Mar-25,"175,516","2,579,244","2,545,476","2,523,432","2,418,492","3,430,284",,Main,Consumption AI
+DMPA-IM,Apr-25,"207,478","2,579,244","2,545,476","2,523,432","2,418,492","3,430,284",,Main,Consumption AI
+DMPA-IM,May-25,"208,829","2,579,244","2,545,476","2,523,432","2,418,492","3,430,284",,Main,Consumption AI
+DMPA-IM,Jun-25,"171,417","2,579,244","2,545,476","2,523,432","2,418,492","3,430,284",,Main,Consumption AI
+,,,,,,,,,,
+DMPA-IM,Jul-24,"228,424","2,583,576","2,418,492","2,509,068","2,507,388","3,207,672",,Review,Consumption AI
+DMPA-IM,Aug-24,"216,668","2,583,576","2,418,492","2,509,068","2,507,388","3,207,672",,Review,Consumption AI
+DMPA-IM,Sept-24,"210,510","2,583,576","2,418,492","2,509,068","2,507,388","3,207,672",,Review,Consumption AI
+DMPA-IM,Oct-24,"218,819","2,583,576","2,418,492","2,509,068","2,507,388","3,207,672",,Review,Consumption AI
+DMPA-IM,Nov-24,"207,141","2,583,576","2,418,492","2,509,068","2,507,388","3,207,672",,Review,Consumption AI
+DMPA-IM,Dec-24,"202,942","2,583,576","2,418,492","2,509,068","2,507,388","3,207,672",,Review,Consumption AI
+DMPA-IM,Jan-25,"212,054","2,583,576","2,418,492","2,509,068","2,507,388","3,207,672",,Review,Consumption AI
+DMPA-IM,Feb-25,"183,451","2,583,576","2,418,492","2,509,068","2,507,388","3,207,672",,Review,Consumption AI
+DMPA-IM,Mar-25,"175,516","2,583,576","2,418,492","2,509,068","2,507,388","3,207,672",,Review,Consumption AI
+DMPA-IM,Apr-25,"207,478","2,583,576","2,418,492","2,509,068","2,507,388","3,207,672",,Review,Consumption AI
+DMPA-IM,May-25,"208,829","2,583,576","2,418,492","2,509,068","2,507,388","3,207,672",,Review,Consumption AI
+DMPA-IM,Jun-25,"171,417","2,583,576","2,418,492","2,509,068","2,507,388","3,207,672",,Review,Consumption AI
+,,,,,,,,,,
+DMPA-IM,Jul-25,"168,495",,"207,438",,"196,283","300,929",216901,Main,Consumption LMIS
+DMPA-IM,Aug-25,"157,570",,"207,727",,"199,207","300,929",216901,Main,Consumption LMIS
+DMPA-IM,Sept-25,"172,603",,"211,920",,"203,443","300,929",216901,Main,Consumption LMIS
+DMPA-IM,Oct-25,"158,034",,"209,605",,"201,357","300,929",216901,Main,Consumption LMIS
+DMPA-IM,Nov-25,"142,110",,"206,846",,"198,469","300,929",216901,Main,Consumption LMIS
+DMPA-IM,Dec-25,"123,485",,"212,060",,"204,791","300,929",216901,Main,Consumption LMIS
+DMPA-IM,Jan-26,,,"214,110",,"198,416","300,929",216901,Main,Consumption LMIS
+DMPA-IM,Feb-26,,,"203,448",,"188,675","300,929",216901,Main,Consumption LMIS
+DMPA-IM,Mar-26,,,"199,631",,"189,329","300,929",216901,Main,Consumption LMIS
+DMPA-IM,Apr-26,,,"208,776",,"198,266","300,929",216901,Main,Consumption LMIS
+DMPA-IM,May-26,,,"205,153",,"197,448","300,929",216901,Main,Consumption LMIS
+DMPA-IM,Jun-26,,,"207,711",,"195,918","300,929",216901,Main,Consumption LMIS
+,,,,,,,,,,
+DMPA-SC,Jul-23,18663,"4,301","5,145","2,141","1,976","71,888",,Main,Demographic
+DMPA-SC,Aug-23,24493,"4,301","5,231","2,141","2,040","71,888",,Main,Demographic
+DMPA-SC,Sept-23,29549,"4,301","5,320","2,141","2,087","71,888",,Main,Demographic
+DMPA-SC,Oct-23,33595,"4,301","5,406","2,141","2,100","71,888",,Main,Demographic
+DMPA-SC,Nov-23,36336,"4,301","5,495","2,141","2,184","71,888",,Main,Demographic
+DMPA-SC,Dec-23,37892,"4,301","5,584","2,141","2,222","71,888",,Main,Demographic
+DMPA-SC,Jan-24,48538,"4,301","5,670","2,141","2,275","71,888",,Main,Demographic
+DMPA-SC,Feb-24,46835,"4,301","5,759","2,141","2,349","71,888",,Main,Demographic
+DMPA-SC,Mar-24,43184,"4,301","5,845","2,141","2,402","71,888",,Main,Demographic
+DMPA-SC,Apr-24,42977,"4,301","5,934","2,141","2,438","71,888",,Main,Demographic
+DMPA-SC,May-24,49097,"4,301","6,023","2,141","2,496","71,888",,Main,Demographic
+DMPA-SC,Jun-24,47927,"4,301","6,106","2,141","2,555","71,888",,Main,Demographic
+,,,,,,,,,,
+DMPA-SC,Jul-24,"56,685","272,640","425,856","485,208","414,600","861,168",,Main,Demographic
+DMPA-SC,Aug-24,"58,686","272,640","425,856","485,208","414,600","861,168",,Main,Demographic
+DMPA-SC,Sept-24,"62,225","272,640","425,856","485,208","414,600","861,168",,Main,Demographic
+DMPA-SC,Oct-24,"67,348","272,640","425,856","485,208","414,600","861,168",,Main,Demographic
+DMPA-SC,Nov-24,"57,400","272,640","425,856","485,208","414,600","861,168",,Main,Demographic
+DMPA-SC,Dec-24,"54,771","272,640","425,856","485,208","414,600","861,168",,Main,Demographic
+DMPA-SC,Jan-25,"55,164","272,640","425,856","485,208","414,600","861,168",,Main,Demographic
+DMPA-SC,Feb-25,"48,725","272,640","425,856","485,208","414,600","861,168",,Main,Demographic
+DMPA-SC,Mar-25,"45,777","272,640","425,856","485,208","414,600","861,168",,Main,Demographic
+DMPA-SC,Apr-25,"44,680","272,640","425,856","485,208","414,600","861,168",,Main,Demographic
+DMPA-SC,May-25,"49,723","272,640","425,856","485,208","414,600","861,168",,Main,Demographic
+DMPA-SC,Jun-25,"56,461","272,640","425,856","485,208","414,600","861,168",,Main,Demographic
+,,,,,,,,,,
+DMPA-SC,Jul-24,"56,685","567,096","861,168","567,024","527,628","801,924",,Review,Demographic
+DMPA-SC,Aug-24,"58,686","567,096","861,168","567,024","527,628","801,924",,Review,Demographic
+DMPA-SC,Sept-24,"62,225","567,096","861,168","567,024","527,628","801,924",,Review,Demographic
+DMPA-SC,Oct-24,"67,348","567,096","861,168","567,024","527,628","801,924",,Review,Demographic
+DMPA-SC,Nov-24,"57,400","567,096","861,168","567,024","527,628","801,924",,Review,Demographic
+DMPA-SC,Dec-24,"54,771","567,096","861,168","567,024","527,628","801,924",,Review,Demographic
+DMPA-SC,Jan-25,"55,164","567,096","861,168","567,024","527,628","801,924",,Review,Demographic
+DMPA-SC,Feb-25,"48,725","567,096","861,168","567,024","527,628","801,924",,Review,Demographic
+DMPA-SC,Mar-25,"45,777","567,096","861,168","567,024","527,628","801,924",,Review,Demographic
+DMPA-SC,Apr-25,"44,680","567,096","861,168","567,024","527,628","801,924",,Review,Demographic
+DMPA-SC,May-25,"49,723","567,096","861,168","567,024","527,628","801,924",,Review,Demographic
+DMPA-SC,Jun-25,"56,461","567,096","861,168","567,024","527,628","801,924",,Review,Demographic
+,,,,,,,,,,
+DMPA-SC,Jul-25,"64,513",,"51,912",,"54,391","128,970","76,857",Main,Service AI
+DMPA-SC,Aug-25,"56,536",,"52,571",,"57,034","128,970","76,857",Main,Service AI
+DMPA-SC,Sept-25,"70,416",,"52,571",,"57,673","128,970","76,857",Main,Service AI
+DMPA-SC,Oct-25,"72,793",,"54,713",,"59,183","128,970","76,857",Main,Service AI
+DMPA-SC,Nov-25,"76,227",,"52,571",,"52,037","128,970","76,857",Main,Service AI
+DMPA-SC,Dec-25,"87,115",,"52,070",,"52,667","128,970","76,857",Main,Service AI
+DMPA-SC,Jan-26,,,"51,842",,"50,361","128,970","76,857",Main,Service AI
+DMPA-SC,Feb-26,,,"51,842",,"51,359","128,970","76,857",Main,Service AI
+DMPA-SC,Mar-26,,,"48,126",,"46,085","128,970","76,857",Main,Service AI
+DMPA-SC,Apr-26,,,"48,296",,"45,382","128,970","76,857",Main,Service AI
+DMPA-SC,May-26,,,"48,773",,"49,569","128,970","76,857",Main,Service AI
+DMPA-SC,Jun-26,,,"52,305",,"55,480","128,970","76,857",Main,Service AI
+,,,,,,,,,,
+Hormonal IUCD,Jul-23,1367,960,"1,616","4,248","1,526","2,645",,Main,Demographic
+Hormonal IUCD,Aug-23,873,960,"1,653","4,248","1,518","2,645",,Main,Demographic
+Hormonal IUCD,Sept-23,708,960,"1,646","4,248","1,522","2,645",,Main,Demographic
+Hormonal IUCD,Oct-23,743,960,"1,644","4,248","1,550","2,645",,Main,Demographic
+Hormonal IUCD,Nov-23,686,960,"1,696","4,248","1,617","2,645",,Main,Demographic
+Hormonal IUCD,Dec-23,486,960,"1,692","4,248","1,550","2,645",,Main,Demographic
+Hormonal IUCD,Jan-24,549,960,"1,705","4,248","1,620","2,645",,Main,Demographic
+Hormonal IUCD,Feb-24,796,960,"1,703","4,248","1,672","2,645",,Main,Demographic
+Hormonal IUCD,Mar-24,717,960,"1,773","4,248","1,697","2,645",,Main,Demographic
+Hormonal IUCD,Apr-24,666,960,"1,784","4,248","1,679","2,645",,Main,Demographic
+Hormonal IUCD,May-24,997,960,"1,785","4,248","1,755","2,645",,Main,Demographic
+Hormonal IUCD,Jun-24,702,960,"1,788","4,248","1,754","2,645",,Main,Demographic
+,,,,,,,,,,
+Hormonal IUCD,Jul-24,"1,082","9,768","15,492","44,496","9,372","11,976",,Main,Demographic
+Hormonal IUCD,Aug-24,"1,310","9,768","15,492","44,496","9,372","11,976",,Main,Demographic
+Hormonal IUCD,Sept-24,"1,403","9,768","15,492","44,496","9,372","11,976",,Main,Demographic
+Hormonal IUCD,Oct-24,"1,145","9,768","15,492","44,496","9,372","11,976",,Main,Demographic
+Hormonal IUCD,Nov-24,"1,044","9,768","15,492","44,496","9,372","11,976",,Main,Demographic
+Hormonal IUCD,Dec-24,876,"9,768","15,492","44,496","9,372","11,976",,Main,Demographic
+Hormonal IUCD,Jan-25,"1,104","9,768","15,492","44,496","9,372","11,976",,Main,Demographic
+Hormonal IUCD,Feb-25,"1,247","9,768","15,492","44,496","9,372","11,976",,Main,Demographic
+Hormonal IUCD,Mar-25,863,"9,768","15,492","44,496","9,372","11,976",,Main,Demographic
+Hormonal IUCD,Apr-25,874,"9,768","15,492","44,496","9,372","11,976",,Main,Demographic
+Hormonal IUCD,May-25,943,"9,768","15,492","44,496","9,372","11,976",,Main,Demographic
+Hormonal IUCD,Jun-25,"1,074","9,768","15,492","44,496","9,372","11,976",,Main,Demographic
+,,,,,,,,,,
+Hormonal IUCD,Jul-24,"1,082","15,648","11,976","11,172","38,340","2,328",,Review,Service AI
+Hormonal IUCD,Aug-24,"1,310","15,648","11,976","11,172","38,340","2,328",,Review,Service AI
+Hormonal IUCD,Sept-24,"1,403","15,648","11,976","11,172","38,340","2,328",,Review,Service AI
+Hormonal IUCD,Oct-24,"1,145","15,648","11,976","11,172","38,340","2,328",,Review,Service AI
+Hormonal IUCD,Nov-24,"1,044","15,648","11,976","11,172","38,340","2,328",,Review,Service AI
+Hormonal IUCD,Dec-24,876,"15,648","11,976","11,172","38,340","2,328",,Review,Service AI
+Hormonal IUCD,Jan-25,"1,104","15,648","11,976","11,172","38,340","2,328",,Review,Service AI
+Hormonal IUCD,Feb-25,"1,247","15,648","11,976","11,172","38,340","2,328",,Review,Service AI
+Hormonal IUCD,Mar-25,863,"15,648","11,976","11,172","38,340","2,328",,Review,Service AI
+Hormonal IUCD,Apr-25,874,"15,648","11,976","11,172","38,340","2,328",,Review,Service AI
+Hormonal IUCD,May-25,943,"15,648","11,976","11,172","38,340","2,328",,Review,Service AI
+Hormonal IUCD,Jun-25,"1,074","15,648","11,976","11,172","38,340","2,328",,Review,Service AI
+,,,,,,,,,,
+Hormonal IUCD,Jul-25,829,,"1,590",,"1,199",991,"4,037",Main,Demographic
+Hormonal IUCD,Aug-25,815,,"1,570",,"1,198",991,"4,037",Main,Demographic
+Hormonal IUCD,Sept-25,943,,"1,546",,"1,544",991,"4,037",Main,Demographic
+Hormonal IUCD,Oct-25,925,,"1,645",,"1,176",991,"4,037",Main,Demographic
+Hormonal IUCD,Nov-25,921,,"1,666",,"1,125",991,"4,037",Main,Demographic
+Hormonal IUCD,Dec-25,888,,"1,443",,955,991,"4,037",Main,Demographic
+Hormonal IUCD,Jan-26,,,"1,509",,975,991,"4,037",Main,Demographic
+Hormonal IUCD,Feb-26,,,"1,530",,"1,054",991,"4,037",Main,Demographic
+Hormonal IUCD,Mar-26,,,"1,497",,"1,144",991,"4,037",Main,Demographic
+Hormonal IUCD,Apr-26,,,"1,522",,987,991,"4,037",Main,Demographic
+Hormonal IUCD,May-26,,,"1,554",,"1,014",991,"4,037",Main,Demographic
+Hormonal IUCD,Jun-26,,,"1,575",,939,991,"4,037",Main,Demographic
+,,,,,,,,,,
+Non-Hormonal IUCD,Jul-23,6544,"7,426","7,407","7,043","6,383","18,848",,Main,Service AI
+Non-Hormonal IUCD,Aug-23,7209,"7,426","7,588","7,043","6,463","18,848",,Main,Service AI
+Non-Hormonal IUCD,Sept-23,6997,"7,426","7,666","7,043","8,536","18,848",,Main,Service AI
+Non-Hormonal IUCD,Oct-23,6987,"7,426","7,820","7,043","9,138","18,848",,Main,Service AI
+Non-Hormonal IUCD,Nov-23,6516,"7,426","8,160","7,043","6,694","18,848",,Main,Service AI
+Non-Hormonal IUCD,Dec-23,5348,"7,426","8,355","7,043","7,350","18,848",,Main,Service AI
+Non-Hormonal IUCD,Jan-24,6378,"7,426","8,349","7,043","6,658","18,848",,Main,Service AI
+Non-Hormonal IUCD,Feb-24,6837,"7,426","8,653","7,043","7,060","18,848",,Main,Service AI
+Non-Hormonal IUCD,Mar-24,6741,"7,426","8,971","7,043","5,129","18,848",,Main,Service AI
+Non-Hormonal IUCD,Apr-24,5430,"7,426","8,966","7,043","8,925","18,848",,Main,Service AI
+Non-Hormonal IUCD,May-24,6356,"7,426","9,310","7,043","7,980","18,848",,Main,Service AI
+Non-Hormonal IUCD,Jun-24,6573,"7,426","9,466","7,043","8,177","18,848",,Main,Service AI
+,,,,,,,,,,
+Non-Hormonal IUCD,Jul-24,"7,398","86,916","82,884","84,024","90,396","189,648",,Main,Consumption Excel
+Non-Hormonal IUCD,Aug-24,"7,054","86,916","82,884","84,024","90,396","189,648",,Main,Consumption Excel
+Non-Hormonal IUCD,Sept-24,"7,060","86,916","82,884","84,024","90,396","189,648",,Main,Consumption Excel
+Non-Hormonal IUCD,Oct-24,"7,249","86,916","82,884","84,024","90,396","189,648",,Main,Consumption Excel
+Non-Hormonal IUCD,Nov-24,"6,634","86,916","82,884","84,024","90,396","189,648",,Main,Consumption Excel
+Non-Hormonal IUCD,Dec-24,"5,707","86,916","82,884","84,024","90,396","189,648",,Main,Consumption Excel
+Non-Hormonal IUCD,Jan-25,"6,439","86,916","82,884","84,024","90,396","189,648",,Main,Consumption Excel
+Non-Hormonal IUCD,Feb-25,"6,244","86,916","82,884","84,024","90,396","189,648",,Main,Consumption Excel
+Non-Hormonal IUCD,Mar-25,"6,270","86,916","82,884","84,024","90,396","189,648",,Main,Consumption Excel
+Non-Hormonal IUCD,Apr-25,"6,021","86,916","82,884","84,024","90,396","189,648",,Main,Consumption Excel
+Non-Hormonal IUCD,May-25,"6,235","86,916","82,884","84,024","90,396","189,648",,Main,Consumption Excel
+Non-Hormonal IUCD,Jun-25,"5,730","86,916","82,884",,,,,,
+,,,,,,,,,,
+Non-Hormonal IUCD,Jul-24,"7,398","83,172","84,024","79,152","121,260","38,448",,Review,Consumption Excel
+Non-Hormonal IUCD,Aug-24,"7,054","83,172","84,024","79,152","121,260","38,448",,Review,Consumption Excel
+Non-Hormonal IUCD,Sept-24,"7,060","83,172","84,024","79,152","121,260","38,448",,Review,Consumption Excel
+Non-Hormonal IUCD,Oct-24,"7,249","83,172","84,024","79,152","121,260","38,448",,Review,Consumption Excel
+Non-Hormonal IUCD,Nov-24,"6,634","83,172","84,024","79,152","121,260","38,448",,Review,Consumption Excel
+Non-Hormonal IUCD,Dec-24,"5,707","83,172","84,024","79,152","121,260","38,448",,Review,Consumption Excel
+Non-Hormonal IUCD,Jan-25,"6,439","83,172","84,024","79,152","121,260","38,448",,Review,Consumption Excel
+Non-Hormonal IUCD,Feb-25,"6,244","83,172","84,024","79,152","121,260","38,448",,Review,Consumption Excel
+Non-Hormonal IUCD,Mar-25,"6,270","83,172","84,024","79,152","121,260","38,448",,Review,Consumption Excel
+Non-Hormonal IUCD,Apr-25,"6,021","83,172","84,024","79,152","121,260","38,448",,Review,Consumption Excel
+Non-Hormonal IUCD,May-25,"6,235","83,172","84,024","79,152","121,260","38,448",,Review,Consumption Excel
+Non-Hormonal IUCD,Jun-25,"5,730","83,172","84,024","79,152","121,260","38,448",,Review,Consumption Excel
+,,,,,,,,,,
+Non-Hormonal IUCD,Jul-25,"5,826",,"7,126",,"1,199","4,138","8,475",Main,Service AI
+Non-Hormonal IUCD,Aug-25,"5,172",,"7,151",,"1,198","4,138","8,475",Main,Service AI
+Non-Hormonal IUCD,Sept-25,"5,261",,"7,421",,"1,544","4,138","8,475",Main,Service AI
+Non-Hormonal IUCD,Oct-25,"5,174",,"7,216",,"1,176","4,138","8,475",Main,Service AI
+Non-Hormonal IUCD,Nov-25,"4,761",,"7,284",,"1,125","4,138","8,475",Main,Service AI
+Non-Hormonal IUCD,Dec-25,"4,039",,"6,552",,955,"4,138","8,475",Main,Service AI
+Non-Hormonal IUCD,Jan-26,,,"6,954",,975,"4,138","8,475",Main,Service AI
+Non-Hormonal IUCD,Feb-26,,,"7,093",,"1,054","4,138","8,475",Main,Service AI
+Non-Hormonal IUCD,Mar-26,,,"7,023",,"1,144","4,138","8,475",Main,Service AI
+Non-Hormonal IUCD,Apr-26,,,"6,746",,987,"4,138","8,475",Main,Service AI
+Non-Hormonal IUCD,May-26,,,"6,972",,"1,014","4,138","8,475",Main,Service AI
+Non-Hormonal IUCD,Jun-26,,,"6,740",,939,"4,138","8,475",Main,Service AI
+,,,,,,,,,,
+Female Condoms,Jul-23,31605,"309,848","221,224","23,093","27,998","16,119",,Main,Consumption AI
+Female Condoms,Aug-23,31418,"309,848","188,376","23,093","28,392","16,119",,Main,Consumption AI
+Female Condoms,Sept-23,27501,"309,848","216,745","23,093","29,043","16,119",,Main,Consumption AI
+Female Condoms,Oct-23,20329,"309,848","185,916","23,093","28,940","16,119",,Main,Consumption AI
+Female Condoms,Nov-23,90469,"309,848","132,698","23,093","28,767","16,119",,Main,Consumption AI
+Female Condoms,Dec-23,65297,"309,848","180,450","23,093","29,660","16,119",,Main,Consumption AI
+Female Condoms,Jan-24,49780,"309,848","216,518","23,093","28,615","16,119",,Main,Consumption AI
+Female Condoms,Feb-24,34297,"309,848","208,873","23,093","28,481","16,119",,Main,Consumption AI
+Female Condoms,Mar-24,45522,"309,848","179,817","23,093","28,790","16,119",,Main,Consumption AI
+Female Condoms,Apr-24,82948,"309,848","176,858","23,093","28,882","16,119",,Main,Consumption AI
+Female Condoms,May-24,23209,"309,848","173,933","23,093","28,817","16,119",,Main,Consumption AI
+Female Condoms,Jun-24,43800,"309,848","172,250","23,093","28,507","16,119",,Main,Consumption AI
+,,,,,,,,,,
+Female Condoms,Jul-24,"30,127","174,972","470,640","341,844","328,944","960,816",,Main,Service Excel
+Female Condoms,Aug-24,"24,858","174,972","470,640","341,844","328,944","960,816",,Main,Service Excel
+Female Condoms,Sept-24,"17,708","174,972","470,640","341,844","328,944","960,816",,Main,Service Excel
+Female Condoms,Oct-24,"47,864","174,972","470,640","341,844","328,944","960,816",,Main,Service Excel
+Female Condoms,Nov-24,"21,749","174,972","470,640","341,844","328,944","960,816",,Main,Service Excel
+Female Condoms,Dec-24,"37,328","174,972","470,640","341,844","328,944","960,816",,Main,Service Excel
+Female Condoms,Jan-25,"19,036","174,972","470,640","341,844","328,944","960,816",,Main,Service Excel
+Female Condoms,Feb-25,"25,764","174,972","470,640","341,844","328,944","960,816",,Main,Service Excel
+Female Condoms,Mar-25,"9,093","174,972","470,640","341,844","328,944","960,816",,Main,Service Excel
+Female Condoms,Apr-25,"18,109","174,972","470,640","341,844","328,944","960,816",,Main,Service Excel
+Female Condoms,May-25,"17,517","174,972","470,640","341,844","328,944","960,816",,Main,Service Excel
+Female Condoms,Jun-25,"11,896","174,972","470,640","341,844","328,944","960,816",,Main,Service Excel
+,,,,,,,,,,
+Female Condoms,Jul-24,"30,127","162,600","174,972","319,272","388,536","882,600",,Review,Consumption AI
+Female Condoms,Aug-24,"24,858","162,600","174,972","319,272","388,536","882,600",,Review,Consumption AI
+Female Condoms,Sept-24,"17,708","162,600","174,972","319,272","388,536","882,600",,Review,Consumption AI
+Female Condoms,Oct-24,"47,864","162,600","174,972","319,272","388,536","882,600",,Review,Consumption AI
+Female Condoms,Nov-24,"21,749","162,600","174,972","319,272","388,536","882,600",,Review,Consumption AI
+Female Condoms,Dec-24,"37,328","162,600","174,972","319,272","388,536","882,600",,Review,Consumption AI
+Female Condoms,Jan-25,"19,036","162,600","174,972","319,272","388,536","882,600",,Review,Consumption AI
+Female Condoms,Feb-25,"25,764","162,600","174,972","319,272","388,536","882,600",,Review,Consumption AI
+Female Condoms,Mar-25,"9,093","162,600","174,972","319,272","388,536","882,600",,Review,Consumption AI
+Female Condoms,Apr-25,"18,109","162,600","174,972","319,272","388,536","882,600",,Review,Consumption AI
+Female Condoms,May-25,"17,517","162,600","174,972","319,272","388,536","882,600",,Review,Consumption AI
+Female Condoms,Jun-25,"11,896","162,600","174,972","319,272","388,536","882,600",,Review,Consumption AI
+,,,,,,,,,,
+Female Condoms,Jul-25,"8,746",,"12,289",,"13,792","135,230","293,565",Main,Service AI
+Female Condoms,Aug-25,"15,015",,"11,510",,"12,408","135,230","293,565",Main,Service AI
+Female Condoms,Sept-25,"21,611",,"13,587",,"12,321","135,230","293,565",Main,Service AI
+Female Condoms,Oct-25,"28,057",,"11,396",,"14,422","135,230","293,565",Main,Service AI
+Female Condoms,Nov-25,"17,328",,"18,271",,"12,809","135,230","293,565",Main,Service AI
+Female Condoms,Dec-25,"18,120",,"13,624",,"19,610","135,230","293,565",Main,Service AI
+Female Condoms,Jan-26,,,"13,062",,"14,222","135,230","293,565",Main,Service AI
+Female Condoms,Feb-26,,,"12,813",,"14,182","135,230","293,565",Main,Service AI
+Female Condoms,Mar-26,,,"11,819",,"12,374","135,230","293,565",Main,Service AI
+Female Condoms,Apr-26,,,"11,512",,"13,655","135,230","293,565",Main,Service AI
+Female Condoms,May-26,,,"12,364",,"12,829","135,230","293,565",Main,Service AI
+Female Condoms,Jun-26,,,"12,960",,"14,006","135,230","293,565",Main,Service AI
+,,,,,,,,,,
+Male Condoms,Jul-23,2836230,"4,739,392","4,641,896","1,722,318","3,312,390","3,948,358",,Main,Demographic
+Male Condoms,Aug-23,2841063,"4,739,392","4,640,184","1,722,318","3,283,109","3,948,358",,Main,Demographic
+Male Condoms,Sept-23,3045910,"4,739,392","4,883,434","1,722,318","3,286,388","3,948,358",,Main,Demographic
+Male Condoms,Oct-23,3663415,"4,739,392","3,818,659","1,722,318","3,266,863","3,948,358",,Main,Demographic
+Male Condoms,Nov-23,2976722,"4,739,392","3,678,636","1,722,318","3,255,456","3,948,358",,Main,Demographic
+Male Condoms,Dec-23,3112028,"4,739,392","4,685,819","1,722,318","3,266,268","3,948,358",,Main,Demographic
+Male Condoms,Jan-24,3178418,"4,739,392","4,580,432","1,722,318","3,249,069","3,948,358",,Main,Demographic
+Male Condoms,Feb-24,3506458,"4,739,392","4,110,842","1,722,318","3,265,053","3,948,358",,Main,Demographic
+Male Condoms,Mar-24,2505489,"4,739,392","4,093,254","1,722,318","3,297,681","3,948,358",,Main,Demographic
+Male Condoms,Apr-24,2617195,"4,739,392","3,115,809","1,722,318","3,284,942","3,948,358",,Main,Demographic
+Male Condoms,May-24,3003823,"4,739,392","3,235,526","1,722,318","3,269,498","3,948,358",,Main,Demographic
+Male Condoms,Jun-24,2198161,"4,739,392","3,627,436","1,722,318","3,312,142","3,948,358",,Main,Demographic
+,,,,,,,,,,
+Male Condoms,Jul-24,"2,138,146","4,910,868","5,172,936","24,384,912","22,269,684","38,883,108",,Main,Demographic
+Male Condoms,Aug-24,"2,306,557","4,910,868","5,172,936","24,384,912","22,269,684","38,883,108",,Main,Demographic
+Male Condoms,Sept-24,"1,846,024","4,910,868","5,172,936","24,384,912","22,269,684","38,883,108",,Main,Demographic
+Male Condoms,Oct-24,"1,991,640","4,910,868","5,172,936","24,384,912","22,269,684","38,883,108",,Main,Demographic
+Male Condoms,Nov-24,"1,772,441","4,910,868","5,172,936","24,384,912","22,269,684","38,883,108",,Main,Demographic
+Male Condoms,Dec-24,"1,500,712","4,910,868","5,172,936","24,384,912","22,269,684","38,883,108",,Main,Demographic
+Male Condoms,Jan-25,"1,567,297","4,910,868","5,172,936","24,384,912","22,269,684","38,883,108",,Main,Demographic
+Male Condoms,Feb-25,"1,027,085","4,910,868","5,172,936","24,384,912","22,269,684","38,883,108",,Main,Demographic
+Male Condoms,Mar-25,"1,327,254","4,910,868","5,172,936","24,384,912","22,269,684","38,883,108",,Main,Demographic
+Male Condoms,Apr-25,"1,145,432","4,910,868","5,172,936","24,384,912","22,269,684","38,883,108",,Main,Demographic
+Male Condoms,May-25,"1,022,867","4,910,868","5,172,936","24,384,912","22,269,684","38,883,108",,Main,Demographic
+Male Condoms,Jun-25,"1,210,983","4,910,868","5,172,936","24,384,912","22,269,684","38,883,108",,Main,Demographic
+,,,,,,,,,,
+Male Condoms,Jul-24,"2,138,146","5,949,600","38,883,108","31,611,672","31,204,560","37,135,332",,Review,Demographic
+Male Condoms,Aug-24,"2,306,557","5,949,600","38,883,108","31,611,672","31,204,560","37,135,332",,Review,Demographic
+Male Condoms,Sept-24,"1,846,024","5,949,600","38,883,108","31,611,672","31,204,560","37,135,332",,Review,Demographic
+Male Condoms,Oct-24,"1,991,640","5,949,600","38,883,108","31,611,672","31,204,560","37,135,332",,Review,Demographic
+Male Condoms,Nov-24,"1,772,441","5,949,600","38,883,108","31,611,672","31,204,560","37,135,332",,Review,Demographic
+Male Condoms,Dec-24,"1,500,712","5,949,600","38,883,108","31,611,672","31,204,560","37,135,332",,Review,Demographic
+Male Condoms,Jan-25,"1,567,297","5,949,600","38,883,108","31,611,672","31,204,560","37,135,332",,Review,Demographic
+Male Condoms,Feb-25,"1,027,085","5,949,600","38,883,108","31,611,672","31,204,560","37,135,332",,Review,Demographic
+Male Condoms,Mar-25,"1,327,254","5,949,600","38,883,108","31,611,672","31,204,560","37,135,332",,Review,Demographic
+Male Condoms,Apr-25,"1,145,432","5,949,600","38,883,108","31,611,672","31,204,560","37,135,332",,Review,Demographic
+Male Condoms,May-25,"1,022,867","5,949,600","38,883,108","31,611,672","31,204,560","37,135,332",,Review,Demographic
+Male Condoms,Jun-25,"1,210,983","5,949,600","38,883,108","31,611,672","31,204,560","37,135,332",,Review,Demographic
+,,,,,,,,,,
+Male Condoms,Jul-25,"1,322,191",,"477,839",,"1,619,329","1,749,891",,Main,Consumption LMIS
+Male Condoms,Aug-25,"1,333,600",,"431,394",,"1,652,288","1,749,891",,Main,Consumption LMIS
+Male Condoms,Sept-25,"1,385,209",,"446,326",,"1,620,084","1,749,891",,Main,Consumption LMIS
+Male Condoms,Oct-25,"1,461,440",,"446,350",,"1,696,222","1,749,891",,Main,Consumption LMIS
+Male Condoms,Nov-25,"1,444,172",,"428,932",,"1,667,928","1,749,891",,Main,Consumption LMIS
+Male Condoms,Dec-25,"1,271,502",,"467,356",,"1,451,269","1,749,891",,Main,Consumption LMIS
+Male Condoms,Jan-26,,,"410,395",,"1,780,970","1,749,891",,Main,Consumption LMIS
+Male Condoms,Feb-26,,,"399,420",,"1,439,586","1,749,891",,Main,Consumption LMIS
+Male Condoms,Mar-26,,,"462,582",,"1,524,370","1,749,891",,Main,Consumption LMIS
+Male Condoms,Apr-26,,,"389,569",,"1,494,963","1,749,891",,Main,Consumption LMIS
+Male Condoms,May-26,,,"434,166",,"1,478,096","1,749,891",,Main,Consumption LMIS
+Male Condoms,Jun-26,,,"447,189",,"1,512,001","1,749,891",,Main,Consumption LMIS
+,,,,,,,,,,
+POPs,Jul-23,38358,"38,576","23,715","27,738","28,770","113,923",,Main,Consumption AI
+POPs,Aug-23,34444,"38,576","23,655","27,738","28,680","113,923",,Main,Consumption AI
+POPs,Sept-23,58079,"38,576","23,624","27,738","28,587","113,923",,Main,Consumption AI
+POPs,Oct-23,33313,"38,576","23,623","27,738","28,497","113,923",,Main,Consumption AI
+POPs,Nov-23,33021,"38,576","23,857","27,738","28,403","113,923",,Main,Consumption AI
+POPs,Dec-23,28857,"38,576","23,649","27,738","28,310","113,923",,Main,Consumption AI
+POPs,Jan-24,33768,"38,576","23,686","27,738","28,220","113,923",,Main,Consumption AI
+POPs,Feb-24,31093,"38,576","23,378","27,738","28,127","113,923",,Main,Consumption AI
+POPs,Mar-24,28780,"38,576","23,671","27,738","28,036","113,923",,Main,Consumption AI
+POPs,Apr-24,31501,"38,576","23,829","27,738","27,943","113,923",,Main,Consumption AI
+POPs,May-24,32637,"38,576","23,727","27,738","27,850","113,923",,Main,Consumption AI
+POPs,Jun-24,30390,"38,576","23,573","27,738","27,763","113,923",,Main,Consumption AI
+,,,,,,,,,,
+POPs,Jul-24,"34,514","421,020","325,680","358,872","329,232","1,535,664",,Main,Consumption Excel
+POPs,Aug-24,"31,825","421,020","325,680","358,872","329,232","1,535,664",,Main,Consumption Excel
+POPs,Sept-24,"26,070","421,020","325,680","358,872","329,232","1,535,664",,Main,Consumption Excel
+POPs,Oct-24,"30,346","421,020","325,680","358,872","329,232","1,535,664",,Main,Consumption Excel
+POPs,Nov-24,"24,661","421,020","325,680","358,872","329,232","1,535,664",,Main,Consumption Excel
+POPs,Dec-24,"22,726","421,020","325,680","358,872","329,232","1,535,664",,Main,Consumption Excel
+POPs,Jan-25,"25,802","421,020","325,680","358,872","329,232","1,535,664",,Main,Consumption Excel
+POPs,Feb-25,"23,900","421,020","325,680","358,872","329,232","1,535,664",,Main,Consumption Excel
+POPs,Mar-25,"22,039","421,020","325,680","358,872","329,232","1,535,664",,Main,Consumption Excel
+POPs,Apr-25,"24,204","421,020","325,680","358,872","329,232","1,535,664",,Main,Consumption Excel
+POPs,May-25,"27,040","421,020","325,680","358,872","329,232","1,535,664",,Main,Consumption Excel
+POPs,Jun-25,"24,770","421,020","325,680","358,872","329,232","1,535,664",,Main,Consumption Excel
+,,,,,,,,,,
+POPs,Jul-24,"34,514","245,112","358,872","360,336","378,792","1,197,828",,Review,Consumption AI
+POPs,Aug-24,"31,825","245,112","358,872","360,336","378,792","1,197,828",,Review,Consumption AI
+POPs,Sept-24,"26,070","245,112","358,872","360,336","378,792","1,197,828",,Review,Consumption AI
+POPs,Oct-24,"30,346","245,112","358,872","360,336","378,792","1,197,828",,Review,Consumption AI
+POPs,Nov-24,"24,661","245,112","358,872","360,336","378,792","1,197,828",,Review,Consumption AI
+POPs,Dec-24,"22,726","245,112","358,872","360,336","378,792","1,197,828",,Review,Consumption AI
+POPs,Jan-25,"25,802","245,112","358,872","360,336","378,792","1,197,828",,Review,Consumption AI
+POPs,Feb-25,"23,900","245,112","358,872","360,336","378,792","1,197,828",,Review,Consumption AI
+POPs,Mar-25,"22,039","245,112","358,872","360,336","378,792","1,197,828",,Review,Consumption AI
+POPs,Apr-25,"24,204","245,112","358,872","360,336","378,792","1,197,828",,Review,Consumption AI
+POPs,May-25,"27,040","245,112","358,872","360,336","378,792","1,197,828",,Review,Consumption AI
+POPs,Jun-25,"24,770","245,112","358,872","360,336","378,792","1,197,828",,Review,Consumption AI
+,,,,,,,,,,
+POPs,Jul-25,"25,474",,"9,647",,"27,723","56,289","40,151",Main,Service AI
+POPs,Aug-25,"24,191",,"9,538",,"23,260","56,289","40,151",Main,Service AI
+POPs,Sept-25,"24,980",,"9,815",,"22,844","56,289","40,151",Main,Service AI
+POPs,Oct-25,"28,616",,"9,796",,"25,518","56,289","40,151",Main,Service AI
+POPs,Nov-25,"22,971",,"9,379",,"23,960","56,289","40,151",Main,Service AI
+POPs,Dec-25,"23,880",,"9,548",,"23,755","56,289","40,151",Main,Service AI
+POPs,Jan-26,,,"9,488",,"25,778","56,289","40,151",Main,Service AI
+POPs,Feb-26,,,"9,259",,"24,135","56,289","40,151",Main,Service AI
+POPs,Mar-26,,,"9,285",,"22,964","56,289","40,151",Main,Service AI
+POPs,Apr-26,,,"9,432",,"25,076","56,289","40,151",Main,Service AI
+POPs,May-26,,,"9,354",,"24,266","56,289","40,151",Main,Service AI
+POPs,Jun-26,,,"9,346",,"24,191","56,289","40,151",Main,Service AI
+,,,,,,,,,,
+Jadelle,Jul-23,39305,"26,302","40,560","28,610","29,889","39,306",,Main,Consumption AI
+Jadelle,Aug-23,45952,"26,302","41,370","28,610","29,963","39,306",,Main,Consumption AI
+Jadelle,Sept-23,43131,"26,302","42,206","28,610","29,515","39,306",,Main,Consumption AI
+Jadelle,Oct-23,42827,"26,302","43,016","28,610","29,367","39,306",,Main,Consumption AI
+Jadelle,Nov-23,40368,"26,302","43,852","28,610","29,210","39,306",,Main,Consumption AI
+Jadelle,Dec-23,36195,"26,302","44,688","28,610","28,856","39,306",,Main,Consumption AI
+Jadelle,Jan-24,42587,"26,302","45,498","28,610","28,466","39,306",,Main,Consumption AI
+Jadelle,Feb-24,39925,"26,302","46,334","28,610","28,272","39,306",,Main,Consumption AI
+Jadelle,Mar-24,36923,"26,302","47,143","28,610","28,136","39,306",,Main,Consumption AI
+Jadelle,Apr-24,33995,"26,302","47,980","28,610","27,804","39,306",,Main,Consumption AI
+Jadelle,May-24,36880,"26,302","48,817","28,610","27,496","39,306",,Main,Consumption AI
+Jadelle,Jun-24,37214,"26,302","49,599","28,610","27,232","39,306",,Main,Consumption AI
+,,,,,,,,,,
+Jadelle,Jul-24,"43,185","412,704","412,704","453,240","454,116","562,260",,Main,Consumption AI
+Jadelle,Aug-24,"43,880","412,704","412,704","453,240","454,116","562,260",,Main,Consumption AI
+Jadelle,Sept-24,"44,338","412,704","412,704","453,240","454,116","562,260",,Main,Consumption AI
+Jadelle,Oct-24,"44,169","412,704","412,704","453,240","454,116","562,260",,Main,Consumption AI
+Jadelle,Nov-24,"39,655","412,704","412,704","453,240","454,116","562,260",,Main,Consumption AI
+Jadelle,Dec-24,"33,483","412,704","412,704","453,240","454,116","562,260",,Main,Consumption AI
+Jadelle,Jan-25,"37,641","412,704","412,704","453,240","454,116","562,260",,Main,Consumption AI
+Jadelle,Feb-25,"35,981","412,704","412,704","453,240","454,116","562,260",,Main,Consumption AI
+Jadelle,Mar-25,"32,192","412,704","412,704","453,240","454,116","562,260",,Main,Consumption AI
+Jadelle,Apr-25,"30,190","412,704","412,704","453,240","454,116","562,260",,Main,Consumption AI
+Jadelle,May-25,"27,142","412,704","412,704","453,240","454,116","562,260",,Main,Consumption AI
+Jadelle,Jun-25,"25,920","412,704","412,704","453,240","454,116","562,260",,Main,Consumption AI
+,,,,,,,,,,
+Jadelle,Jul-24,"43,185","485,700","454,116","478,164","461,964","137,400",,Review,Consumption AI
+Jadelle,Aug-24,"43,880","485,700","454,116","478,164","461,964","137,400",,Review,Consumption AI
+Jadelle,Sept-24,"44,338","485,700","454,116","478,164","461,964","137,400",,Review,Consumption AI
+Jadelle,Oct-24,"44,169","485,700","454,116","478,164","461,964","137,400",,Review,Consumption AI
+Jadelle,Nov-24,"39,655","485,700","454,116","478,164","461,964","137,400",,Review,Consumption AI
+Jadelle,Dec-24,"33,483","485,700","454,116","478,164","461,964","137,400",,Review,Consumption AI
+Jadelle,Jan-25,"37,641","485,700","454,116","478,164","461,964","137,400",,Review,Consumption AI
+Jadelle,Feb-25,"35,981","485,700","454,116","478,164","461,964","137,400",,Review,Consumption AI
+Jadelle,Mar-25,"32,192","485,700","454,116","478,164","461,964","137,400",,Review,Consumption AI
+Jadelle,Apr-25,"30,190","485,700","454,116","478,164","461,964","137,400",,Review,Consumption AI
+Jadelle,May-25,"27,142","485,700","454,116","478,164","461,964","137,400",,Review,Consumption AI
+Jadelle,Jun-25,"25,920","485,700","454,116","478,164","461,964","137,400",,Review,Consumption AI
+,,,,,,,,,,
+Jadelle,Jul-25,"34,314",,"40,170",,"35,846","17,221","44,598",Main,Service AI
+Jadelle,Aug-25,"35,421",,"40,708",,"37,923","17,221","44,598",Main,Service AI
+Jadelle,Sept-25,"36,693",,"40,450",,"38,056","17,221","44,598",Main,Service AI
+Jadelle,Oct-25,"31,970",,"40,576",,"36,929","17,221","44,598",Main,Service AI
+Jadelle,Nov-25,"31,296",,"39,655",,"35,332","17,221","44,598",Main,Service AI
+Jadelle,Dec-25,"29,699",,"35,785",,"32,824","17,221","44,598",Main,Service AI
+Jadelle,Jan-26,,,"39,164",,"33,630","17,221","44,598",Main,Service AI
+Jadelle,Feb-26,,,"38,552",,"32,052","17,221","44,598",Main,Service AI
+Jadelle,Mar-26,,,"38,366",,"31,603","17,221","44,598",Main,Service AI
+Jadelle,Apr-26,,,"36,513",,"30,391","17,221","44,598",Main,Service AI
+Jadelle,May-26,,,"36,366",,"30,235","17,221","44,598",Main,Service AI
+Jadelle,Jun-26,,,"36,621",,"31,135","17,221","44,598",Main,Service AI
+,,,,,,,,,,
+Levoplant,Jul-23,10493,"18,927","15,774","18,376","14,945","15,722",,Main,Consumption AI
+Levoplant,Aug-23,12763,"18,927","16,088","18,376","20,735","15,722",,Main,Consumption AI
+Levoplant,Sept-23,11768,"18,927","16,414","18,376","18,962","15,722",,Main,Consumption AI
+Levoplant,Oct-23,12263,"18,927","16,728","18,376","19,803","15,722",,Main,Consumption AI
+Levoplant,Nov-23,13288,"18,927","17,054","18,376","20,797","15,722",,Main,Consumption AI
+Levoplant,Dec-23,11512,"18,927","17,379","18,376","18,427","15,722",,Main,Consumption AI
+Levoplant,Jan-24,12962,"18,927","17,693","18,376","21,266","15,722",,Main,Consumption AI
+Levoplant,Feb-24,12385,"18,927","18,019","18,376","19,206","15,722",,Main,Consumption AI
+Levoplant,Mar-24,10854,"18,927","18,334","18,376","21,095","15,722",,Main,Consumption AI
+Levoplant,Apr-24,9653,"18,927","18,659","18,376","13,717","15,722",,Main,Consumption AI
+Levoplant,May-24,8982,"18,927","18,984","18,376","12,509","15,722",,Main,Consumption AI
+Levoplant,Jun-24,8970,"18,927","19,289","18,376","13,402","15,722",,Main,Consumption AI
+,,,,,,,,,,
+Levoplant,Jul-24,"10,623","149,004",,"163,632","167,124","224,904",,Main,Consumption Excel
+Levoplant,Aug-24,"10,111","149,004",,"163,632","167,124","224,904",,Main,Consumption Excel
+Levoplant,Sept-24,"9,763","149,004",,"163,632","167,124","224,904",,Main,Consumption Excel
+Levoplant,Oct-24,"10,689","149,004",,"163,632","167,124","224,904",,Main,Consumption Excel
+Levoplant,Nov-24,"8,736","149,004",,"163,632","167,124","224,904",,Main,Consumption Excel
+Levoplant,Dec-24,"8,383","149,004",,"163,632","167,124","224,904",,Main,Consumption Excel
+Levoplant,Jan-25,"8,938","149,004",,"163,632","167,124","224,904",,Main,Consumption Excel
+Levoplant,Feb-25,"10,548","149,004",,"163,632","167,124","224,904",,Main,Consumption Excel
+Levoplant,Mar-25,"11,694","149,004",,"163,632","167,124","224,904",,Main,Consumption Excel
+Levoplant,Apr-25,"10,986","149,004",,"163,632","167,124","224,904",,Main,Consumption Excel
+Levoplant,May-25,"10,319","149,004",,"163,632","167,124","224,904",,Main,Consumption Excel
+Levoplant,Jun-25,"8,940","149,004",,"163,632","167,124","224,904",,Main,Consumption Excel
+,,,,,,,,,,
+Levoplant,Jul-24,"10,623","136,992","163,632","131,424","167,772","83,544",,Review,Consumption AI
+Levoplant,Aug-24,"10,111","136,992","163,632","131,424","167,772","83,544",,Review,Consumption AI
+Levoplant,Sept-24,"9,763","136,992","163,632","131,424","167,772","83,544",,Review,Consumption AI
+Levoplant,Oct-24,"10,689","136,992","163,632","131,424","167,772","83,544",,Review,Consumption AI
+Levoplant,Nov-24,"8,736","136,992","163,632","131,424","167,772","83,544",,Review,Consumption AI
+Levoplant,Dec-24,"8,383","136,992","163,632","131,424","167,772","83,544",,Review,Consumption AI
+Levoplant,Jan-25,"8,938","136,992","163,632","131,424","167,772","83,544",,Review,Consumption AI
+Levoplant,Feb-25,"10,548","136,992","163,632","131,424","167,772","83,544",,Review,Consumption AI
+Levoplant,Mar-25,"11,694","136,992","163,632","131,424","167,772","83,544",,Review,Consumption AI
+Levoplant,Apr-25,"10,986","136,992","163,632","131,424","167,772","83,544",,Review,Consumption AI
+Levoplant,May-25,"10,319","136,992","163,632","131,424","167,772","83,544",,Review,Consumption AI
+Levoplant,Jun-25,"8,940","136,992","163,632","131,424","167,772","83,544",,Review,Consumption AI
+,,,,,,,,,,
+Levoplant,Jul-25,"6,699",,"8,913",,"9,408","10,470","19,885",Main,Consumption LMIS
+Levoplant,Aug-25,"6,884",,"9,043",,"9,814","10,470","19,885",Main,Consumption LMIS
+Levoplant,Sept-25,"7,559",,"8,885",,"9,418","10,470","19,885",Main,Consumption LMIS
+Levoplant,Oct-25,"8,021",,"8,927",,"8,724","10,470","19,885",Main,Consumption LMIS
+Levoplant,Nov-25,"7,453",,"8,789",,"8,963","10,470","19,885",Main,Consumption LMIS
+Levoplant,Dec-25,"6,773",,"7,880",,"8,310","10,470","19,885",Main,Consumption LMIS
+Levoplant,Jan-26,,,"8,640",,"10,876","10,470","19,885",Main,Consumption LMIS
+Levoplant,Feb-26,,,"8,470",,"10,789","10,470","19,885",Main,Consumption LMIS
+Levoplant,Mar-26,,,"8,457",,"11,154","10,470","19,885",Main,Consumption LMIS
+Levoplant,Apr-26,,,"8,075",,"8,724","10,470","19,885",Main,Consumption LMIS
+Levoplant,May-26,,,"8,040",,"9,947","10,470","19,885",Main,Consumption LMIS
+Levoplant,Jun-26,,,"7,988",,"8,892","10,470","19,885",Main,Consumption LMIS
+,,,,,,,,,,
+Cycle Beads,Jul-23,"1,280",,341,648,277,3226,,Main,Demographic
+Cycle Beads,Aug-23,128,,227,648,280,3226,,Main,Demographic
+Cycle Beads,Sept-23,118,,363,648,266,3226,,Main,Demographic
+Cycle Beads,Oct-23,"1,573",,101,648,273,3226,,Main,Demographic
+Cycle Beads,Nov-23,134,,673,648,274,3226,,Main,Demographic
+Cycle Beads,Dec-23,"1,001",,243,648,272,3226,,Main,Demographic
+Cycle Beads,Jan-24,163,,203,648,280,3226,,Main,Demographic
+Cycle Beads,Feb-24,104,,246,648,274,3226,,Main,Demographic
+Cycle Beads,Mar-24,144,,261,648,277,3226,,Main,Demographic
+Cycle Beads,Apr-24,105,,430,648,275,3226,,Main,Demographic
+Cycle Beads,May-24,105,,188,648,274,3226,,Main,Demographic
+Cycle Beads,Jun-24,86,,270,648,265,3226,,Main,Demographic
+,,,,,,,,,,
+Cycle Beads,Jul-24,69,"2,388","3,492","2,280","8,784","26,088",,Main,Demographic
+Cycle Beads,Aug-24,124,"2,388","3,492","2,280","8,784","26,088",,Main,Demographic
+Cycle Beads,Sept-24,55,"2,388","3,492","2,280","8,784","26,088",,Main,Demographic
+Cycle Beads,Oct-24,105,"2,388","3,492","2,280","8,784","26,088",,Main,Demographic
+Cycle Beads,Nov-24,52,"2,388","3,492","2,280","8,784","26,088",,Main,Demographic
+Cycle Beads,Dec-24,102,"2,388","3,492","2,280","8,784","26,088",,Main,Demographic
+Cycle Beads,Jan-25,76,"2,388","3,492","2,280","8,784","26,088",,Main,Demographic
+Cycle Beads,Feb-25,114,"2,388","3,492","2,280","8,784","26,088",,Main,Demographic
+Cycle Beads,Mar-25,39,"2,388","3,492","2,280","8,784","26,088",,Main,Demographic
+Cycle Beads,Apr-25,79,"2,388","3,492","2,280","8,784","26,088",,Main,Demographic
+Cycle Beads,May-25,69,"2,388","3,492","2,280","8,784","26,088",,Main,Demographic
+Cycle Beads,Jun-25,109,"2,388","3,492","2,280","8,784","26,088",,Main,Demographic
+,,,,,,,,,,
+Cycle Beads,Jul-24,69,,"26,088","2,700","3,060","25,692",,Review,Demographic
+Cycle Beads,Aug-24,124,,"26,088","2,700","3,060","25,692",,Review,Demographic
+Cycle Beads,Sept-24,55,,"26,088","2,700","3,060","25,692",,Review,Demographic
+Cycle Beads,Oct-24,105,,"26,088","2,700","3,060","25,692",,Review,Demographic
+Cycle Beads,Nov-24,52,,"26,088","2,700","3,060","25,692",,Review,Demographic
+Cycle Beads,Dec-24,102,,"26,088","2,700","3,060","25,692",,Review,Demographic
+Cycle Beads,Jan-25,76,,"26,088","2,700","3,060","25,692",,Review,Demographic
+Cycle Beads,Feb-25,114,,"26,088","2,700","3,060","25,692",,Review,Demographic
+Cycle Beads,Mar-25,39,,"26,088","2,700","3,060","25,692",,Review,Demographic
+Cycle Beads,Apr-25,79,,"26,088","2,700","3,060","25,692",,Review,Demographic
+Cycle Beads,May-25,69,,"26,088","2,700","3,060","25,692",,Review,Demographic
+Cycle Beads,Jun-25,109,,"26,088","2,700","3,060","25,692",,Review,Demographic
+,,,,,,,,,,
+Cycle Beads,Jul-25,34,,102,,87,"3,734","13,729",Main,Demographic
+Cycle Beads,Aug-25,38,,70,,110,"3,734","13,729",Main,Demographic
+Cycle Beads,Sept-25,29,,73,,61,"3,734","13,729",Main,Demographic
+Cycle Beads,Oct-25,38,,111,,86,"3,734","13,729",Main,Demographic
+Cycle Beads,Nov-25,100,,74,,62,"3,734","13,729",Main,Demographic
+Cycle Beads,Dec-25,375,,80,,91,"3,734","13,729",Main,Demographic
+Cycle Beads,Jan-26,,,136,,70,"3,734","13,729",Main,Demographic
+Cycle Beads,Feb-26,,,50,,104,"3,734","13,729",Main,Demographic
+Cycle Beads,Mar-26,,,49,,64,"3,734","13,729",Main,Demographic
+Cycle Beads,Apr-26,,,99,,84,"3,734","13,729",Main,Demographic
+Cycle Beads,May-26,,,57,,72,"3,734","13,729",Main,Demographic
+Cycle Beads,Jun-26,,,93,,103,"3,734","13,729",Main,Demographic
