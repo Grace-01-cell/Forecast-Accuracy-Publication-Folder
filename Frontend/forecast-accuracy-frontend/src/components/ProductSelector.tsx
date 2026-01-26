@@ -24,7 +24,7 @@ const ProductSelector: React.FC<ProductSelectorProps> = ({
         onChange={(e) => onChange(e.target.value)}
         disabled={loading}
       >
-        <option value="">
+        <option value="" disabled hidden>
           {loading ? "Loading products..." : "Choose a product"}
         </option>
 

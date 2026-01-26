@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 
 export interface ThreeYearResultRow {
   fy: string;
@@ -6,17 +6,32 @@ export interface ThreeYearResultRow {
   bias: number;
   rmse: number;
   mape: number;
-  count: number;
+  count: number; // months
 }
 
 interface ThreeYearTableProps {
   results: ThreeYearResultRow[];
 }
 
+const fmt = (n: number, dp = 2) =>
+  Number.isFinite(n)
+    ? n.toLocaleString(undefined, { maximumFractionDigits: dp })
+    : "—";
+
 const ThreeYearTable: React.FC<ThreeYearTableProps> = ({ results }) => {
   if (!results || results.length === 0) return null;
 
-  const minRmse = Math.min(...results.map((r) => r.rmse));
+  const { full, partial } = useMemo(() => {
+    const fullYears = results.filter((r) => (r.count ?? 0) >= 12);
+    const partialYears = results.filter((r) => (r.count ?? 0) > 0 && (r.count ?? 0) < 12);
+
+    fullYears.sort((a, b) => a.fy.localeCompare(b.fy));
+    partialYears.sort((a, b) => a.fy.localeCompare(b.fy));
+
+    return { full: fullYears, partial: partialYears };
+  }, [results]);
+
+  const minRmseFull = full.length ? Math.min(...full.map((r) => r.rmse)) : NaN;
 
   return (
     <table className="metric-table">
@@ -30,20 +45,43 @@ const ThreeYearTable: React.FC<ThreeYearTableProps> = ({ results }) => {
           <th>N</th>
         </tr>
       </thead>
+
       <tbody>
-        {results.map((r) => (
+        {full.map((r) => (
           <tr key={r.fy}>
             <td>{r.fy}</td>
             <td>{r.method_name}</td>
-            <td>{r.bias.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+            <td>{fmt(r.bias, 2)}</td>
             <td>
-              {r.rmse.toLocaleString(undefined, { maximumFractionDigits: 2 })}
-              {r.rmse === minRmse && " "}
+              {fmt(r.rmse, 2)}
+              {r.rmse === minRmseFull ? " ★" : ""}
             </td>
-            <td>{r.mape.toLocaleString(undefined, { maximumFractionDigits: 2 })}</td>
+            <td>{fmt(r.mape, 2)}</td>
             <td>{r.count}</td>
           </tr>
         ))}
+
+        {partial.length > 0 && (
+          <>
+            <tr>
+              <td colSpan={6} style={{ paddingTop: 14, fontWeight: 700, color: "#334155" }}>
+                Partial year (not included in full-year comparison)
+              </td>
+            </tr>
+            {partial.map((r) => (
+              <tr key={r.fy}>
+                <td>{r.fy}</td>
+                <td>
+                  {r.method_name} <span style={{ color: "#64748b" }}>(Partial)</span>
+                </td>
+                <td>{fmt(r.bias, 2)}</td>
+                <td>{fmt(r.rmse, 2)}</td>
+                <td>{fmt(r.mape, 2)}</td>
+                <td>{r.count}</td>
+              </tr>
+            ))}
+          </>
+        )}
       </tbody>
     </table>
   );

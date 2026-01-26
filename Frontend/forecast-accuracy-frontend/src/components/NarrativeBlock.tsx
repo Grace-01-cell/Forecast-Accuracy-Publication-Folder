@@ -1,5 +1,4 @@
-import React from "react";
-
+import React, { useMemo } from "react";
 import type { ThreeYearResultRow } from "./ThreeYearTable";
 
 interface NarrativeBlockProps {
@@ -7,73 +6,75 @@ interface NarrativeBlockProps {
   results: ThreeYearResultRow[];
 }
 
-const NarrativeBlock: React.FC<NarrativeBlockProps> = ({
-  productName,
-  results,
-}) => {
+const fmt = (n: number, dp = 2) =>
+  Number.isFinite(n)
+    ? n.toLocaleString(undefined, { maximumFractionDigits: dp })
+    : "—";
+
+function direction(from: number, to: number) {
+  if (!Number.isFinite(from) || !Number.isFinite(to)) return "changed";
+  if (to > from) return "increased";
+  if (to < from) return "decreased";
+  return "stayed about the same";
+}
+
+const NarrativeBlock: React.FC<NarrativeBlockProps> = ({ productName, results }) => {
   if (!results || results.length === 0) return null;
 
-  const sorted = [...results].sort((a, b) => a.fy.localeCompare(b.fy));
-  const first = sorted[0];
-  const last = sorted[sorted.length - 1];
+  const { full, partial } = useMemo(() => {
+    const fullYears = results.filter((r) => (r.count ?? 0) >= 12).sort((a, b) => a.fy.localeCompare(b.fy));
+    const partialYears = results.filter((r) => (r.count ?? 0) > 0 && (r.count ?? 0) < 12).sort((a, b) => a.fy.localeCompare(b.fy));
+    return { full: fullYears, partial: partialYears };
+  }, [results]);
 
-  const rmseChange = last.rmse - first.rmse;
-  const mapeChange = last.mape - first.mape;
+  if (full.length < 2) {
+    return (
+      <div className="narrative-block">
+        <h3>Interpretation</h3>
+        <p style={{ marginBottom: 0 }}>
+          Not enough full-year data to make a fair comparison yet.
+        </p>
+        {partial.length > 0 && (
+          <p style={{ color: "#64748b", marginTop: 8 }}>
+            FY25/26 is partial ({partial[0].count} months), so treat it cautiously.
+          </p>
+        )}
+      </div>
+    );
+  }
 
-  let directionRmse = "";
-  if (rmseChange < 0) directionRmse = "decreased";
-  else if (rmseChange > 0) directionRmse = "increased";
-  else directionRmse = "stayed roughly the same";
+  const first = full[0];
+  const last = full[full.length - 1];
 
-  let directionMape = "";
-  if (mapeChange < 0) directionMape = "decreased";
-  else if (mapeChange > 0) directionMape = "increased";
-  else directionMape = "stayed roughly the same";
+  const rmseDir = direction(first.rmse, last.rmse);
+  const mapeDir = direction(first.mape, last.mape);
 
-  const biasCloserToZero =
-    Math.abs(last.bias) < Math.abs(first.bias) ? "moved closer to zero" : "did not consistently move closer to zero";
+  const biasDir =
+    Math.abs(last.bias) < Math.abs(first.bias)
+      ? "closer to zero"
+      : "not closer to zero";
 
   return (
     <div className="narrative-block">
       <h3>Interpretation</h3>
-      <p>
-        For <strong>{productName}</strong>, forecast accuracy across{" "}
-        <strong>{sorted.map((r) => r.fy).join(", ")}</strong> shows that RMSE{" "}
-        <strong>{directionRmse}</strong> from{" "}
-        <strong>
-          {first.rmse.toLocaleString(undefined, { maximumFractionDigits: 2 })}
-        </strong>{" "}
-        in {first.fy} to{" "}
-        <strong>
-          {last.rmse.toLocaleString(undefined, { maximumFractionDigits: 2 })}
-        </strong>{" "}
-        in {last.fy}.
+
+      <p style={{ marginBottom: 8 }}>
+        For <strong>{productName}</strong>, comparing full financial years{" "}
+        <strong>{full.map((r) => r.fy).join(" vs ")}</strong>: RMSE{" "}
+        <strong>{rmseDir}</strong> (from <strong>{fmt(first.rmse, 2)}</strong> to{" "}
+        <strong>{fmt(last.rmse, 2)}</strong>).
       </p>
-      <p>
-        Over the same period, MAPE <strong>{directionMape}</strong> from{" "}
-        <strong>
-          {first.mape.toLocaleString(undefined, { maximumFractionDigits: 2 })}
-          %
-        </strong>{" "}
-        to{" "}
-        <strong>
-          {last.mape.toLocaleString(undefined, { maximumFractionDigits: 2 })}
-          %
-        </strong>
-        .
+
+      <p style={{ marginBottom: 8 }}>
+        MAPE <strong>{mapeDir}</strong> (from <strong>{fmt(first.mape, 2)}%</strong>{" "}
+        to <strong>{fmt(last.mape, 2)}%</strong>). Bias is <strong>{biasDir}</strong>.
       </p>
-      <p>
-        Bias has <strong>{biasCloserToZero}</strong>, indicating that forecasts{" "}
-        {biasCloserToZero === "moved closer to zero"
-          ? "have become better centered around actual demand."
-          : "still exhibit some systematic over- or under-forecasting."}
-      </p>
-      <p>
-        The adopted methods changed from{" "}
-        <strong>{first.method_name}</strong> in {first.fy} to{" "}
-        <strong>{last.method_name}</strong> in {last.fy}, which may have
-        contributed to the observed changes in accuracy.
-      </p>
+
+      {partial.length > 0 && (
+        <p style={{ marginBottom: 0, color: "#64748b" }}>
+          <strong>Note:</strong> {partial.map((p) => `${p.fy} is partial (${p.count} months)`).join("; ")} and is shown separately.
+        </p>
+      )}
     </div>
   );
 };
