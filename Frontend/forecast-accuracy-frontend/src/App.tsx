@@ -50,6 +50,8 @@ const App: React.FC = () => {
   const [threeYearRows, setThreeYearRows] = useState<ThreeYearResultRow[]>([]);
   const [trend, setTrend] = useState<TrendResponse | null>(null);
   const [selectedHistogramFY, setSelectedHistogramFY] = useState<string>("");
+  console.log(trend);
+  console.log(selectedHistogramFY);
 
   const [loadingProducts, setLoadingProducts] = useState(false);
   const [loadingYears, setLoadingYears] = useState(false);
