@@ -29,7 +29,7 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
-        "https://fp-forecast-accuracy-publication-vg62z.ondigitalocean.app/"
+        "https://fp-forecast-accuracy-publication-vg62z.ondigitalocean.app"
     ],
     # allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
