@@ -1,3 +1,4 @@
+// src/components/HistogramChart.tsx
 import React, { useMemo } from "react";
 import {
   ResponsiveContainer,
@@ -14,17 +15,16 @@ import {
 } from "recharts";
 
 type HistogramBin = {
-  x: number;      // midpoint
-  count: number;  // frequency
-  start: number;  // tooltip range start
-  end: number;    // tooltip range end
-  density: number; // scaled curve value (same axis as count)
+  x: number;
+  count: number;
+  start: number;
+  end: number;
 };
 
 interface HistogramChartProps {
   actuals: number[];
   productName: string;
-  bins?: number; // optional override
+  bins?: number;
 }
 
 const formatNumber = (value: number) =>
@@ -42,27 +42,16 @@ function median(values: number[]) {
   return s.length % 2 === 0 ? (s[mid - 1] + s[mid]) / 2 : s[mid];
 }
 
-function std(values: number[]) {
-  if (values.length < 2) return NaN;
-  const m = mean(values);
-  const v = values.reduce((acc, x) => acc + (x - m) ** 2, 0) / (values.length - 1);
-  return Math.sqrt(v);
+function normalPdf(x: number, mu: number, sigma: number) {
+  if (!Number.isFinite(mu) || !Number.isFinite(sigma) || sigma <= 0) return 0;
+  const z = (x - mu) / sigma;
+  return (1 / (sigma * Math.sqrt(2 * Math.PI))) * Math.exp(-0.5 * z * z);
 }
 
-function gaussian(u: number) {
-  return Math.exp(-0.5 * u * u) / Math.sqrt(2 * Math.PI);
-}
-
-// Simple KDE at a point x, using bandwidth h
-function kdeAtPoint(x: number, values: number[], h: number) {
-  if (!values.length || !Number.isFinite(h) || h <= 0) return 0;
-  const n = values.length;
-  let sum = 0;
-  for (const v of values) sum += gaussian((x - v) / h);
-  return sum / (n * h);
-}
-
-function createHistogramData(actuals: number[], numBins: number): {
+function createHistogramData(
+  actuals: number[],
+  numBins: number
+): {
   data: HistogramBin[];
   minVal: number;
   maxVal: number;
@@ -71,13 +60,13 @@ function createHistogramData(actuals: number[], numBins: number): {
   const clean = actuals.filter((v) => Number.isFinite(v));
   if (!clean.length) return { data: [], minVal: 0, maxVal: 0, binSize: 1 };
 
-  const minVal = Math.min(...clean);
   const maxVal = Math.max(...clean);
+  const minVal = Math.min(...clean);
   const span = maxVal - minVal;
 
   if (span < 1e-9) {
     return {
-      data: [{ x: minVal, count: clean.length, start: minVal, end: minVal, density: clean.length }],
+      data: [{ x: minVal, count: clean.length, start: minVal, end: minVal }],
       minVal,
       maxVal,
       binSize: 1,
@@ -86,71 +75,79 @@ function createHistogramData(actuals: number[], numBins: number): {
 
   const binSize = span / numBins;
 
-  const bins: HistogramBin[] = Array.from({ length: numBins }, (_, i) => {
+  const data: HistogramBin[] = Array.from({ length: numBins }, (_, i) => {
     const start = minVal + i * binSize;
     const end = i === numBins - 1 ? maxVal : minVal + (i + 1) * binSize;
     const x = (start + end) / 2;
-    return { x, count: 0, start, end, density: 0 };
+    return { x, count: 0, start, end };
   });
 
   for (const v of clean) {
     let idx = Math.floor((v - minVal) / binSize);
     if (idx < 0) idx = 0;
     if (idx >= numBins) idx = numBins - 1;
-    bins[idx].count += 1;
+    data[idx].count += 1;
   }
 
-  // KDE bandwidth (Silverman's rule of thumb-ish)
-  const s = std(clean);
-  const n = clean.length;
-  const h = Number.isFinite(s) && s > 0 ? 1.06 * s * Math.pow(n, -1 / 5) : binSize;
-
-  // Compute unscaled density at bin midpoints
-  const rawDens = bins.map((b) => kdeAtPoint(b.x, clean, h));
-  const maxRaw = Math.max(...rawDens, 0);
-  const maxCount = Math.max(...bins.map((b) => b.count), 0);
-
-  // Scale density so curve fits on same axis as counts
-  const scale = maxRaw > 0 ? (maxCount / maxRaw) : 1;
-
-  bins.forEach((b, i) => {
-    b.density = rawDens[i] * scale;
-  });
-
-  return { data: bins, minVal, maxVal, binSize };
+  return { data, minVal, maxVal, binSize };
 }
 
-/** Always-visible Mean/Median badges using Customized */
+/**
+ * Mean/Median badges drawn using <Customized />.
+ * IMPORTANT: Cast axis objects to `any` to avoid TS2339 errors.
+ */
 function MeanMedianBadges({
   meanVal,
   medianVal,
-  format,
 }: {
   meanVal: number;
   medianVal: number;
-  format: (n: number) => string;
 }) {
   return (
     <Customized
-      component={(props: any) => {
-        const xAxis = props?.xAxisMap ? Object.values(props.xAxisMap)[0] : null;
-        const yAxis = props?.yAxisMap ? Object.values(props.yAxisMap)[0] : null;
-        const xScale = xAxis?.scale;
-        const yScale = yAxis?.scale;
+      component={(rawProps: unknown) => {
+        const props = rawProps as any;
+
+        const xAxisMap = props?.xAxisMap as Record<string, any> | undefined;
+        const yAxisMap = props?.yAxisMap as Record<string, any> | undefined;
+
+        const xAxis = xAxisMap ? (Object.values(xAxisMap)[0] as any) : null;
+        const yAxis = yAxisMap ? (Object.values(yAxisMap)[0] as any) : null;
+
+        const xScale = xAxis?.scale as ((v: number) => number) | undefined;
+        const yScale = yAxis?.scale as ((v: number) => number) | undefined;
 
         if (!xScale || !yScale) return null;
 
         const xMean = Number.isFinite(meanVal) ? xScale(meanVal) : null;
         const xMed = Number.isFinite(medianVal) ? xScale(medianVal) : null;
 
-        // place labels inside plot near the top
-        const yTop1 = yScale(yAxis.domain?.[1] ?? 0) + 18; // safe-ish
-        const yTop2 = yTop1 + 22;
+        // Place badges near the top INSIDE the plotting area
+        const yDomainMax =
+          Array.isArray(yAxis?.domain) && yAxis.domain.length > 1
+            ? yAxis.domain[1]
+            : 0;
+
+        const yTop = yScale(yDomainMax) + 18;
 
         const Badge = (x: number, y: number, text: string, color: string) => (
           <g>
-            <rect x={x - 64} y={y - 14} width={128} height={20} rx={10} fill="#fff" stroke="#e5e7eb" />
-            <text x={x} y={y} textAnchor="middle" fontSize={12} fontWeight={700} fill={color}>
+            <rect
+              x={x + 10}
+              y={y - 14}
+              width={170}
+              height={22}
+              rx={11}
+              fill="#fff"
+              stroke="#e5e7eb"
+            />
+            <text
+              x={x + 22}
+              y={y + 2}
+              fontSize={12}
+              fontWeight={700}
+              fill={color}
+            >
               {text}
             </text>
           </g>
@@ -158,8 +155,15 @@ function MeanMedianBadges({
 
         return (
           <g>
-            {xMean != null && Badge(xMean, yTop1, `Mean: ${format(meanVal)}`, "#ef4444")}
-            {xMed != null && Badge(xMed, yTop2, `Median: ${format(medianVal)}`, "#111827")}
+            {xMean != null &&
+              Badge(xMean, yTop, `Mean: ${formatNumber(meanVal)}`, "#ef4444")}
+            {xMed != null &&
+              Badge(
+                xMed,
+                yTop + 26,
+                `Median: ${formatNumber(medianVal)}`,
+                "#111827"
+              )}
           </g>
         );
       }}
@@ -167,28 +171,62 @@ function MeanMedianBadges({
   );
 }
 
-const HistogramChart: React.FC<HistogramChartProps> = ({ actuals, productName, bins = 12 }) => {
-  const clean = useMemo(() => actuals.filter((v) => Number.isFinite(v)), [actuals]);
+const HistogramChart: React.FC<HistogramChartProps> = ({
+  actuals,
+  productName,
+  bins = 12,
+}) => {
+  const clean = useMemo(
+    () => actuals.filter((v) => Number.isFinite(v)),
+    [actuals]
+  );
+
   const m = useMemo(() => mean(clean), [clean]);
   const med = useMemo(() => median(clean), [clean]);
+
+  const sigma = useMemo(() => {
+    if (clean.length < 2) return NaN;
+    const mu = mean(clean);
+    const varSum = clean.reduce((acc, v) => acc + (v - mu) ** 2, 0);
+    return Math.sqrt(varSum / (clean.length - 1));
+  }, [clean]);
 
   const { data, minVal, maxVal, binSize } = useMemo(
     () => createHistogramData(clean, bins),
     [clean, bins]
   );
 
-  const maxCount = useMemo(() => (data.length ? Math.max(...data.map((d) => d.count)) : 0), [data]);
+  const maxCount = useMemo(
+    () => (data.length ? Math.max(...data.map((d) => d.count)) : 0),
+    [data]
+  );
 
-  // ✅ padding so bars don't overlap the Y-axis
+  // Padding so first/last bars don't touch the Y-axis / edge
   const domainMin = data.length ? minVal - binSize / 2 : 0;
   const domainMax = data.length ? maxVal + binSize / 2 : 1;
 
-  if (!data.length) return null;
+  // Normal curve overlay scaled into histogram "counts" space
+  const curve = useMemo(() => {
+    if (!data.length || !Number.isFinite(m) || !Number.isFinite(sigma) || sigma <= 0)
+      return [];
+    const n = clean.length;
+    const scale = n * binSize;
+    return data.map((b) => ({ x: b.x, y: normalPdf(b.x, m, sigma) * scale }));
+  }, [data, m, sigma, clean.length, binSize]);
+
+  if (!data.length) {
+    return (
+      <div className="empty-state">No actual consumption values available.</div>
+    );
+  }
 
   return (
     <div style={{ width: "100%", height: 360 }}>
       <ResponsiveContainer width="100%" height="100%">
-        <ComposedChart data={data} margin={{ top: 36, right: 18, left: 18, bottom: 42 }}>
+        <ComposedChart
+          data={data}
+          margin={{ top: 50, right: 18, left: 22, bottom: 44 }}
+        >
           <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
 
           <XAxis
@@ -206,11 +244,10 @@ const HistogramChart: React.FC<HistogramChartProps> = ({ actuals, productName, b
             />
           </XAxis>
 
-          {/* add headroom so badges never clip */}
           <YAxis
             stroke="#6b7280"
             allowDecimals={false}
-            domain={[0, maxCount + 3]}
+            domain={[0, Math.max(1, maxCount + 1)]}
           >
             <Label
               value="Frequency (Months)"
@@ -221,10 +258,15 @@ const HistogramChart: React.FC<HistogramChartProps> = ({ actuals, productName, b
           </YAxis>
 
           <Tooltip
-            formatter={(value: any, name: any) => [
-              (value as number).toLocaleString(undefined, { maximumFractionDigits: 2 }),
-              name === "density" ? "Curve (shape)" : "Months",
-            ]}
+            formatter={(value: any, name: any) => {
+              if (name === "count") return [value, "Months"];
+              return [
+                Number(value).toLocaleString(undefined, {
+                  maximumFractionDigits: 2,
+                }),
+                "Curve (scaled)",
+              ];
+            }}
             labelFormatter={(_: any, payload: any) => {
               const p = payload?.[0]?.payload as HistogramBin | undefined;
               if (!p) return "";
@@ -237,29 +279,33 @@ const HistogramChart: React.FC<HistogramChartProps> = ({ actuals, productName, b
             }}
           />
 
-          {/* vertical reference lines */}
+          {/* Lines only */}
           {Number.isFinite(m) && (
-            <ReferenceLine x={m} stroke="#ef4444" strokeDasharray="6 4" />
+            <ReferenceLine x={m} stroke="#ef4444" strokeDasharray="4 4" />
           )}
           {Number.isFinite(med) && (
             <ReferenceLine x={med} stroke="#111827" strokeDasharray="2 6" />
           )}
 
-          {/* Always-visible badges for mean/median */}
-          <MeanMedianBadges meanVal={m} medianVal={med} format={formatNumber} />
+          {/* Always-visible labels */}
+          {Number.isFinite(m) && Number.isFinite(med) && (
+            <MeanMedianBadges meanVal={m} medianVal={med} />
+          )}
 
-          {/* bars */}
           <Bar dataKey="count" fill="#3b82f6" barSize={28} />
 
-          {/* curve (density scaled to same axis) */}
-          <Line
-            type="monotone"
-            dataKey="density"
-            stroke="#111827"
-            strokeWidth={2}
-            dot={false}
-            isAnimationActive={false}
-          />
+          {/* Normal curve overlay */}
+          {curve.length > 0 && (
+            <Line
+              type="monotone"
+              data={curve}
+              dataKey="y"
+              dot={false}
+              stroke="#64748b"
+              strokeWidth={2}
+              isAnimationActive={false}
+            />
+          )}
         </ComposedChart>
       </ResponsiveContainer>
     </div>
